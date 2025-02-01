@@ -17,5 +17,6 @@ manifest:
     - name: eyelash_corne
       url: https://github.com/a741725193/zmk-new_corne
       revision: main
+      import: boards/arm/eyelash_corne/
   self:
     path: config
