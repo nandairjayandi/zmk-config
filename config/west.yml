@@ -11,17 +11,17 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    # - name: zmk-new_corne
-    #   remote: eyelash_corne
-    #   revision: main
+    - name: zmk-new_corne
+      remote: eyelash_corne
+      revision: main
     # - name: eyelash_corne
     #   url: https://github.com/a741725193/zmk-new_corne
     #   revision: main
     #   import: boards/arm/eyelash_corne/
 
-    - name: eyelash_corne
-      url: https://github.com/a741725193/zmk-new_corne
-      revision: main
+    # - name: eyelash_corne
+    #   url: https://github.com/a741725193/zmk-new_corne
+    #   revision: main
 
   self:
     path: config
