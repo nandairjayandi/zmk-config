@@ -49,12 +49,12 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "QWERTY";
+            display-name = "GALLIUM";
             bindings = <
-&kp TAB    &kp Q  &kp W      &kp E     &kp R  &kp T                              &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&td0       &kp A  &kp S      &kp D     &kp F  &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X      &kp C     &kp V  &kp B       &kp SPACE              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                             &kp LGUI  &mo 1  &lt 3 SPACE                                              &lt 3 ENTER  &mo 2  &kp RALT
+&kp TAB    &kp B  &kp L      &kp D     &kp C  &kp V                              &kp UP                &kp J        &kp Y  &kp O      &kp U    &kp COMMA     &kp BSPC
+&td0       &kp N  &kp R      &kp T     &kp S  &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp P        &kp H  &kp A      &kp E    &kp I  &kp SQT
+&kp LCTRL  &kp X  &kp Q      &kp M     &kp W  &kp Z       &kp SPACE              &kp DOWN              &kp K        &kp F  &kp SQT  &kp SEMI  &kp DOT  &kp ESC
+                             &kp LGUI  &lt 3 SPACE &mo 1                                                &lt 3 ENTER  &mo 2  &kp RALT
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
