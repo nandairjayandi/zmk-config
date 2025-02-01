@@ -22,14 +22,17 @@
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 600
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
 
+#define XXX &none
+#define ___ &trans
+
 / {
     behaviors {
-        td0: td0 {
-            compatible = "zmk,behavior-tap-dance";
-            display-name = "Shift/Caps Lock Tap Dance";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
-        };
+        // td0: td0 {
+        //     compatible = "zmk,behavior-tap-dance";
+        //     display-name = "Shift/Caps Lock Tap Dance";
+        //     #binding-cells = <0>;
+        //     bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
+        // };
     };
 
     rgb_encoder: rgb_encoder {
@@ -51,10 +54,10 @@
         default_layer {
             display-name = "GALLIUM";
             bindings = <
-&kp TAB    &kp B  &kp L      &kp D     &kp C  &kp V                              &kp UP                &kp J        &kp Y  &kp O      &kp U    &kp COMMA     &kp BSPC
-&td0       &kp N  &kp R      &kp T     &kp S  &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp P        &kp H  &kp A      &kp E    &kp I  &kp SQT
-&kp LCTRL  &kp X  &kp Q      &kp M     &kp W  &kp Z       &kp SPACE              &kp DOWN              &kp K        &kp F  &kp SQT  &kp SEMI  &kp DOT  &kp ESC
-                             &kp LGUI  &lt 3 SPACE &mo 1                                                &lt 3 ENTER  &mo 2  &kp RALT
+XXX &kp B &kp L  &kp D  &kp C  &kp V                              &kp UP                &kp J  &kp Y  &kp O      &kp U    &kp COMMA     &kp BSPC
+XXX &kp N &kp R  &kp T  &kp S  &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp P  &kp H  &kp A      &kp E    &kp I  &kp SQT
+XXX &kp X &kp Q  &kp M  &kp W  &kp Z       &kp SPACE              &kp DOWN              &kp K  &kp F  &kp SQT  &kp SEMI  &kp DOT  &kp ESC
+                    &kp LGUI  &lt 3 BSPC &lt 3 TAB                                        &lt 2 ENTER &lt 3 SPACE &kp RALT
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
