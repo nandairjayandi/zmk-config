@@ -7,6 +7,9 @@
 
 #include <input/processors.dtsi>
 
+#include "zmk-helpers/helper.h"
+#include "zmk-helpers/key-labels/42.h"
+
 /*
 
    &mmv_input_listener {
@@ -35,6 +38,8 @@
         // };
     };
 
+    // Very likely I will want to change the behaviour of the encoder independent from the layer
+
     rgb_encoder: rgb_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
@@ -50,6 +55,8 @@
 
     keymap {
         compatible = "zmk,keymap";
+
+// With &lt 3 BSPC I will leave it like that, even though it's causing issue when holding it, you just need to discpline using modifier key or VIM bindings
 
         default_layer {
             display-name = "GALLIUM";
