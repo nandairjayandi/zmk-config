@@ -1,50 +1,50 @@
 layers:
-  QWERTY:
+  GALLIUM:
   - $$mdi:keyboard-tab$$
-  - Q
-  - W
-  - E
-  - R
-  - T
+  - B
+  - L
+  - D
+  - C
+  - V
   - $$mdi:arrow-up-bold$$
+  - J
   - Y
-  - U
-  - I
   - O
-  - P
+  - U
+  - {t: ',', s: <}
   - {t: '$$mdi:backspace$$', type: backspace}
   - '&td0'
-  - A
+  - N
+  - R
+  - T
   - S
-  - D
-  - F
   - G
   - $$mdi:arrow-left-bold$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:arrow-right-bold$$
+  - P
   - H
-  - J
-  - K
-  - L
-  - {t: ;, s: ':'}
+  - A
+  - E
+  - I
   - {t: '''', s: '"'}
   - $$mdi:apple-keyboard-control$$
-  - Z
   - X
-  - C
-  - V
-  - B
+  - Q
+  - M
+  - W
+  - Z
   - $$mdi:keyboard-space$$
   - $$mdi:arrow-down-bold$$
-  - N
-  - M
-  - {t: ',', s: <}
+  - K
+  - F
+  - {t: '''', s: '"'}
+  - {t: ;, s: ':'}
   - {t: ., s: '>'}
-  - {t: /, s: '?'}
   - $$mdi:keyboard-esc$$
   - LGUI
-  - NUMBER
   - {t: '$$mdi:keyboard-space$$', h: Fn}
+  - NUMBER
   - {t: '$$mdi:keyboard-return$$', h: Fn}
   - SYMBOL
   - $$mdi:apple-keyboard-option$$
@@ -92,8 +92,8 @@ layers:
   - END
   - PG DN
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
   - INS
   - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
@@ -190,8 +190,8 @@ layers:
   - SCROLLLOCK
   - PAUSE BREAK
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {type: held alternate}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
