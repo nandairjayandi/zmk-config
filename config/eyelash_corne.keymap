@@ -57,7 +57,7 @@
 XXX &kp B &kp L  &kp D  &kp C  &kp V                              &kp UP                &kp J  &kp Y  &kp O      &kp U    &kp COMMA     &kp BSPC
 XXX &kp N &kp R  &kp T  &kp S  &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp P  &kp H  &kp A      &kp E    &kp I  &kp SQT
 XXX &kp X &kp Q  &kp M  &kp W  &kp Z       &kp SPACE              &kp DOWN              &kp K  &kp F  &kp SQT  &kp SEMI  &kp DOT  &kp ESC
-                    &kp LGUI  &lt 3 BSPC &lt 3 TAB                                        &lt 2 ENTER &lt 3 SPACE &kp RALT
+                    &kp LGUI  &lt 3 BSPC &lt 3 TAB                                        &lt 2 ENTER &lt 3 SPACE &caps_word 
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
@@ -87,8 +87,8 @@ XXX &kp X &kp Q  &kp M  &kp W  &kp Z       &kp SPACE              &kp DOWN      
         layer_3 {
             display-name = "Fn";
             bindings = <
-&studio_unlock   &kp F1      &kp F2      &kp F3       &kp F4     &kp F5                                  &mmv MOVE_UP                     &kp F6       &kp F7     &kp F8       &kp F9      &kp F10          &kp F11
-&trans  &trans      &mkp LCLK   &mkp MCLK    &mkp RCLK  &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &kp PRINTSCREEN  &kp F12
+&kp F1      &kp F2      &kp F3       &kp F4     &kp F5                                  &mmv MOVE_UP                     &kp F6       &kp F7     &kp F8       &kp F9      &kp F10          &kp F11 &kp F12
+&trans  &trans      &mkp LCLK   &mkp MCLK    &mkp RCLK  &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &kp PRINTSCREEN  XXX
 &trans  &sys_reset  &trans      &bootloader  &trans     &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
                                 &trans      &trans      &trans                                                                   &trans       &trans     &trans
             >;
