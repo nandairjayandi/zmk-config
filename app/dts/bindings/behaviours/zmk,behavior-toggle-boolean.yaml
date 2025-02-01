@@ -1,0 +1,2 @@
+# stub for new behavior aimed to change the rotation of the encoder and the joystick button on the eyelash_corne zmk-new_corne
+# TODO this seems to be a simple behaviour that I am surprised that nobody raised issue or have implemented in ZMK, especially since writing a function that changes the boolean in the keyboard can be easily implemented in QMK. I need to research devicetree, research for any pre-existing solutions, or maybe raise an issue first before writing this program. I am putting this as low priority until I have everything prepared
