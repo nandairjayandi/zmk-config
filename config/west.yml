@@ -18,6 +18,7 @@ manifest:
       revision: main
     - name: zmk-helpers
       remote: urob
+      revision: main
     # - name: eyelash_corne
     #   url: https://github.com/a741725193/zmk-new_corne
     #   revision: main
