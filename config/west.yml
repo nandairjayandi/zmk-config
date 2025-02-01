@@ -1,4 +1,5 @@
 manifest:
+
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
@@ -8,6 +9,7 @@ manifest:
       url-base: https://github.com/a741725193
     - name: urob
       url-base: https://github.com/urob
+
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -19,14 +21,6 @@ manifest:
     - name: zmk-helpers
       remote: urob
       revision: main
-    # - name: eyelash_corne
-    #   url: https://github.com/a741725193/zmk-new_corne
-    #   revision: main
-    #   import: boards/arm/eyelash_corne/
-
-    # - name: eyelash_corne
-    #   url: https://github.com/a741725193/zmk-new_corne
-    #   revision: main
-
+      
   self:
     path: config
