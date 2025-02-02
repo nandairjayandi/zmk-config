@@ -53,84 +53,103 @@
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
+SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
+SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp BSHL)
+
 // I am not using HRM combos tap only since I use combinations of modifiers for MEH and HYPR
 
 // #include "mouse.dtsi"
 // note that this should be written after MAKE_HRM, though I'll think about it later. The current implementation uses dt-bindings which i need to explore a little bit more
 // for now the important bit is to make timeless homerow first
 
-/ {
-    behaviors {
-        // td0: td0 {
-        //     compatible = "zmk,behavior-tap-dance";
-        //     display-name = "Shift/Caps Lock Tap Dance";
-        //     #binding-cells = <0>;
-        //     bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
-        // };
-    };
+ZMK_LAYER(default_layer,
+//╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                    ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
+    XXX      &kp B         &kp L         &kp D         &kp C         &kp V                              &kp UP                &kp J         &kp F         &kp O         &kp U         &comma_morph    XXX
+//├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤          ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
+    XXX      &hml LCTRL N  &hml LALT R   &hml LGUI T   &hml LSHFT S  &kp G                    XXX       XXX       XXX         &kp Y         &hmr RSHFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I    XXX
+//├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤          ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
+    XXX      &kp X         &kp Q         &kp M         &kp W         &kp Z                              XXX                   &kp K         &kp F         &kp SQT       &kp SEMI      &kp DOT         XXX
+//╰──────╯ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ╭──────╮           ╰─────────╯           ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ╰──────╯
+                                         &kp TAB       &kp BSPC      &kp TAB         XXX                                      &kp ENTER     &kp SPC       &kp ENTER
+//                                     ╰─────────────┴─────────────┴─────────────╯ ╰──────╯                                 ╰─────────────┴─────────────┴─────────────╯
 
-    // Very likely I will want to change the behaviour of the encoder independent from the layer
+    , &inc_dec_kp C_VOL_UP C_VOL_DN
+)
 
-    rgb_encoder: rgb_encoder {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
-    };
 
-    scroll_encoder: scroll_encoder {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-        tap-ms = <30>;
-    };
+// old keymap stub 
+// {
+//     behaviors {
+//         // td0: td0 {
+//         //     compatible = "zmk,behavior-tap-dance";
+//         //     display-name = "Shift/Caps Lock Tap Dance";
+//         //     #binding-cells = <0>;
+//         //     bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
+//         // };
+//     };
 
-    keymap {
-        compatible = "zmk,keymap";
+//     // Very likely I will want to change the behaviour of the encoder independent from the layer
 
-// With &lt 3 BSPC I will leave it like that, even though it's causing issue when holding it, you just need to discpline using modifier key or VIM bindings
+//     rgb_encoder: rgb_encoder {
+//         compatible = "zmk,behavior-sensor-rotate";
+//         #sensor-binding-cells = <0>;
+//         bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
+//     };
 
-        default_layer {
-            display-name = "GALLIUM";
-            bindings = <
-XXX &kp B &kp L  &kp D  &kp C  &kp V                              &kp UP                &kp J  &kp Y  &kp O      &kp U    &kp COMMA     &kp BSPC
-XXX &kp N &kp R  &kp T  &kp S  &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp P  &kp H  &kp A      &kp E    &kp I  &kp SQT
-XXX &kp X &kp Q  &kp M  &kp W  &kp Z       &kp SPACE              &kp DOWN              &kp K  &kp F  &kp SQT  &kp SEMI  &kp DOT  &kp ESC
-                    &kp LGUI  &lt 3 BSPC &lt 3 TAB                                        &lt 2 ENTER &lt 3 SPACE &caps_word 
-            >;
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
-        };
+//     scroll_encoder: scroll_encoder {
+//         compatible = "zmk,behavior-sensor-rotate";
+//         #sensor-binding-cells = <0>;
+//         bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+//         tap-ms = <30>;
+//     };
 
-        lower_layer {
-            display-name = "NUMBER";
-            bindings = <
-&trans  &kp N1           &kp N2          &kp N3        &kp N4        &kp N5                                        &mmv MOVE_UP                     &kp N6           &kp N7           &kp N8           &kp N9           &kp N0    &kp BSPC
-&trans  &bt BT_CLR_ALL   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                           &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp HOME  &kp PG_UP
-&trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &trans        &trans        &rgb_ug RGB_EFF &kp C_MUTE                    &mmv MOVE_DOWN                   &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp END   &kp PG_DN
-                                         &trans        &trans        &trans                                                                         &kp INS          &kp DEL          &trans
-            >;
-            sensor-bindings = <&scroll_encoder>;
-        };
+//     keymap {
+//         compatible = "zmk,keymap";
 
-        raise_layer {
-            display-name = "SYMBOL";
-            bindings = <
-&trans  &kp EXCL      &kp AT        &kp HASH   &kp DLLR   &kp PRCNT                           &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&trans  &bt BT_CLR    &mkp LCLK     &mkp MCLK  &mkp RCLK  &mkp MB4            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&trans  &out OUT_USB  &out OUT_BLE  &none      &none      &mkp MB5  &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                                    &trans     &trans     &kp SPACE                                                            &kp RET    &trans     &trans
-            >;
-            sensor-bindings = <&scroll_encoder>;
-        };
+// // With &lt 3 BSPC I will leave it like that, even though it's causing issue when holding it, you just need to discpline using modifier key or VIM bindings
 
-        layer_3 {
-            display-name = "Fn";
-            bindings = <
-&kp F1      &kp F2      &kp F3       &kp F4     &kp F5                                  &mmv MOVE_UP                     &kp F6       &kp F7     &kp F8       &kp F9      &kp F10          &kp F11 &kp F12
-&trans  &trans      &mkp LCLK   &mkp MCLK    &mkp RCLK  &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &kp PRINTSCREEN  XXX
-&trans  &sys_reset  &trans      &bootloader  &trans     &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
-                                &trans      &trans      &trans                                                                   &trans       &trans     &trans
-            >;
-            sensor-bindings = <&scroll_encoder>;
-        };
-    };
-};
+//         default_layer {
+//             display-name = "GALLIUM";
+//             bindings = <
+// XXX &kp B &kp L  &kp D  &kp C  &kp V                              &kp UP                &kp J  &kp Y  &kp O      &kp U    &kp COMMA     &kp BSPC
+// XXX &kp N &kp R  &kp T  &kp S  &kp G                    &kp LEFT  &kp ENTER  &kp RIGHT  &kp P  &kp H  &kp A      &kp E    &kp I  &kp SQT
+// XXX &kp X &kp Q  &kp M  &kp W  &kp Z       &kp SPACE              &kp DOWN              &kp K  &kp F  &kp SQT  &kp SEMI  &kp DOT  &kp ESC
+//                     &kp LGUI  &lt 3 BSPC &lt 3 TAB                                        &lt 2 ENTER &lt 3 SPACE &caps_word 
+//             >;
+//             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+//         };
+
+//         lower_layer {
+//             display-name = "NUMBER";
+//             bindings = <
+// &trans  &kp N1           &kp N2          &kp N3        &kp N4        &kp N5                                        &mmv MOVE_UP                     &kp N6           &kp N7           &kp N8           &kp N9           &kp N0    &kp BSPC
+// &trans  &bt BT_CLR_ALL   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                           &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp HOME  &kp PG_UP
+// &trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &trans        &trans        &rgb_ug RGB_EFF &kp C_MUTE                    &mmv MOVE_DOWN                   &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp END   &kp PG_DN
+//                                          &trans        &trans        &trans                                                                         &kp INS          &kp DEL          &trans
+//             >;
+//             sensor-bindings = <&scroll_encoder>;
+//         };
+
+//         raise_layer {
+//             display-name = "SYMBOL";
+//             bindings = <
+// &trans  &kp EXCL      &kp AT        &kp HASH   &kp DLLR   &kp PRCNT                           &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
+// &trans  &bt BT_CLR    &mkp LCLK     &mkp MCLK  &mkp RCLK  &mkp MB4            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
+// &trans  &out OUT_USB  &out OUT_BLE  &none      &none      &mkp MB5  &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
+//                                     &trans     &trans     &kp SPACE                                                            &kp RET    &trans     &trans
+//             >;
+//             sensor-bindings = <&scroll_encoder>;
+//         };
+
+//         layer_3 {
+//             display-name = "Fn";
+//             bindings = <
+// &kp F1      &kp F2      &kp F3       &kp F4     &kp F5                                  &mmv MOVE_UP                     &kp F6       &kp F7     &kp F8       &kp F9      &kp F10          &kp F11 &kp F12
+// &trans  &trans      &mkp LCLK   &mkp MCLK    &mkp RCLK  &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &kp PRINTSCREEN  XXX
+// &trans  &sys_reset  &trans      &bootloader  &trans     &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
+//                                 &trans      &trans      &trans                                                                   &trans       &trans     &trans
+//             >;
+//             sensor-bindings = <&scroll_encoder>;
+//         };
+//     };
+// };
