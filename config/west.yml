@@ -9,6 +9,8 @@ manifest:
       url-base: https://github.com/a741725193
     - name: nanda-irjayandi
       url-base: https://github.com/nanda-irjayandi
+    - name: m165437
+      url-base: https://github.com/M165437 
 
   projects:
     - name: zmk
@@ -21,6 +23,9 @@ manifest:
     - name: zmk-helpers # from urob
       remote: nanda-irjayandi
       revision: main
+    - name: nice-view-gem 
+      remote: m165437 
+      revision: main 
       
   self:
     path: config
