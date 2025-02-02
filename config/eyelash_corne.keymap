@@ -68,9 +68,9 @@ SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMI, &kp BSLH)
 
 ZMK_LAYER(GALLIUM,
     //╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-        &to 1      &kp B         &kp L         &kp D         &kp C         &kp V                               &kp UP                &kp J         &kp F         &kp O         &kp U         &comma_morph    XXX
+        &to 1      &kp B         &kp L         &kp D         &kp C         &kp V                               &kp UP                &kp J         &kp Y         &kp O         &kp U         &comma_morph    XXX
     //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-        &to 2      &hml LCTRL N  &hml LALT R   &hml LGUI T   &hml LSHFT S  &kp G                     &kp LEFT  XXX       &kp RIGHT   &kp Y         &hmr RSHFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I    XXX
+        &to 2      &hml LCTRL N  &hml LALT R   &hml LGUI T   &hml LSHFT S  &kp G                     &kp LEFT  XXX       &kp RIGHT   &kp P         &hmr RSHFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I    XXX
     //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
         XXX      &kp X         &kp Q         &kp M         &kp W         &kp Z            XXX                &kp DOWN                &kp K         &kp F         &kp SQT       &kp SEMI      &kp DOT         XXX
     //╰──────╯ ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ╰──────╯
