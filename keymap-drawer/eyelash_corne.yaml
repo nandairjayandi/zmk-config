@@ -14,19 +14,19 @@ layers:
   - {t: ',', s: <}
   - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: N, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: R, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: T, h: LGUI}
-  - {t: S, h: '$$mdi:apple-keyboard-shift$$'}
+  - N
+  - R
+  - T
+  - S
   - G
   - $$mdi:arrow-left-bold$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:arrow-right-bold$$
   - P
-  - {t: H, h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: A, h: RGUI}
-  - {t: E, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: I, h: '$$mdi:apple-keyboard-control$$'}
+  - H
+  - A
+  - E
+  - I
   - {t: '''', s: '"'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - X
