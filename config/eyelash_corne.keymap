@@ -73,7 +73,7 @@ ZMK_LAYER(default_layer,
                                          &kp TAB       &kp BSPC      &kp TAB         XXX                                      &kp ENTER     &kp SPC       &kp ENTER
 //                                     ╰─────────────┴─────────────┴─────────────╯ ╰──────╯                                 ╰─────────────┴─────────────┴─────────────╯
 
-    , &inc_dec_kp C_VOL_UP C_VOL_DN
+    // , &inc_dec_kp C_VOL_UP C_VOL_DN
 )
 
 
