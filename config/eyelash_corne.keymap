@@ -53,14 +53,12 @@
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
-// #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2) \
-//     ZMK_BEHAVIOR(NAME, mod_morph, \
-//         mods = <(MOD_L ## MOD|MOD_R ## MOD)>; \
-//         bindings = <BINDING1>, <BINDING2>; \
-//     )
+#define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
+  ZMK_MOD_MORPH(NAME, mods = <(MOD_L##MOD | MOD_R##MOD)>;                      \
+                bindings = <BINDING1>, <BINDING2>;)
 
-// SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
-// SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp BSHL)
+SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
+SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp BSHL)
 
 // I am not using HRM combos tap only since I use combinations of modifiers for MEH and HYPR
 
