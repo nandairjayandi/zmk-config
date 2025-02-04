@@ -79,7 +79,10 @@ ZMK_TAP_DANCE(tap_bracket_right,
     bindings = <&kp RPAR>, <&kp RBRC>, <&kp GT>, <&kp RBKT>;  // ) } > ]
 )
 
+// macOS move combo
 ZMK_COMBO(combo_copy, &kp LG(LA(V)), LT4 LT2, 2)
+
+ZMK_CONDITIONAL_LAYER(sys, 1 2, 4)
 
 // I am not using HRM combos tap only since I use combinations of modifiers for MEH and HYPR
 
@@ -145,16 +148,22 @@ ZMK_LAYER(FN,
 
 ZMK_LAYER(SYSTEM,
     //╭──────╮       ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                              ╭──────────────────╮                     ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-      &bt BT_CLR_ALL   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3         XXX                                 &bt BT_SEL 0                             &kp J         &kp F         &kp O         &kp U         &comma_morph    XXX
+        XXX            XXX           XXX           XXX           XXX           XXX                                        &bt BT_SEL 0                             &kp J         &kp F         &kp O         &kp U         &comma_morph    XXX
     //├──────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭──────────────────┼──────────────────┼──────────────────╮  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-        XXX            XXX         &kp N4        &kp N5        &kp N6        XXX                       &bt BT_SEL 3       &bt BT_CLR_ALL     &bt BT_SEL 1          &kp Y         &hmr RSHFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I    XXX
+        XXX            XXX           XXX           XXX           XXX           XXX                     &bt BT_SEL 3       &bt BT_CLR_ALL     &bt BT_SEL 1          &kp Y         &hmr RSHFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I    XXX
     //├──────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰──────────────────┼──────────────────┼──────────────────╯  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-        &to 0            XXX         &kp N1        &kp N2        &kp N3        XXX            XXX                         &bt BT_SEL 2                             &kp K         &kp F          &kp SQT       &kp SEMI      &kp DOT         XXX
+        XXX            XXX           XXX           XXX           XXX           XXX              XXX                       &bt BT_SEL 2                             &kp K         &kp F          &kp SQT       &kp SEMI      &kp DOT         XXX
     //╰──────╯       ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤  ╰──────╯                    ╰──────────────────╯                     ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ╰──────╯
-                                                   &kp TAB       &kp N0        XXX                                                                                   &kp ENTER     &kp SPC       &kp ENTER
+                                                   XXX           XXX           XXX                                                                                   &kp ENTER     &kp SPC       &kp ENTER
     //                                           ╰─────────────┴─────────────┴─────────────╯                                                                       ╰─────────────┴─────────────┴─────────────╯
 
-    , &inc_dec_kp C_VOL_UP C_VOL_DN
+    , 
+    
+        rgb_encoder: rgb_encoder {
+        compatible = "zmk,behavior-sensor-rotate";
+        #sensor-binding-cells = <0>;
+        bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
+    };
 )
 
 
