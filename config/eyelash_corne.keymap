@@ -84,7 +84,7 @@ ZMK_COMBO(combo_copy, &kp LG(LA(V)), LT4 LT2, 2)
 
 ZMK_CONDITIONAL_LAYER(sys, 1 2, 4)
 
-{
+/ {
     behaviors {
         rgb_encoder: rgb_encoder {
             compatible = "zmk,behavior-sensor-rotate";
