@@ -89,7 +89,7 @@ ZMK_LAYER(GRAPHITE,
     //├─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       &kp EQUAL        &hml LCTRL N  &hml LALT R   &hml LGUI T   &hml LSHFT S  &kp G                     &kp LEFT  XXX       &kp RIGHT   &kp Y         &hmr RSHFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I    &comma_morph
     //├─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-      XXX              &kp Q         &kp X         &kp M         &kp C         &kp V            XXX                &kp DOWN              &kp K         &kp P         &kp SQT       &kp SEMI      &kp DOT         &kp BSLH
+      &tog 1              &kp Q         &kp X         &kp M         &kp C         &kp V            XXX                &kp DOWN              &kp K         &kp P         &kp SQT       &kp SEMI      &kp DOT         &kp BSLH
     //╰─────────────╯  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
                                                    &kp TAB       &kp BSPC      &kp TAB                                                   &kp ENTER     &kp SPC       &kp ENTER
     //                                             ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
@@ -99,14 +99,14 @@ ZMK_LAYER(GRAPHITE,
 
 ZMK_LAYER(NUMBER,
     //╭──────╮ ╭───────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-        XXX    &kp KP_MULTIPLY &kp N7        &kp N8        &kp N9        &kp KP_PLUS                               &kp UP          &kp KP_PLUS   &kp N9        &kp N8        &kp N7        &kp KP_MULTIPLY    XXX
+        XXX    &kp KP_MULTIPLY &kp N7        &kp N8        &kp N9        &kp KP_PLUS                         &kp UP                &kp KP_PLUS   &kp N9        &kp N8        &kp N7        &kp KP_MULTIPLY    XXX
     //├──────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-        XXX    &hml LCTRL N0 &hml LALT N4  &hml LGUI N5  &hml LSHFT N6 &kp KP_EQUAL             &kp LEFT   XXX       &kp RIGHT   &kp KP_EQUAL         &hmr RSHFT N6  &hmr RGUI N5   &hmr RALT N4   &hmr RCTRL N0    XXX
+        XXX    &hml LCTRL N0   &hml LALT N4  &hml LGUI N5  &hml LSHFT N6 &kp KP_EQUAL             &kp LEFT   XXX       &kp RIGHT   &kp KP_EQUAL  &hmr RSHFT N6 &hmr RGUI N5  &hmr RALT N4  &hmr RCTRL N0    XXX
     //├──────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-        XXX    &kp KP_DIVIDE   &kp N1        &kp N2        &kp N3        &kp KP_MINUS            XXX                &kp UP         &kp KP_MINUS         &kp N3         &kp N2       &kp SEMI      &kp DOT         XXX
+        &tog 1    &kp KP_DIVIDE   &kp N1        &kp N2        &kp N3        &kp KP_MINUS            XXX         &kp DOWN              &kp KP_MINUS  &kp N3        &kp N2        &kp SEMI      &kp DOT         XXX
     //╰──────╯ ╰───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
-                                             XXX       &tap_bracket_left        XXX                                                       &kp ENTER     &tap_bracket_right       &kp ENTER
-    //                                     ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
+                                             XXX           &tap_bracket_left        XXX                                            &kp ENTER     &tap_bracket_right       &kp ENTER
+    //                                       ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
     , &inc_dec_kp C_VOL_UP C_VOL_DN
 )
