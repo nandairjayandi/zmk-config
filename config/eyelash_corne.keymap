@@ -92,7 +92,7 @@ ZMK_CONDITIONAL_LAYER(sys, 1 2, 4)
             bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
         };
     };
-}
+};
 
 
 // I am not using HRM combos tap only since I use combinations of modifiers for MEH and HYPR
