@@ -86,8 +86,9 @@ ZMK_COMBO(combo_copy, &kp LG(LA(V)), LT3 LT1, 2)
     continue-list = <UNDERSCORE MINUS>;
 };
 
-ZMK_COMBO(combo_capsword, &caps_word, LH2 RH2, 0)
+ZMK_COMBO(combo_capsword, &caps_word, LH2 RH2, 0, 100)
 ZMK_COMBO(combo_menu, &kp LG(LS(FSLH)), RB1 RB3, 2)
+ZMK_COMBO(combo_fn, &tog 3, LT5 RT5, 0 3, 100)
 
 ZMK_TAP_DANCE(tap_shot_partial,
     tapping-term-ms = <200>;
@@ -130,7 +131,7 @@ ZMK_LAYER(GRAPHITE,
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       &kp EQUAL    &hml LCTRL N  &hml LALT R   &hml LGUI T   &hml LSHFT S  &kp G                     &kp LEFT    XXX     &kp RIGHT   &kp Y         &hmr RSHFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I    &comma_morph
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-      &tog 3       &kp Q         &kp X         &kp M         &kp C         &kp V              XXX              &kp DOWN              &kp K         &kp P         &dot_morph    &min_morph   &slsh_morph      &kp BSLH
+      &kp LC(LA(SPACE))       &kp Q         &kp X         &kp M         &kp C         &kp V              XXX              &kp DOWN              &kp K         &kp P         &dot_morph    &min_morph   &slsh_morph      &kp BSLH
     //╰─────────╯  ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
                                               &kp TAB       &kp BSPC      &mo 2                                                      &mo 1         &kp SPC       &kp ENTER
     //                                         ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
@@ -174,7 +175,7 @@ ZMK_LAYER(FN,
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       &tog 3       &sk LCTRL     &sk LALT      &sk LGUI      &sk LSHFT     XXX              &kp LEFT           &mmv MOVE_DOWN          XXX         &sk RSHFT     &sk RGUI      &sk RALT      &sk RCTRL       &tog 3
     //╰─────────╯  ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯ ╰──────╯
-                                               &kp TAB       &kp BSPC      &kp TAB                                                   &kp ENTER     &kp SPC       &kp ENTER
+                                               &kp TAB       &kp BSPC      &tog 2                                                   &tog 1     &kp SPC       &kp ENTER
     //                                         ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
     , &inc_dec_kp PG_UP PG_DN
