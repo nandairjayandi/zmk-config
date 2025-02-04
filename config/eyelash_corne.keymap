@@ -31,6 +31,7 @@
 
 &sl {
     release-after-ms = <0>;
+    ignore-modifiers;
 };
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 2400 
