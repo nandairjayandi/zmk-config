@@ -22,6 +22,13 @@
 
  */
  
+&mmv {
+    // x-input-code = <INPUT_REL_X>;
+    // y-input-code = <INPUT_REL_Y>;
+    time-to-max-speed-ms = <300>;
+    acceleration-exponent = <2>;
+};
+
 
  // vestige from regular HRM implementation
 //  &mt {
@@ -82,14 +89,20 @@ ZMK_TAP_DANCE(tap_bracket_right,
 // macOS move combo
 ZMK_COMBO(combo_copy, &kp LG(LA(V)), LT3 LT1, 2)
 
+&caps_word {
+    continue-list = <UNDERSCORE MINUS>;
+};
+
+ZMK_COMBO(combo_capsword, &caps_word, LH2 RH2, 0)
+
 ZMK_TAP_DANCE(tap_shot_partial,
     tapping-term-ms = <200>;
-    bindings = <&kp LG(LS(LA(4)))>, <&kp LG(LS(4))>; 
+    bindings = <&kp LG(LS(LA(N4)))>, <&kp LG(LS(N4))>; 
 )
 
 ZMK_TAP_DANCE(tap_shot_full,
     tapping-term-ms = <200>;
-    bindings = <&kp LG(LS(LA(4)))>, <&kp LG(LS(4))>; 
+    bindings = <&kp LG(LS(LA(N3)))>, <&kp LG(LS(N3))>; 
 )
 
 // system layer when nav and num layer is on
@@ -137,7 +150,7 @@ ZMK_LAYER(NUMBER,
     //├──────────────────────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
         XXX                        &kp KP_DIVIDE   &kp N1        &kp N2        &kp N3        &kp KP_MINUS     XXX                &kp DOWN              &kp KP_MINUS  &kp N3        &kp N2        &kp N1        &kp KP_DIVIDE     XXX
     //╰──────────────────────────╯ ╰───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
-                                                                 &kp TAB       &kp BSPC &tog 1                                                           ___   &kp SPC        &kp ENTER
+                                                                 &kp TAB       &kp BSPC &tog 2                                                           &tog 1   &kp SPC        &kp ENTER
     //                                                           ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
     , &inc_dec_kp C_VOL_UP C_VOL_DN
@@ -151,7 +164,7 @@ ZMK_LAYER(NAV,
     //├──────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯             ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       &tog 1   &kp  C_BRI_DN     &tap_shot_full &kp LG(LS(5)) &tap_shot_partial &kp C_VOL_DN              XXX                &mmv MOVE_DOWN    XXX  &kp PG_DN        &kp K_APP        &kp END      XXX         XXX
     //╰──────╯ ╰───────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯                       ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
-                                             &kp TAB        &kp BSPC   ___                                                                             &tog 2  &kp SPC            &kp ENTER
+                                             &kp TAB        &kp BSPC   &tog 2                                                                             &tog 1  &kp SPC            &kp ENTER
     //                                       ╰─────────────┴─────────────┴─────────────╯                                                       ╰─────────────┴─────────────┴─────────────╯
 
     , &inc_dec_kp C_VOL_UP C_VOL_DN
@@ -173,13 +186,13 @@ ZMK_LAYER(FN,
 
 ZMK_LAYER(SYSTEM,
     //╭──────╮       ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                              ╭──────────────────╮                     ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-        XXX            XXX           &rgb_ug RGB_SAD &rgb_ug RGB_SPI &rgb_ug RGB_SAI     XXX                                        &bt BT_SEL 0                             &kp J         &kp F         &kp O         &kp U         &comma_morph    XXX
+        XXX            XXX           &rgb_ug RGB_SAD &rgb_ug RGB_SPI &rgb_ug RGB_SAI     XXX                                        &bt BT_SEL 0                             &out OUT_BLE         &kp F         &kp O         &kp U         &comma_morph    XXX
     //├──────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭──────────────────┼──────────────────┼──────────────────╮  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-        XXX            XXX           &rgb_ug RGB_EFR XXX       &rgb_ug RGB_EFF           XXX                     &bt BT_SEL 3       &bt BT_CLR_ALL     &bt BT_SEL 1          &kp Y         &hmr RSHFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I    XXX
+        XXX            XXX           &rgb_ug RGB_EFR XXX       &rgb_ug RGB_EFF           XXX                     &bt BT_SEL 3       &bt BT_CLR_ALL     &bt BT_SEL 1          XXX         &hmr RSHFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I    XXX
     //├──────┤       ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰──────────────────┼──────────────────┼──────────────────╯  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-        XXX            XXX           &rgb_ug RGB_HUD &rgb_ug RGB_SPD &rgb_ug RGB_HUI     XXX  &rgb_ug RGB_TOG                 &bt BT_SEL 2                             &kp K         &kp F          &kp SQT       &kp SEMI      &kp DOT         XXX
+        XXX            XXX           &rgb_ug RGB_HUD &rgb_ug RGB_SPD &rgb_ug RGB_HUI     XXX  &rgb_ug RGB_TOG                 &bt BT_SEL 2                             &out OUT_USB         &kp F          &kp SQT       &kp SEMI      &kp DOT         XXX
     //╰──────╯       ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤  ╰──────╯                    ╰──────────────────╯                     ├─────────────┼─────────────┼─────────────┴───────────────────────────╯ ╰──────╯
-                                                   XXX           XXX           XXX                                                                                   &kp ENTER     &kp SPC       &kp ENTER
+                                                   XXX           XXX           XXX                                                                                   XXX     XXX       XXX
     //                                           ╰─────────────┴─────────────┴─────────────╯                                                                       ╰─────────────┴─────────────┴─────────────╯
 
     , &rgb_encoder
