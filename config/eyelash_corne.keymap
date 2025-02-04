@@ -22,10 +22,12 @@
 
  */
  
- &mt {
-    tapping-term-ms = <150>;
-    retro-tap;
-};
+
+ // vestige from regular HRM implementation
+//  &mt {
+//     tapping-term-ms = <150>;
+//     retro-tap;
+// };
 
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200 
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20
@@ -61,20 +63,20 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 // SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
 // SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMI, &kp BSLH)
 
-SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp QMARK)
-SIMPLE_MORPH(sqt_morph, SFT, &kp SQT, &kp UNDER) // '_
-SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp GT) // .>
-SIMPLE_MORPH(slsh_morph, SFT, &kp FSLH, &kp LT) // /<
-SIMPLE_MORPH(min_morph, SFT, &kp MINUS, &kp DQT) // -"
+SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp QMARK)          // ,?
+SIMPLE_MORPH(sqt_morph, SFT, &kp SQT, &kp UNDER)              // '_
+SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp GT)                 // .>
+SIMPLE_MORPH(slsh_morph, SFT, &kp FSLH, &kp LT)               // /<
+SIMPLE_MORPH(min_morph, SFT, &kp MINUS, &kp DQT)              // -"
 
 ZMK_TAP_DANCE(tap_bracket_left,
     tapping-term-ms = <200>;
-    bindings = <&kp LPAR>, <&kp LBRC>, <&kp LBKT>, <&kp LT>; // ( { [ <
+    bindings = <&kp LPAR>, <&kp LBRC>, <&kp LT>, <&kp LBKT>;  // ( { < [
 )
 
 ZMK_TAP_DANCE(tap_bracket_right,
     tapping-term-ms = <200>;
-    bindings = <&kp RPAR>, <&kp RBRC>, <&kp RBKT>, <&kp GT>; // ) } ] >
+    bindings = <&kp RPAR>, <&kp RBRC>, <&kp GT>, <&kp RBKT>;  // ) } > ]
 )
 
 // I am not using HRM combos tap only since I use combinations of modifiers for MEH and HYPR
@@ -89,15 +91,29 @@ ZMK_LAYER(GRAPHITE,
     //├─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       &kp EQUAL        &hml LCTRL N  &hml LALT R   &hml LGUI T   &hml LSHFT S  &kp G                     &kp LEFT  XXX       &kp RIGHT   &kp Y         &hmr RSHFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I    &comma_morph
     //├─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-      &tog 1              &kp Q      &kp X         &kp M         &kp C         &kp V            XXX                &kp DOWN              &kp K         &kp P         &dot_morph    &min_morph   &slsh_morph      &kp BSLH
+      &tog 3              &kp Q      &kp X         &kp M         &kp C         &kp V            XXX                &kp DOWN              &kp K         &kp P         &dot_morph    &min_morph   &slsh_morph      &kp BSLH
     //╰─────────────╯  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
-                                                   &kp TAB       &kp BSPC      &kp TAB                                                   &kp ENTER     &kp SPC       &kp ENTER
+                                                   &kp TAB       &mo 1      &kp BSPC                                                   &kp SPC     &mo 2       &kp ENTER
     //                                             ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
     , &inc_dec_kp PG_UP PG_DN
 )
 
 ZMK_LAYER(NUMBER,
+    //╭──────────────────────────╮ ╭───────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
+        XXX                        &kp KP_MULTIPLY &kp N7        &kp N8        &kp N9        &kp KP_PLUS                         &kp UP                &kp KP_PLUS   &kp N9        &kp N8        &kp N7        &kp KP_MULTIPLY    XXX
+    //├──────────────────────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
+      &tap_bracket_left            &hml LCTRL N0   &hml LALT N4  &hml LGUI N5  &hml LSHFT N6 &kp KP_EQUAL             &kp LEFT   XXX       &kp RIGHT   &kp KP_EQUAL  &hmr RSHFT N6 &hmr RGUI N5  &hmr RALT N4  &hmr RCTRL N0    &tap_bracket_right
+    //├──────────────────────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
+      &tog 1                       &kp KP_DIVIDE   &kp N1        &kp N2        &kp N3        &kp KP_MINUS     XXX                &kp DOWN              &kp KP_MINUS  &kp N3        &kp N2        &kp N1      &kp KP_DIVIDE         XXX
+    //╰──────────────────────────╯ ╰───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
+                                             &kp TAB           XXX        &kp BSPC                                            &kp SPC     XXX       &kp ENTER
+    //                                       ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
+
+    , &inc_dec_kp C_VOL_UP C_VOL_DN
+)
+
+ZMK_LAYER(NAV,
     //╭──────╮ ╭───────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
         XXX    &kp KP_MULTIPLY &kp N7        &kp N8        &kp N9        &kp KP_PLUS                         &kp UP                &kp KP_PLUS   &kp N9        &kp N8        &kp N7        &kp KP_MULTIPLY    XXX
     //├──────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
@@ -109,6 +125,20 @@ ZMK_LAYER(NUMBER,
     //                                       ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
     , &inc_dec_kp C_VOL_UP C_VOL_DN
+)
+
+ZMK_LAYER(FN,
+    //╭─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
+      &kp F1         &kp F2         &kp F3         &kp F4         &kp F5       &kp F6                        &kp UP                      &kp F7         &kp F8         &kp F9         &kp F10    &kp F11         &kp F12
+    //├─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
+      &kp EQUAL        &kp N1         &kp N2         &kp N3         &kp N4         &kp N5                     &kp LEFT  XXX       &kp RIGHT   &kp 6         &kp 7         &kp 8         &kp 9         &kp 0    &comma_morph
+    //├─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
+      &kp EQUAL        &sk LCTRL     &sk LALT      &sk LGUI      &sk LSHFT     XXX              &kp LEFT           XXX                   XXX         &sk RSHFT     &sk RGUI      &sk RALT      &sk RCTRL        XXX
+    //╰─────────────╯  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
+                                                   &kp TAB       &kp BSPC      &kp TAB                                                   &kp ENTER     &kp SPC       &kp ENTER
+    //                                             ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
+
+    , &inc_dec_kp PG_UP PG_DN
 )
 
 ZMK_LAYER(SYSTEM,
@@ -124,20 +154,6 @@ ZMK_LAYER(SYSTEM,
 
     , &inc_dec_kp C_VOL_UP C_VOL_DN
 )
-
-// ZMK_LAYER(FN,
-//     //╭─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-//       &kp F1         &kp F2         &kp F3         &kp F4         &kp F5       &kp F6                        &kp UP                      &kp F7         &kp F8         &kp F9         &kp F10    &kp F11         &kp F12
-//     //├─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-//       &kp EQUAL        &kp N1         &kp N2         &kp N3         &kp N4         &kp N5                     &kp LEFT  XXX       &kp RIGHT   &kp 6         &kp 7         &kp 8         &kp 9         &kp 0    &comma_morph
-//     //├─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-//       &kp EQUAL        &sk LCTRL     &sk LALT      &sk LGUI      &sk LSHFT     XXX              &kp LEFT           XXX                   XXX         &sk RSHFT     &sk RGUI      &sk RALT      &sk RCTRL        XXX
-//     //╰─────────────╯  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
-//                                                    &kp TAB       &kp BSPC      &kp TAB                                                   &kp ENTER     &kp SPC       &kp ENTER
-//     //                                             ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
-
-//     , &inc_dec_kp PG_UP PG_DN
-// )
 
 
 // old keymap stub 
