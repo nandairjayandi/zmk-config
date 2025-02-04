@@ -46,8 +46,8 @@
 
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS)                                 \
   ZMK_HOLD_TAP(NAME, bindings = <HOLD>, <TAP>; flavor = "balanced";            \
-               tapping-term-ms = <280>; quick-tap-ms = <QUICK_TAP_MS>;         \
-               require-prior-idle-ms = <150>; hold-trigger-on-release;         \
+               tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;         \
+               require-prior-idle-ms = <100>; hold-trigger-on-release;         \
                hold-trigger-key-positions = <TRIGGER_POS>;)
 
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
@@ -89,7 +89,7 @@ ZMK_LAYER(GRAPHITE,
     //├─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       &kp EQUAL        &hml LCTRL N  &hml LALT R   &hml LGUI T   &hml LSHFT S  &kp G                     &kp LEFT  XXX       &kp RIGHT   &kp Y         &hmr RSHFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I    &comma_morph
     //├─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-      &tog 1              &kp Q         &kp X         &kp M         &kp C         &kp V            XXX                &kp DOWN           &kp K         &kp P         &dot_morph    &slsh_morph    &min_morph         &kp BSLH
+      &tog 1              &kp Q      &kp X         &kp M         &kp C         &kp V            XXX                &kp DOWN              &kp K         &kp P         &dot_morph    &min_morph   &slsh_morph      &kp BSLH
     //╰─────────────╯  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
                                                    &kp TAB       &kp BSPC      &kp TAB                                                   &kp ENTER     &kp SPC       &kp ENTER
     //                                             ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
@@ -103,7 +103,7 @@ ZMK_LAYER(NUMBER,
     //├──────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
         XXX    &hml LCTRL N0   &hml LALT N4  &hml LGUI N5  &hml LSHFT N6 &kp KP_EQUAL             &kp LEFT   XXX       &kp RIGHT   &kp KP_EQUAL  &hmr RSHFT N6 &hmr RGUI N5  &hmr RALT N4  &hmr RCTRL N0    XXX
     //├──────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-        &tog 1    &kp KP_DIVIDE   &kp N1        &kp N2        &kp N3        &kp KP_MINUS            XXX         &kp DOWN              &kp KP_MINUS  &kp N3        &kp N2        &kp SEMI      &kp DOT         XXX
+      &tog 1   &kp KP_DIVIDE   &kp N1        &kp N2        &kp N3        &kp KP_MINUS     XXX                &kp DOWN              &kp KP_MINUS  &kp N3        &kp N2        &kp SEMI      &kp DOT         XXX
     //╰──────╯ ╰───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
                                              XXX           &tap_bracket_left        XXX                                            &kp ENTER     &tap_bracket_right       &kp ENTER
     //                                       ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
@@ -127,11 +127,11 @@ ZMK_LAYER(SYSTEM,
 
 // ZMK_LAYER(FN,
 //     //╭─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-//       &kp GRAVE        &kp B         &kp L         &kp D         &kp W         &kp Z                               &kp UP                &sqt_morph    &kp F         &kp O         &kp U         &kp J           &kp SEMI
+//       &kp F1         &kp F2         &kp F3         &kp F4         &kp F5       &kp F6                        &kp UP                      &kp F7         &kp F8         &kp F9         &kp F10    &kp F11         &kp F12
 //     //├─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-//       &kp EQUAL        &hml LCTRL N  &hml LALT R   &hml LGUI T   &hml LSHFT S  &kp G                     &kp LEFT  XXX       &kp RIGHT   &kp Y         &hmr RSHFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I    &comma_morph
+//       &kp EQUAL        &kp N1         &kp N2         &kp N3         &kp N4         &kp N5                     &kp LEFT  XXX       &kp RIGHT   &kp 6         &kp 7         &kp 8         &kp 9         &kp 0    &comma_morph
 //     //├─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-//       XXX              &kp Q         &kp X         &kp M         &kp C         &kp V            XXX                &kp DOWN              &kp K         &kp P         &kp SQT       &kp SEMI      &kp DOT         &kp BSLH
+//       &kp EQUAL        &sk LCTRL     &sk LALT      &sk LGUI      &sk LSHFT     XXX              &kp LEFT           XXX                   XXX         &sk RSHFT     &sk RGUI      &sk RALT      &sk RCTRL        XXX
 //     //╰─────────────╯  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
 //                                                    &kp TAB       &kp BSPC      &kp TAB                                                   &kp ENTER     &kp SPC       &kp ENTER
 //     //                                             ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
