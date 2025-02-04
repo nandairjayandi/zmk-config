@@ -105,10 +105,18 @@ ZMK_TAP_DANCE(tap_shot_full,
     bindings = <&kp LG(LS(LA(N3)))>, <&kp LG(LS(N3))>; 
 )
 
+ZMK_TAP_DANCE(tap_meh_hyper,
+    tapping-term-ms = <200>;
+    bindings = <&sk LG(LS(LALT))>, <&sk LG(LS(LA(LCTRL)))>; 
+)
+
 // system layer when nav and num layer is on
 ZMK_CONDITIONAL_LAYER(sys, 1 2, 4)
 
 ZMK_COMBO(combo_esc, &kp ESC, LT5 RT5, 0)
+
+ZMK_COMBO(combo_meh, &tap_meh_hyper, LM5 RM5, 0)
+
 
 
 / {
