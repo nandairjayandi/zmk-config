@@ -67,6 +67,16 @@ SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp GT) // .>
 SIMPLE_MORPH(slsh_morph, SFT, &kp FSLH, &kp LT) // /<
 SIMPLE_MORPH(min_morph, SFT, &kp MINUS, &kp DQT) // -"
 
+ZMK_TAP_DANCE(tap_bracket_left,
+    tapping-term-ms = <200>;
+    bindings = <&kp LPAR>, <&kp LBRC>, <&kp LBKT>, <&kp LT> // ( { [ <
+)
+
+ZMK_TAP_DANCE(tap_bracket_right,
+    tapping-term-ms = <200>;
+    bindings = <&kp RPAR>, <&kp RBRC>, <&kp RBKT>, <&kp GT> // ) } ] >
+)
+
 // I am not using HRM combos tap only since I use combinations of modifiers for MEH and HYPR
 
 // #include "mouse.dtsi"
@@ -88,14 +98,14 @@ ZMK_LAYER(GRAPHITE,
 )
 
 ZMK_LAYER(NUMBER,
-    //╭──────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-        XXX      XXX       &kp N7        &kp N8        &kp N9        &kp EQUAL                               &kp UP                  &kp J         &kp F         &kp O         &kp U         &comma_morph    XXX
-    //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-        XXX      XXX         &kp N4        &kp N5        &kp N6        XXX                     &kp LEFT   XXX       &kp RIGHT    &kp Y         &hmr RSHFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I    XXX
-    //├──────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-        XXX      XXX         &kp N1        &kp N2        &kp N3        XXX            XXX                &kp UP                  &kp K         &kp F         &kp SQT       &kp SEMI      &kp DOT         XXX
-    //╰──────╯ ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
-                                             XXX       &kp N0        XXX                                                       &kp ENTER     &kp SPC       &kp ENTER
+    //╭──────╮ ╭───────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
+        XXX    &kp KP_MULTIPLY &kp N7        &kp N8        &kp N9        &kp KP_PLUS                               &kp UP          &kp KP_PLUS   &kp N9        &kp N8        &kp N7        &comma_morph    XXX
+    //├──────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
+        XXX    &hml LCTRL N0 &hml LALT N4  &hml LGUI N5  &hml LSHFT N6 &kp KP_EQUAL             &kp LEFT   XXX       &kp RIGHT   &kp KP_EQUAL         &hmr RSHFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I    XXX
+    //├──────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
+        XXX    &kp KP_DIVIDE   &kp N1        &kp N2        &kp N3        &kp KP_MINUS            XXX                &kp UP         &kp KP_MINUS         &kp F         &kp SQT       &kp SEMI      &kp DOT         XXX
+    //╰──────╯ ╰───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
+                                             XXX       &tap_bracket_left        XXX                                                       &kp ENTER     &tap_bracket_right       &kp ENTER
     //                                     ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
     , &inc_dec_kp C_VOL_UP C_VOL_DN
