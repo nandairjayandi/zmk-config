@@ -1,3 +1,5 @@
+// TODO dynamic encoder behaviour based on flag boolean
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -32,6 +34,12 @@
 &sl {
     release-after-ms = <0>;
     ignore-modifiers;
+};
+
+&sk {
+  release-after-ms = <0>;
+  quick-release;
+  display-name = "&sk ON";
 };
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 2400 
@@ -172,6 +180,7 @@ ZMK_LAYER(NAV,
     , &inc_dec_kp C_VOL_UP C_VOL_DN
 )
 
+// Press XXX to cancel the sticky key
 ZMK_LAYER(FN,
     //╭─────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
       &kp F1       &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                              &mmv MOVE_UP          &kp F7        &kp F8        &kp F9        &kp F10       &kp F11         &kp F12
