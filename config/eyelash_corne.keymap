@@ -84,12 +84,12 @@ ZMK_COMBO(combo_copy, &kp LG(LA(V)), LT3 LT1, 2)
 
 ZMK_TAP_DANCE(tap_shot_partial,
     tapping-term-ms = <200>;
-    bindings = <&kp LG(LS(LA(4))>, <&kp LG(LS(4))>; 
+    bindings = <&kp LG(LS(LA(4)))>, <&kp LG(LS(4))>; 
 )
 
 ZMK_TAP_DANCE(tap_shot_full,
     tapping-term-ms = <200>;
-    bindings = <&kp LG(LS(LA(4))>, <&kp LG(LS(4))>; 
+    bindings = <&kp LG(LS(LA(4)))>, <&kp LG(LS(4))>; 
 )
 
 // system layer when nav and num layer is on
