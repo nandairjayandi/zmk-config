@@ -29,6 +29,10 @@
     acceleration-exponent = <2>;
 };
 
+&sl {
+    release-after-ms = <0>;
+};
+
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 2400 
 // #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20
 #define QUICK_TAP_MS 175
@@ -88,7 +92,7 @@ ZMK_COMBO(combo_copy, &kp LG(LA(V)), LT3 LT1, 2)
 
 ZMK_COMBO(combo_capsword, &caps_word, LH2 RH2, 0, 100)
 ZMK_COMBO(combo_menu, &kp LG(LS(FSLH)), RB1 RB3, 2)
-ZMK_COMBO(combo_fn, &tog 3, LT5 RT5, 0 3, 100)
+ZMK_COMBO(combo_fn, &sl 3, LT5 RT5, 0 3, 100)
 
 ZMK_TAP_DANCE(tap_shot_partial,
     tapping-term-ms = <200>;
