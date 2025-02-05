@@ -10,7 +10,9 @@ manifest:
     - name: nanda-irjayandi
       url-base: https://github.com/nanda-irjayandi
     - name: m165437
-      url-base: https://github.com/M165437 
+      url-base: https://github.com/M165437
+    - name: urob
+      url-base: https://github.com/urob
 
   projects:
     - name: zmk
@@ -27,7 +29,7 @@ manifest:
       remote: m165437 
       revision: main 
     - name: zmk-auto-layer
-      path: modules/zmk/auto-layer
+      remote: urob
       
   self:
     path: config
