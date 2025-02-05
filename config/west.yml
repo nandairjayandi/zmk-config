@@ -26,6 +26,8 @@ manifest:
     - name: nice-view-gem 
       remote: m165437 
       revision: main 
+    - name: zmk-auto-layer
+      path: modules/zmk/auto-layer
       
   self:
     path: config
