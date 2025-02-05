@@ -10,6 +10,7 @@
 #include <input/processors.dtsi>
 
 #include "zmk-helpers/helper.h"
+#include <behaviors/num_word.dtsi>
 #include "zmk-helpers/key-labels/eyelash42.h"
 
 /* this is for input processor if you want to modify the behaviour
