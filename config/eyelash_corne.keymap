@@ -38,8 +38,8 @@
 
 &sk {
   release-after-ms = <0>;
-  quick-release;
-  display-name = "&sk ON";
+  // quick-release;
+  // display-name = "SK ON";
 };
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 2400 
@@ -112,6 +112,12 @@ ZMK_TAP_DANCE(tap_shot_full,
     tapping-term-ms = <200>;
     bindings = <&kp LG(LS(LC(N3)))>, <&kp LG(LS(N3))>; 
 )
+
+#define    &smart_num 1
+ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
+             tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
+ZMK_TAP_DANCE(num_dance, bindings = <&num_word 1>, <&sl 1>;
+              tapping-term-ms = <200>;)
 
 // Doesn't work fluently and I prefer doing finger gymnastic 
 // ZMK_TAP_DANCE(tap_meh_hyper,
