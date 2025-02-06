@@ -77,6 +77,30 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 // SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
 // SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMI, &kp BSLH)
 
+/ {
+    behaviors {
+      rgb_encoder: rgb_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
+      };
+
+      num_word: num_word {
+            compatible = "zmk,behavior-auto-layer";
+            #binding-cells = <1>;
+            continue-list = <BACKSPACE DELETE DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
+            ignore-numbers;
+      }; 
+      
+      nav_word: nav_word {
+            compatible = "zmk,behavior-auto-layer";
+            #binding-cells = <1>;
+            continue-list = <LEFT DOWN UP RIGHT PG_DN PG_UP HOME END>;
+            ignore-modifiers;
+      };
+    };
+};
+
 SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp QMARK)          // ,?
 SIMPLE_MORPH(sqt_morph, SFT, &kp SQT, &kp UNDER)              // '_
 SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp GT)                 // .>
@@ -125,29 +149,7 @@ ZMK_TAP_DANCE(tap_shot_full,
 // system layer when nav and num layer is on
 ZMK_CONDITIONAL_LAYER(sys, 1 2, 4)
 
-/ {
-    behaviors {
-      rgb_encoder: rgb_encoder {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
-      };
 
-      num_word: num_word {
-            compatible = "zmk,behavior-auto-layer";
-            #binding-cells = <1>;
-            continue-list = <BACKSPACE DELETE DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
-            ignore-numbers;
-      }; 
-      
-      nav_word: nav_word {
-            compatible = "zmk,behavior-auto-layer";
-            #binding-cells = <1>;
-            continue-list = <LEFT DOWN UP RIGHT PG_DN PG_UP HOME END>;
-            ignore-modifiers;
-      };
-    };
-};
 
 #define SMART_NUM &smart_num 1 0
 ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
