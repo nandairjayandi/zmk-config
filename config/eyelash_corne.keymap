@@ -77,14 +77,6 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 // SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
 // SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMI, &kp BSLH)
 
-
-        num_word: num_word {
-            compatible = "zmk,behavior-auto-layer";
-            #binding-cells = <1>;
-            continue-list = <BACKSPACE DELETE DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
-            ignore-numbers;
-        };
-
 / {
     behaviors {
       rgb_encoder: rgb_encoder {
