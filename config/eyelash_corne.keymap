@@ -151,13 +151,13 @@ ZMK_CONDITIONAL_LAYER(sys, 1 2, 4)
 
 
 
-#define SMART_NUM &smart_num 1 0
+#define SMART_NUM &smart_num 1
 ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
 ZMK_TAP_DANCE(num_dance, bindings = <&num_word 1>, <&sl 1>;
               tapping-term-ms = <200>;)
 
-#define SMART_NAV &smart_nav 2 0
+#define SMART_NAV &smart_nav 2
 ZMK_HOLD_TAP(smart_nav, bindings = <&mo>, <&nav_dance>; flavor = "balanced";
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
 ZMK_TAP_DANCE(nav_dance, bindings = <&smart_nav 2>, <&sl 2>;
