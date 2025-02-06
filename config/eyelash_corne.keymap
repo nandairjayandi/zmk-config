@@ -111,6 +111,10 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
         };
     };
 
+    kscan: kscan {
+      wakeup-source;
+    };
+
     // &encoder {
     //     compatible = "zmk,behavior-encoder";
     //     sensor-bindings = <&encoder_toggle 0 &rot_kp VOL_UP VOL_DOWN>,
