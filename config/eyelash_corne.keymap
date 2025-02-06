@@ -11,11 +11,10 @@
 #include <input/processors.dtsi>
 
 #include "zmk-helpers/helper.h"
-// #include <behaviors/num_word.dtsi>
 #include "zmk-helpers/key-labels/eyelash42.h"
 
 /* this is for input processor if you want to modify the behaviour
-
+// not sure what the use case for me is
    &mmv_input_listener {
        input-processors = <&zip_xy_scaler 2 1>;
    };
@@ -80,61 +79,42 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
 / {
     behaviors {
-      rgb_encoder: rgb_encoder {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
-      };
+        rgb_encoder: rgb_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
+        };
 
-      encoder_toggle: behavior_toggle {
-        label = "ENCODER_TOGGLE";
-        bindings = <&kp XXX>;
-      };
+        encoder_toggle: behavior_toggle {
+            label = "ENCODER_TOGGLE";
+            bindings = <&kp XXX>;
+        };
 
-      rot_kp: sensor_rotate_kp {
-        compatible = "zmk,behavior-sensor-rotate-var";
-        #sensor-binding-cells = <2>;
-        bindings = <&kp>, <&kp>;
-      };
+        rot_kp: sensor_rotate_kp {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+        };
 
-      encoder_toggle: behavior_toggle {
-        label = "ENCODER_TOGGLE";
-        bindings = <&kp XXX>;
-      };
-
-      rot_kp: sensor_rotate_kp {
-        compatible = "zmk,behavior-sensor-rotate-var";
-        #sensor-binding-cells = <2>;
-        bindings = <&kp>, <&kp>;
-      };
-
-      num_word: num_word {
-        compatible = "zmk,behavior-auto-layer";
-        #binding-cells = <1>;
-        continue-list = <BACKSPACE DELETE DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
-        ignore-numbers;
+        num_word: num_word {
             compatible = "zmk,behavior-auto-layer";
             #binding-cells = <1>;
             continue-list = <BACKSPACE DELETE DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
-        compatible = "zmk,behavior-auto-layer";
-        #binding-cells = <1>;
-        continue-list = <LEFT DOWN UP RIGHT PG_DN PG_UP HOME END>;
-        ignore-modifiers;
-        ignore-numbers;
-      }; 
-      
-      nav_word: nav_word {
-        compatible = "zmk,behavior-auto-layer";
-        #binding-cells = <1>;
-        continue-list = <LEFT DOWN UP RIGHT PG_DN PG_UP HOME END>;
-        ignore-modifiers;
-      };
+            ignore-numbers;
+        };
+
+        nav_word: nav_word {
+            compatible = "zmk,behavior-auto-layer";
+            #binding-cells = <1>;
+            continue-list = <LEFT DOWN UP RIGHT PG_DN PG_UP HOME END>;
+            ignore-modifiers;
+        };
     };
 
     &encoder {
-      compatible = "zmk,behavior-encoder"
-      sensor-bindings = <&encoder_toggle 0 &rot_kp VOL_UP VOL_DOWN>,
-                        <&encoder_toggle 1 &rot_kp PG_UP PG_DN>;
+        compatible = "zmk,behavior-encoder";
+        sensor-bindings = <&encoder_toggle 0 &rot_kp VOL_UP VOL_DOWN>,
+                          <&encoder_toggle 1 &rot_kp PG_UP PG_DN>;
     };
 };
 
@@ -176,8 +156,6 @@ ZMK_TAP_DANCE(tap_shot_full,
     bindings = <&kp LG(LS(LC(N3)))>, <&kp LG(LS(N3))>; 
 )
 
-
-
 // Doesn't work fluently and I prefer doing finger gymnastic 
 // ZMK_TAP_DANCE(tap_meh_hyper,
 //     tapping-term-ms = <200>;
@@ -186,8 +164,6 @@ ZMK_TAP_DANCE(tap_shot_full,
 
 // system layer when nav and num layer is on
 ZMK_CONDITIONAL_LAYER(sys, 1 2, 4)
-
-
 
 #define SMART_NUM &smart_num 1 0
 ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
