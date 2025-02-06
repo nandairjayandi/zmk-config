@@ -99,7 +99,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
         num_word: num_word {
             compatible = "zmk,behavior-auto-layer";
             #binding-cells = <1>;
-            continue-list = <BACKSPACE DELETE DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
+            continue-list = <BACKSPACE DELETE KP_DOT KP_PLUS KP_MINUS KP_MULTIPLY KP_DIVIDE KP_EQUAL>;
             ignore-numbers;
         };
 
@@ -123,6 +123,8 @@ SIMPLE_MORPH(sqt_morph, SFT, &kp SQT, &kp UNDER)              // '_
 SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp GT)                 // .>
 SIMPLE_MORPH(slsh_morph, SFT, &kp FSLH, &kp LT)               // /<
 SIMPLE_MORPH(min_morph, SFT, &kp MINUS, &kp DQT)              // -"
+
+SIMPLE_MORPH(eql_morph, SFT, &kp KP_EQUAL, &kp KP_DOT)              // =.
 
 ZMK_TAP_DANCE(tap_bracket_left,
     tapping-term-ms = <200>;
@@ -201,7 +203,7 @@ ZMK_LAYER(NUMBER,
     //╭─────────────────╮ ╭───────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
         XXX               &kp KP_MULTIPLY &kp N7        &kp N8        &kp N9        &kp KP_PLUS                         &kp UP                &kp KP_PLUS   &kp N9        &kp N8        &kp N7        &kp KP_MULTIPLY   XXX
     //├─────────────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-      &tap_bracket_left   &hml LCTRL N0   &hml LALT N4  &hml LGUI N5  &hml LSHFT N6 &kp KP_EQUAL             &kp LEFT     XXX     &kp RIGHT   &kp KP_EQUAL  &hmr RSHFT N6 &hmr RGUI N5  &hmr RALT N4  &hmr RCTRL N0   &tap_bracket_right
+      &tap_bracket_left   &hml LCTRL N0   &hml LALT N4  &hml LGUI N5  &hml LSHFT N6 &eql_morph             &kp LEFT     XXX     &kp RIGHT   &eql_morph  &hmr RSHFT N6 &hmr RGUI N5  &hmr RALT N4  &hmr RCTRL N0   &tap_bracket_right
     //├─────────────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
         XXX               &kp KP_DIVIDE   &kp N1        &kp N2        &kp N3        &kp KP_MINUS       XXX              &kp DOWN              &kp KP_MINUS  &kp N3        &kp N2        &kp N1        &kp KP_DIVIDE     XXX
     //╰─────────────────╯ ╰───────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
