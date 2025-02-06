@@ -10,7 +10,7 @@
 #include <input/processors.dtsi>
 
 #include "zmk-helpers/helper.h"
-#include <behaviors/num_word.dtsi>
+// #include <behaviors/num_word.dtsi>
 #include "zmk-helpers/key-labels/eyelash42.h"
 
 /* this is for input processor if you want to modify the behaviour
@@ -114,11 +114,7 @@ ZMK_TAP_DANCE(tap_shot_full,
     bindings = <&kp LG(LS(LC(N3)))>, <&kp LG(LS(N3))>; 
 )
 
-#define SMART_NUM &smart_num 1 0
-ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
-             tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
-ZMK_TAP_DANCE(num_dance, bindings = <&num_word 1>, <&sl 1>;
-              tapping-term-ms = <200>;)
+
 
 // Doesn't work fluently and I prefer doing finger gymnastic 
 // ZMK_TAP_DANCE(tap_meh_hyper,
@@ -131,13 +127,39 @@ ZMK_CONDITIONAL_LAYER(sys, 1 2, 4)
 
 / {
     behaviors {
-        rgb_encoder: rgb_encoder {
+      rgb_encoder: rgb_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
-        };
+      };
+
+      num_word: num_word {
+            compatible = "zmk,behavior-auto-layer";
+            #binding-cells = <1>;
+            continue-list = <BACKSPACE DELETE DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
+            ignore-numbers;
+      }; 
+      
+      nav_word: nav_word {
+            compatible = "zmk,behavior-auto-layer";
+            #binding-cells = <1>;
+            continue-list = <LEFT DOWN UP RIGHT PG_DN PG_UP HOME END>;
+            ignore-modifiers;
+      };
     };
 };
+
+#define SMART_NUM &smart_num 1 0
+ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
+             tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
+ZMK_TAP_DANCE(num_dance, bindings = <&num_word 1>, <&sl 1>;
+              tapping-term-ms = <200>;)
+
+#define SMART_NAV &smart_nav 2 0
+ZMK_HOLD_TAP(smart_nav, bindings = <&mo>, <&nav_dance>; flavor = "balanced";
+             tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
+ZMK_TAP_DANCE(nav_dance, bindings = <&smart_nav 2>, <&sl 2>;
+              tapping-term-ms = <200>;)
 
 // I am not using HRM combos tap only since I use combinations of modifiers for MEH and HYPR
 
@@ -153,7 +175,7 @@ ZMK_LAYER(GRAPHITE,
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       &kp LC(LG(SPACE))       &kp Q         &kp X         &kp M         &kp C         &kp V              XXX              &kp DOWN              &kp K         &kp P         &dot_morph    &min_morph   &slsh_morph      &kp BSLH
     //╰─────────╯  ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
-                                              &kp TAB       &kp BSPC      &mo 2                                                      SMART_NUM         &kp SPC       &kp ENTER
+                                              &kp TAB       &kp BSPC      SMART_NAV                                                      SMART_NUM         &kp SPC       &kp ENTER
     //                                         ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
     , &inc_dec_kp UP DOWN
