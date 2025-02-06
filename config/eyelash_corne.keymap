@@ -86,6 +86,28 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
         bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
       };
 
+      encoder_toggle: behavior_toggle {
+        label = "ENCODER_TOGGLE";
+        bindings = <&kp XXX>;
+      };
+
+      rot_kp: sensor_rotate_kp {
+        compatible = "zmk,behavior-sensor-rotate-var";
+        #sensor-binding-cells = <2>;
+        bindings = <&kp>, <&kp>;
+      };
+
+      encoder_toggle: behavior_toggle {
+        label = "ENCODER_TOGGLE";
+        bindings = <&kp XXX>;
+      };
+
+      rot_kp: sensor_rotate_kp {
+        compatible = "zmk,behavior-sensor-rotate-var";
+        #sensor-binding-cells = <2>;
+        bindings = <&kp>, <&kp>;
+      };
+
       num_word: num_word {
         compatible = "zmk,behavior-auto-layer";
         #binding-cells = <1>;
@@ -107,6 +129,12 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
         continue-list = <LEFT DOWN UP RIGHT PG_DN PG_UP HOME END>;
         ignore-modifiers;
       };
+    };
+
+    &encoder {
+      compatible = "zmk,behavior-encoder"
+      sensor-bindings = <&encoder_toggle 0 &rot_kp VOL_UP VOL_DOWN>,
+                        <&encoder_toggle 1 &rot_kp PG_UP PG_DN>;
     };
 };
 
