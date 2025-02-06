@@ -101,6 +101,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 			#binding-cells = <1>;
 			continue-list = <BACKSPACE DELETE KP_DOT KP_PLUS KP_MINUS KP_MULTIPLY KP_DIVIDE KP_EQUAL>;
 			ignore-numbers;
+      ignore-modifiers;
 		};
 		
 		nav_word: nav_word {
