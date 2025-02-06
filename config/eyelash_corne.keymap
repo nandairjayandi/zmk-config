@@ -115,6 +115,33 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 		wakeup-source;
 	};
 	
+	side_band_behavior_triggers: side_band_behavior_triggers {
+		compatible = "zmk,kscan-sideband-behaviors";
+		wakeup-source;
+		kscan = <&kscan>;
+		soft_on {
+			column = <12>;
+			row = <4>;
+			bindings = <&hw_soft_on>;
+		};
+	};
+	
+	chosen {
+		zmk,kscan = &side_band_behavior_triggers;
+	};
+
+  wakeup_scan: wakeup_scan {
+      compatible = "zmk,gpio-key-wakeup-trigger";
+      trigger = <&soft_off_gpio_key>;
+      wakeup-source;
+      extra-gpios = <&gpio0 23 GPIO_ACTIVE_HIGH>;
+  };
+  
+  soft_off_wakers {
+      compatible = "zmk,soft-off-wakeup-sources";
+      wakeup-sources = <&wakeup_scan>;
+  };
+
 	// &encoder {
 	//     compatible = "zmk,behavior-encoder";
 	//     sensor-bindings = <&encoder_toggle 0 &rot_kp VOL_UP VOL_DOWN>,
