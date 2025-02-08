@@ -89,13 +89,8 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
     test_encoder: test_encoder {
 			compatible = "zmk,behavior-sensor-rotate";
 			#sensor-binding-cells = <0>;
-			bindings = <&enc_cw_morph>, <&enc_ccw_morph;
+			bindings = <&enc_cw_morph>, <&enc_ccw_morph>;
 		};
-		
-		// encoder_toggle: behavior_toggle {
-		//     label = "ENCODER_TOGGLE";
-		//     bindings = <&kp XXX>;
-		// };
 		
 		// rot_kp: sensor_rotate_kp {
 		//     compatible = "zmk,behavior-sensor-rotate-var";
