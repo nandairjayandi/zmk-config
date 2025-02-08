@@ -192,6 +192,12 @@ ZMK_COMBO(combo_vim_jump_right, &kp LBRC, RT2 RM3, 2)
 ZMK_COMBO(combo_vim_word_left, &kp LBRC, RM2 RM1, 2)
 ZMK_COMBO(combo_vim_word_right, &kp LBRC, RM2 RM3, 2)
 
+
+ZMK_COMBO(combo_meh_left, &sk LG(LA(LC)), LM4 LM3 LM1, 2)
+ZMK_COMBO(combo_meh_right, &sk RG(RA(RC)), RM4 RM3 RM1, 2)
+
+ZMK_COMBO(combo_hypr_left, &sk LG(LA(LC(LS))), LM4 LM3 LM2 LM1, 2)
+ZMK_COMBO(combo_hypr_right, &sk RG(RA(RC(LS))), RM4 RM3 RM2 RM1, 2)
 // &caps_word {
 //     continue-list = <UNDERSCORE MINUS>;
 // };
