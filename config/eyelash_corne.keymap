@@ -248,7 +248,7 @@ ZMK_TAP_DANCE(tap_shot_full,
 #define LAYER_SMART &nav_num_smart 2 0
 ZMK_HOLD_TAP(nav_num_smart, bindings = <&mo>, <&nav_num_dance>; flavor = "tap-preferred";
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
-ZMK_TAP_DANCE(nav_num_dance, bindings = <&nav_word 2>, <&num_word 1>;
+ZMK_TAP_DANCE(nav_num_dance, bindings = <&num_word 1>, <&nav_word 2>;
               tapping-term-ms = <200>;)
 
 // I am not using HRM combos tap only since I use combinations of modifiers for MEH and HYPR
