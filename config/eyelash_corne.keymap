@@ -85,6 +85,12 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 			#sensor-binding-cells = <0>;
 			bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
 		};
+
+    test_encoder: test_encoder {
+			compatible = "zmk,behavior-sensor-rotate";
+			#sensor-binding-cells = <0>;
+			bindings = <&enc_cw_morph>, <&enc_ccw_morph;
+		};
 		
 		// encoder_toggle: behavior_toggle {
 		//     label = "ENCODER_TOGGLE";
@@ -169,6 +175,9 @@ SIMPLE_MORPH(eql_morph, SFT, &kp KP_EQUAL, &kp KP_DOT)              // =.
 
 SIMPLE_MORPH(bspc_morph, SFT, &kp BSPC, &kp DELETE)              // =.
 
+SIMPLE_MORPH(enc_cw_morph, CTRL, &kp UP, &kp LEFT)
+SIMPLE_MORPH(enc_ccw_morph, CTRL, &kp DOWN, &kp RIGHT)
+
 ZMK_TAP_DANCE(tap_bracket_left,
     tapping-term-ms = <200>;
     bindings = <&kp LPAR>, <&kp LBRC>, <&kp LT>, <&kp LBKT>;  // ( { < [
@@ -192,7 +201,7 @@ ZMK_COMBO(combo_fn, &sl 3, LB5 RB5, 0 3, 100)
 ZMK_COMBO(combo_esc, &kp ESC, LT5 RT5, 0 3, 100)
 ZMK_COMBO(combo_undo, &kp LG(Z), LB1 LB2, 0, 100)
 ZMK_COMBO(combo_redo, &kp LG(LS(Z)), RB1 RB2, 0, 100)
-ZMK_COMBO(combo_sys, &tog 4, LH0 RH0, 0 4, 100)
+ZMK_COMBO(combo_sys, &tog 4, LH0 RH0, 0, 100)
 
 // TODO DOWN RIGHT in NAV results in VIM e. Down left in b
 // TODO Up Right in nav results in vim }
@@ -253,7 +262,7 @@ ZMK_LAYER(GRAPHITE,
                                               &kp TAB       &bspc_morph      LAYER_SMART                                                      LAYER_SMART         &kp SPC       &kp ENTER
     //                                         ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
-    , &inc_dec_kp UP DOWN
+    , &test_encoder
 )
 
 ZMK_LAYER(NUMBER,
