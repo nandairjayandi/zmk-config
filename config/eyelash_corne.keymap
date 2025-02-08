@@ -170,8 +170,8 @@ SIMPLE_MORPH(eql_morph, SFT, &kp KP_EQUAL, &kp KP_DOT)              // =.
 
 SIMPLE_MORPH(bspc_morph, SFT, &kp BSPC, &kp DELETE)              // =.
 
-SIMPLE_MORPH(enc_cw_morph, CTRL, &kp UP, &kp LEFT)
-SIMPLE_MORPH(enc_ccw_morph, CTRL, &kp DOWN, &kp RIGHT)
+SIMPLE_MORPH(enc_cw_morph, CTL, &kp UP, &kp LEFT)
+SIMPLE_MORPH(enc_ccw_morph, CTL, &kp DOWN, &kp RIGHT)
 
 ZMK_TAP_DANCE(tap_bracket_left,
     tapping-term-ms = <200>;
