@@ -186,6 +186,7 @@ ZMK_TAP_DANCE(tap_bracket_right,
 // macOS move combo
 ZMK_COMBO(combo_move, &kp LG(LA(V)), RT3 RT1, 2)
 
+// VIM navigation combo
 ZMK_COMBO(combo_vim_jump_left, &kp LBRC, RT2 RM1, 2)
 ZMK_COMBO(combo_vim_jump_right, &kp LBRC, RT2 RM3, 2)
 
