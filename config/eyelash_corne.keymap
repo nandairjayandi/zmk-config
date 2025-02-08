@@ -110,6 +110,13 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 			continue-list = <LEFT DOWN UP RIGHT PG_DN PG_UP HOME END>;
 			ignore-modifiers;
 		};
+
+    caps_word: caps_word {
+      compatible = "zmk,behavior-caps-word";
+      #binding-cells = <0>;
+      continue-list = <BACKSPACE MINUS UNDER PERIOD SLASH PERIOD>;
+      ignore-modifiers; 
+    }
 	};
 	
 	// kscan: kscan {
@@ -173,9 +180,9 @@ ZMK_TAP_DANCE(tap_bracket_right,
 // macOS move combo
 ZMK_COMBO(combo_copy, &kp LG(LA(V)), LT3 LT1, 2)
 
-&caps_word {
-    continue-list = <UNDERSCORE MINUS>;
-};
+// &caps_word {
+//     continue-list = <UNDERSCORE MINUS>;
+// };
 
 ZMK_COMBO(combo_capsword, &caps_word, LH2 RH2, 0, 100)
 ZMK_COMBO(combo_menu, &kp LG(LS(FSLH)), RB1 RB3, 2)
@@ -201,6 +208,7 @@ ZMK_TAP_DANCE(tap_shot_full,
 // system layer when nav and num layer is on
 ZMK_CONDITIONAL_LAYER(sys, 1 2, 4)
 
+// Tap: smart num-layer | double-tap: sticky/single shot num-word | Hold: num-layer.
 #define SMART_NUM &smart_num 1 0
 ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
@@ -241,7 +249,7 @@ ZMK_LAYER(NUMBER,
     //├─────────────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
         XXX               &kp KP_DIVIDE   &kp N1        &kp N2        &kp N3        &kp KP_MINUS       XXX              &kp DOWN              &kp KP_MINUS  &kp N3        &kp N2        &kp N1        &kp KP_DIVIDE     XXX
     //╰─────────────────╯ ╰───────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
-                                                        &kp TAB       &bspc_morph      &tog 2                                                    &tog 1        &kp SPC       &kp ENTER
+                                                        &kp TAB       &bspc_morph      XXX                                                    &tog 1        &kp SPC       &kp ENTER
     //                                                  ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
     , &inc_dec_kp UP DOWN
@@ -255,7 +263,7 @@ ZMK_LAYER(NAV,
     //├──────┤ ├───────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────┤  ╭──────╮ ╰─────────────────┼─────────────────┼─────────╯      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       &tog 1     XXX         &kp PG_DN     &kp LC(ENTER) &kp END         XXX                               XXX                      &mmv MOVE_DOWN                     &kp  C_BRI_DN &tap_shot_full    &kp LG(LS(N5))    &tap_shot_partial &kp C_VOL_DN      XXX
     //╰──────╯ ╰───────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────┤  ╰──────╯                   ╰─────────────────╯                ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯ ╰──────╯
-                                                     &kp TAB           &bspc_morph          &tog 2                                                                         &tog 1        &kp SPC       &kp ENTER
+                                                     &kp TAB           &bspc_morph          &tog 2                                                                         XXX        &kp SPC       &kp ENTER
     //                                               ╰─────────────────┴─────────────────┴─────────────╯                                                                ╰─────────────┴─────────────┴─────────────╯
 
     , &inc_dec_kp C_VOL_UP C_VOL_DN
