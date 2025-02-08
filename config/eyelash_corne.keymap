@@ -184,7 +184,7 @@ ZMK_TAP_DANCE(tap_bracket_right,
 )
 
 // macOS move combo
-ZMK_COMBO(combo_copy, &kp LG(LA(V)), LT3 LT1, 2)
+ZMK_COMBO(combo_move, &kp LG(LA(V)), RT3 RT1, 2)
 
 // &caps_word {
 //     continue-list = <UNDERSCORE MINUS>;
@@ -274,33 +274,33 @@ ZMK_LAYER(NUMBER,
     , &inc_dec_kp UP DOWN
 )
 
-ZMK_LAYER(NAV,
-    //╭──────╮ ╭───────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────╮                             ╭─────────────────╮                ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-      &kp ESC    XXX         &kp PG_UP     &kp UP        &kp HOME        XXX                                                         &mmv MOVE_UP                       &kp LG(Z)     &kp LG(X)     &kp LG(C)     &kp LG(V)     &kp LG(LS(Z))     XXX
-    //├──────┤ ├───────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────┤           ╭─────────────────┼─────────────────┼─────────╮      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-      &kp F15   XXX         &kp LEFT      &kp DOWN      &kp RIGHT       XXX                                        &mmv MOVE_LEFT    &mkp LCLK         &mmv MOVE_RIGHT  &hml LCTRL C_BRI_UP &hml LALT C_PREV  &hml LGUI C_PP    &hml LSHFT C_NEXT &kp C_VOL_UP     XXX
-    //├──────┤ ├───────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────┤  ╭──────╮ ╰─────────────────┼─────────────────┼─────────╯      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-      &tog 1     XXX         &kp PG_DN     &kp LC(ENTER) &kp END         XXX                               XXX                      &mmv MOVE_DOWN                     &kp  C_BRI_DN &tap_shot_full    &kp LG(LS(N5))    &tap_shot_partial &kp C_VOL_DN      XXX
-    //╰──────╯ ╰───────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────┤  ╰──────╯                   ╰─────────────────╯                ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯ ╰──────╯
-                                                     &kp TAB           &bspc_morph          &tog 2                                                                         XXX        &kp SPC       &kp ENTER
-    //                                               ╰─────────────────┴─────────────────┴─────────────╯                                                                ╰─────────────┴─────────────┴─────────────╯
-
-    , &inc_dec_kp C_VOL_UP C_VOL_DN
-)
-
 // ZMK_LAYER(NAV,
 //     //╭──────╮ ╭───────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────╮                             ╭─────────────────╮                ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-//       &kp ESC  &kp LG(Z)           &kp LG(X)         &kp LG(C)         &kp LG(V)         &kp LG(LS(Z))                               &mmv MOVE_UP                         XXX         &kp PG_UP     &kp UP        &kp HOME        XXX             XXX
+//       &kp ESC    XXX         &kp PG_UP     &kp UP        &kp HOME        XXX                                                         &mmv MOVE_UP                       &kp LG(Z)     &kp LG(X)     &kp LG(C)     &kp LG(V)     &kp LG(LS(Z))     XXX
 //     //├──────┤ ├───────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────┤           ╭─────────────────┼─────────────────┼─────────╮      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-//       &kp F15  &hml LCTRL C_BRI_UP &hml LALT C_PREV  &hml LGUI C_PP    &hml LSHFT C_NEXT &kp C_VOL_UP              &mmv MOVE_LEFT    &mkp LCLK         &mmv MOVE_RIGHT    XXX         &kp LEFT      &kp DOWN      &kp RIGHT       XXX             XXX
+//       &kp F15   XXX         &kp LEFT      &kp DOWN      &kp RIGHT       XXX                                        &mmv MOVE_LEFT    &mkp LCLK         &mmv MOVE_RIGHT  &hml LCTRL C_BRI_UP &hml LALT C_PREV  &hml LGUI C_PP    &hml LSHFT C_NEXT &kp C_VOL_UP     XXX
 //     //├──────┤ ├───────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────┤  ╭──────╮ ╰─────────────────┼─────────────────┼─────────╯      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-//       &tog 1   &kp  C_BRI_DN       &tap_shot_full    &kp LG(LS(N5))    &tap_shot_partial &kp C_VOL_DN       XXX                      &mmv MOVE_DOWN                       XXX         &kp PG_DN     &kp LC(ENTER) &kp END         XXX             XXX
+//       &tog 1     XXX         &kp PG_DN     &kp LC(ENTER) &kp END         XXX                               XXX                      &mmv MOVE_DOWN                     &kp  C_BRI_DN &tap_shot_full    &kp LG(LS(N5))    &tap_shot_partial &kp C_VOL_DN      XXX
 //     //╰──────╯ ╰───────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────┤  ╰──────╯                   ╰─────────────────╯                ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯ ╰──────╯
-//                                                      &kp TAB           &kp BSPC          &tog 2                                                                         &tog 1        &kp SPC       &kp ENTER
+//                                                      &kp TAB           &bspc_morph          &tog 2                                                                         XXX        &kp SPC       &kp ENTER
 //     //                                               ╰─────────────────┴─────────────────┴─────────────╯                                                                ╰─────────────┴─────────────┴─────────────╯
 
 //     , &inc_dec_kp C_VOL_UP C_VOL_DN
 // )
+
+ZMK_LAYER(NAV,
+    //╭──────╮ ╭───────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────╮                             ╭─────────────────╮                ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
+      &kp ESC  XXX           &kp LG(X)         &kp LG(C)         &kp LG(V)         XXX                                               &mmv MOVE_UP                         XXX         &kp PG_UP     &kp UP        &kp HOME        XXX             XXX
+    //├──────┤ ├───────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────┤           ╭─────────────────┼─────────────────┼─────────╮      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
+      &kp F15  &hml LCTRL C_BRI_UP &hml LALT C_PREV  &hml LGUI C_PP    &hml LSHFT C_NEXT &kp C_VOL_UP              &mmv MOVE_LEFT    &mkp LCLK         &mmv MOVE_RIGHT    XXX         &kp LEFT      &kp DOWN      &kp RIGHT       XXX             XXX
+    //├──────┤ ├───────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────┤  ╭──────╮ ╰─────────────────┼─────────────────┼─────────╯      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
+      &tog 1   &kp  C_BRI_DN       &tap_shot_full    &kp LG(LS(N5))    &tap_shot_partial &kp C_VOL_DN       XXX                      &mmv MOVE_DOWN                       XXX         &kp PG_DN     &kp LC(ENTER) &kp END         XXX             XXX
+    //╰──────╯ ╰───────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────┤  ╰──────╯                   ╰─────────────────╯                ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯ ╰──────╯
+                                                     &kp TAB           &bspc_morph          &tog 2                                                                        XXX         &kp SPC       &kp ENTER
+    //                                               ╰─────────────────┴─────────────────┴─────────────╯                                                                ╰─────────────┴─────────────┴─────────────╯
+
+    , &inc_dec_kp C_VOL_UP C_VOL_DN
+)
 
 // Press XXX to cancel the sticky key
 ZMK_LAYER(FN,
