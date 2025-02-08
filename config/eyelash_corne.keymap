@@ -1,6 +1,4 @@
-// TODO dynamic encoder behaviour based on flag boolean
 // TODO callum style sticky key on Fn layer that is indifinite 
-// TODO dynamic encoder can use modifier key instead using SIMPLE_MORPH 
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
