@@ -115,7 +115,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
       compatible = "zmk,behavior-caps-word";
       #binding-cells = <0>;
       continue-list = <BACKSPACE MINUS UNDER PERIOD SLASH PERIOD>;
-      ignore-modifiers; 
+      // ignore-modifiers; 
     };
 	};
 	
