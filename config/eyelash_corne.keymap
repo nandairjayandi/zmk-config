@@ -230,7 +230,7 @@ ZMK_TAP_DANCE(tap_shot_full,
 // )
 
 // system layer when nav and num layer is on
-ZMK_CONDITIONAL_LAYER(sys, 1 2, 4)
+// ZMK_CONDITIONAL_LAYER(sys, 1 2, 4)
 
 // Tap: smart num-layer | double-tap: sticky/single shot num-word | Hold: num-layer.
 // #define SMART_NUM &smart_num 1 0
