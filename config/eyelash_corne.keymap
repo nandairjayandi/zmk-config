@@ -116,7 +116,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
       #binding-cells = <0>;
       continue-list = <BACKSPACE MINUS UNDER PERIOD SLASH PERIOD>;
       ignore-modifiers; 
-    }
+    };
 	};
 	
 	// kscan: kscan {
