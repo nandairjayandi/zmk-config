@@ -247,7 +247,7 @@ ZMK_TAP_DANCE(tap_shot_full,
 // single-tap for smart NAV layer double-tap for smart NUM layer hold for Nav-layer
 #define LAYER_SMART &nav_num_smart 2 0
 ZMK_HOLD_TAP(nav_num_smart, bindings = <&mo>, <&nav_num_dance>; flavor = "tap-preferred";
-             tapping-term-ms = <220>; quick-tap-ms = <220>)
+             tapping-term-ms = <220>; quick-tap-ms = <220>;)
 ZMK_TAP_DANCE(nav_num_dance, bindings = <&num_word 1>, <&nav_word 2>;
               tapping-term-ms = <220>;)
 
