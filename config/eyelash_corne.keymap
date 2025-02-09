@@ -232,24 +232,24 @@ ZMK_TAP_DANCE(tap_shot_full,
 // ZMK_CONDITIONAL_LAYER(sys, 1 2, 4)
 
 // Tap: smart num-layer | double-tap: sticky/single shot num-word | Hold: num-layer.
-// #define SMART_NUM &smart_num 1 0
-// ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
-//              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
-// ZMK_TAP_DANCE(num_dance, bindings = <&num_word 1>, <&sl 1>;
-//               tapping-term-ms = <200>;)
+#define SMART_NUM &smart_num 1 0
+ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
+             tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
+ZMK_TAP_DANCE(num_dance, bindings = <&sl 1>, <&num_word 1>;
+              tapping-term-ms = <200>;)
 
-// #define SMART_NAV &smart_nav 2 0
-// ZMK_HOLD_TAP(smart_nav, bindings = <&mo>, <&nav_dance>; flavor = "balanced";
-//              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
-// ZMK_TAP_DANCE(nav_dance, bindings = <&nav_word 2>, <&sl 2>;
-//               tapping-term-ms = <200>;)
+#define SMART_NAV &smart_nav 2 0
+ZMK_HOLD_TAP(smart_nav, bindings = <&mo>, <&nav_dance>; flavor = "balanced";
+             tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
+ZMK_TAP_DANCE(nav_dance, bindings = <&sl 2>, <&nav_word 2>;
+              tapping-term-ms = <200>;)
 
-// single-tap for smart NAV layer double-tap for smart NUM layer hold for Nav-layer
-#define LAYER_SMART &nav_num_smart 2 0
-ZMK_HOLD_TAP(nav_num_smart, bindings = <&mo>, <&nav_num_dance>; flavor = "tap-preferred";
-             tapping-term-ms = <220>; quick-tap-ms = <220>;)
-ZMK_TAP_DANCE(nav_num_dance, bindings = <&num_word 1>, <&nav_word 2>;
-              tapping-term-ms = <220>;)
+// single-tap for smart NUM layer double-tap for smart NAV layer hold for Nav-layer
+// #define LAYER_SMART &nav_num_smart 2 0
+// ZMK_HOLD_TAP(nav_num_smart, bindings = <&mo>, <&nav_num_dance>; flavor = "tap-preferred";
+//              tapping-term-ms = <220>; quick-tap-ms = <220>;)
+// ZMK_TAP_DANCE(nav_num_dance, bindings = <&sl 2>, <&num_word 2>, <&n>;
+//               tapping-term-ms = <220>;)
 
 // I am not using HRM combos tap only since I use combinations of modifiers for MEH and HYPR
 
@@ -265,7 +265,7 @@ ZMK_LAYER(GRAPHITE,
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       &kp LC(LG(SPACE))       &kp Q         &kp X         &kp M         &kp C         &kp V              XXX              &kp DOWN              &kp K         &kp P         &dot_morph    &min_morph   &slsh_morph      &kp BSLH
     //╰─────────╯  ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
-                                              &kp TAB       &bspc_morph      LAYER_SMART                                                      LAYER_SMART         &kp SPC       &kp ENTER
+                                              &kp TAB       &bspc_morph      SMART_NAV                                                     SMART_NUM         &kp SPC       &kp ENTER
     //                                         ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
     , &test_encoder
