@@ -115,6 +115,13 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
       mods = <(MOD_RGUI|MOD_LGUI)>;
     };
 
+    enc_ccw_morph_arrow: enc_ccw_morph_arrow {
+      compatible = "zmk,behavior-mod-morph";
+      #sensor-binding-cells = <0>;
+      bindings = <&kp DOWN>, <&kp LEFT>;
+      mods = <(MOD_RGUI|MOD_LGUI)>;
+    };
+
     // enc_cw_morph_main: enc_cw_morph_main {
     //   compatible = "zmk,behavior-mod-morph"
     //   #sensor-binding-cells = <0>;
