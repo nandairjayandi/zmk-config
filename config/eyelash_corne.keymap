@@ -164,7 +164,9 @@ SIMPLE_MORPH(slsh_morph, SFT, &kp FSLH, &kp LT)               // /<
 SIMPLE_MORPH(min_morph, SFT, &kp MINUS, &kp DQT)              // -"
 
 // for NUMBER layer
-SIMPLE_MORPH(eql_morph, SFT, &kp KP_EQUAL, &kp KP_DOT)              // =.
+SIMPLE_MORPH(eql_morph, SFT, &kp KP_EQUAL, &kp KP_DOT)        // =.
+
+SIMPLE_MORPH(bspc_morph, SFT, &kp BSPC, &kp DELETE)           // =.
 
 SIMPLE_MORPH(bspc_morph, SFT, &kp BSPC, &kp DELETE)              // =.
 
@@ -232,24 +234,24 @@ ZMK_TAP_DANCE(tap_shot_full,
 // ZMK_CONDITIONAL_LAYER(sys, 1 2, 4)
 
 // Tap: smart num-layer | double-tap: sticky/single shot num-word | Hold: num-layer.
-#define SMART_NUM &smart_num 1 0
-ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
-             tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
-ZMK_TAP_DANCE(num_dance, bindings = <&sl 1>, <&num_word 1>;
-              tapping-term-ms = <200>;)
+// #define SMART_NUM &smart_num 1 0
+// ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
+//              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
+// ZMK_TAP_DANCE(num_dance, bindings = <&sl 1>, <&num_word 1>;
+//               tapping-term-ms = <200>;)
 
-#define SMART_NAV &smart_nav 2 0
-ZMK_HOLD_TAP(smart_nav, bindings = <&mo>, <&nav_dance>; flavor = "balanced";
-             tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
-ZMK_TAP_DANCE(nav_dance, bindings = <&sl 2>, <&nav_word 2>;
-              tapping-term-ms = <200>;)
+// #define SMART_NAV &smart_nav 2 0
+// ZMK_HOLD_TAP(smart_nav, bindings = <&mo>, <&nav_dance>; flavor = "balanced";
+//              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
+// ZMK_TAP_DANCE(nav_dance, bindings = <&sl 2>, <&nav_word 2>;
+//               tapping-term-ms = <200>;)
 
 // single-tap for smart NUM layer double-tap for smart NAV layer hold for Nav-layer
-// #define LAYER_SMART &nav_num_smart 2 0
-// ZMK_HOLD_TAP(nav_num_smart, bindings = <&mo>, <&nav_num_dance>; flavor = "tap-preferred";
-//              tapping-term-ms = <220>; quick-tap-ms = <220>;)
-// ZMK_TAP_DANCE(nav_num_dance, bindings = <&sl 2>, <&num_word 2>, <&n>;
-//               tapping-term-ms = <220>;)
+#define LAYER_SMART &nav_num_smart 2 0
+ZMK_HOLD_TAP(nav_num_smart, bindings = <&mo>, <&nav_num_dance>; flavor = "tap-preferred";
+             tapping-term-ms = <300>; quick-tap-ms = <280>;)
+ZMK_TAP_DANCE(nav_num_dance, bindings = <&sl 1>, <&nav_word 2>, <&n>;
+              tapping-term-ms = <300>;)
 
 // I am not using HRM combos tap only since I use combinations of modifiers for MEH and HYPR
 
@@ -265,7 +267,7 @@ ZMK_LAYER(GRAPHITE,
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       &kp LC(LG(SPACE))       &kp Q         &kp X         &kp M         &kp C         &kp V              XXX              &kp DOWN              &kp K         &kp P         &dot_morph    &min_morph   &slsh_morph      &kp BSLH
     //╰─────────╯  ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
-                                              &kp TAB       &bspc_morph      SMART_NAV                                                     SMART_NUM         &kp SPC       &kp ENTER
+                                              &kp TAB       &bspc_morph      LAYER_SMART                                                     LAYER_SMART         &kp SPC       &kp ENTER
     //                                         ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
     , &test_encoder
@@ -273,7 +275,7 @@ ZMK_LAYER(GRAPHITE,
 
 ZMK_LAYER(NUMBER,
     //╭─────────────────╮ ╭───────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-        XXX               &kp KP_MULTIPLY &kp N7        &kp N8        &kp N9        &kp KP_PLUS                         &kp UP                &kp KP_PLUS   &kp N9        &kp N8        &kp N7        &kp KP_MULTIPLY   XXX
+        &kp ESC               &kp KP_MULTIPLY &kp N7        &kp N8        &kp N9        &kp KP_PLUS                         &kp UP                &kp KP_PLUS   &kp N9        &kp N8        &kp N7        &kp KP_MULTIPLY   XXX
     //├─────────────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       &tap_bracket_left   &hml LCTRL N0   &hml LALT N4  &hml LGUI N5  &hml LSHFT N6 &eql_morph                &kp LEFT     XXX     &kp RIGHT  &eql_morph    &hmr RSHFT N6 &hmr RGUI N5  &hmr RALT N4  &hmr RCTRL N0   &tap_bracket_right
     //├─────────────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
