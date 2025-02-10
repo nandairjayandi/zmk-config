@@ -84,12 +84,57 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 			bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
 		};
 
-    test_encoder: test_encoder {
-			compatible = "zmk,behavior-sensor-rotate";
-			#sensor-binding-cells = <0>;
-			bindings = <&enc_cw_morph>, <&enc_ccw_morph>;
-		};
+    // test_encoder: test_encoder {
+		// 	compatible = "zmk,behavior-sensor-rotate";
+		// 	#sensor-binding-cells = <0>;
+		// 	bindings = <&enc_cw_morph>, <&enc_ccw_morph>;
+		// };
+
+    // bright_encoder: test_encoder {
+		// 	compatible = "zmk,behavior-sensor-rotate";
+		// 	#sensor-binding-cells = <0>;
+		// 	bindings = <&enc_cw_morph>, <&enc_ccw_morph>;
+		// };
 		
+    // main_encoder: main_encoder {
+    //   compatible = "zmk,behavior-sensor-rotate";
+    //   #sensor-binding-cells = <0>;
+    //   bindings = <&enc_cw_morph_main>, <&enc_ccw_morph_main>;
+    // };
+
+    arrow_encoder: arrow_encoder {
+      compatible = "zmk,behavior-sensor-rotate";
+      #sensor-binding-cells = <0>;
+      bindings = <&enc_cw_morph_arrow>, <&enc_ccw_morph_arrow>;
+    };
+
+    enc_cw_morph_arrow: enc_cw_morph_arrow {
+      compatible = "zmk,behavior-mod-morph";
+      #sensor-binding-cells = <0>;
+      bindings = <&kp UP>, <&kp RIGHT>;
+      mods = <MOD_RGUI|MOD_LGUI>;
+    }
+
+    // enc_cw_morph_main: enc_cw_morph_main {
+    //   compatible = "zmk,behavior-mod-morph"
+    //   #sensor-binding-cells = <0>;
+    //   bindings = <&enc_cw_rshft>, <&enc_cw_rgui>, <&enc_cw_ralt>;
+    //   mods = <MOD_RSHFT|MOD_RGUI|RMOD_RALT|MOD_RCTRL>;
+    // };
+
+    // enc_cw_rshft: enc_cw_morph_rshft {
+    //   compatible = "zmk,behavior-mod-morph"
+    //   #sensor-binding-cells = <0>;
+    //   bindings = 
+    //   mods = <MOD_RSHFT>;
+    // };
+
+    // enc_cw_rgui: enc_cw_morph_rgui {
+    //   compatible = "zmk,behavior-mod-morph"
+    //   #sensor-binding-cells = <0>;
+    //   bindings = 
+    //   mods = <MOD_RSHFT>;
+    // };
 		// rot_kp: sensor_rotate_kp {
 		//     compatible = "zmk,behavior-sensor-rotate-var";
 		//     #sensor-binding-cells = <2>;
@@ -168,10 +213,11 @@ SIMPLE_MORPH(eql_morph, SFT, &kp KP_EQUAL, &kp KP_DOT)        // =.
 
 SIMPLE_MORPH(bspc_morph, SFT, &kp BSPC, &kp DELETE)           // =.
 
-SIMPLE_MORPH(bspc_morph, SFT, &kp BSPC, &kp DELETE)              // =.
+// SIMPLE_MORPH(enc_cw_morph_arrow, CTL, &kp UP, &kp RIGHT)            // 
+// SIMPLE_MORPH(enc_ccw_morph_arrow, CTL, &kp DOWN, &kp LEFT)
 
-SIMPLE_MORPH(enc_cw_morph, CTL, &kp UP, &kp LEFT)
-SIMPLE_MORPH(enc_ccw_morph, CTL, &kp DOWN, &kp RIGHT)
+// SIMPLE_MORPH(enc_cw_morph_, CTL, &kp UP, &kp LC(RIGHT))            // 
+// SIMPLE_MORPH(enc_ccw_morph_arrow, CTL, &kp DOWN, &kp LC(LEFT))
 
 ZMK_TAP_DANCE(tap_bracket_left,
     tapping-term-ms = <200>;
@@ -278,7 +324,7 @@ ZMK_LAYER(GRAPHITE,
                                               &kp TAB       &bspc_morph      &layer_nav                                                     &layer_num         &kp SPC       &kp ENTER
     //                                         ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
-    , &test_encoder
+    , &arrow_encoder
 )
 
 ZMK_LAYER(NUMBER,
