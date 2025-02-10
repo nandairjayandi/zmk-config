@@ -212,6 +212,11 @@ ZMK_TAP_DANCE(tap_bracket_right,
     bindings = <&kp RPAR>, <&kp RBRC>, <&kp GT>, <&kp RBKT>;  // ) } > ]
 )
 
+ZMK_TAP_DANCE(tap_symbol_fn,
+    tapping-term-ms = <200>;
+    bindings = <&sl 3>, <&kp LC(LG(SPACE))>;
+    )
+
 // macOS move combo
 ZMK_COMBO(combo_move, &kp LG(LA(V)), RT3 RT1, 2)
 
@@ -240,8 +245,6 @@ ZMK_COMBO(combo_undo, &kp LG(Z), LB1 LB2, 0, 100)
 ZMK_COMBO(combo_redo, &kp LG(LS(Z)), RB1 RB2, 0, 100)
 ZMK_COMBO(combo_sys, &tog 4, LH0 RH0, 0, 100)
 
-// TODO DOWN RIGHT in NAV results in VIM e. Down left in b
-// TODO Up Right in nav results in vim }
 
 ZMK_TAP_DANCE(tap_shot_partial,
     tapping-term-ms = <200>;
@@ -259,12 +262,6 @@ ZMK_TAP_DANCE(tap_shot_full,
 //     bindings = <&sk LG(LS(LALT))>, <&sk LG(LS(LA(LCTRL)))>; 
 // )
 
-// Tap: smart num-layer | double-tap: sticky/single shot num-word | Hold: num-layer.
-// #define SMART_NUM &smart_num 1 0
-// ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
-//              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
-// ZMK_TAP_DANCE(num_dance, bindings = <&sl 1>, <&num_word 1>;
-//               tapping-term-ms = <200>;)
 
 // #define SMART_NAV &smart_nav 2 0
 // ZMK_HOLD_TAP(smart_nav, bindings = <&mo>, <&nav_dance>; flavor = "balanced";
