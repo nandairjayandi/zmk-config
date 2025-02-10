@@ -84,24 +84,6 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 			bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
 		};
 
-    // test_encoder: test_encoder {
-		// 	compatible = "zmk,behavior-sensor-rotate";
-		// 	#sensor-binding-cells = <0>;
-		// 	bindings = <&enc_cw_morph>, <&enc_ccw_morph>;
-		// };
-
-    // bright_encoder: test_encoder {
-		// 	compatible = "zmk,behavior-sensor-rotate";
-		// 	#sensor-binding-cells = <0>;
-		// 	bindings = <&enc_cw_morph>, <&enc_ccw_morph>;
-		// };
-		
-    // main_encoder: main_encoder {
-    //   compatible = "zmk,behavior-sensor-rotate";
-    //   #sensor-binding-cells = <0>;
-    //   bindings = <&enc_cw_morph_main>, <&enc_ccw_morph_main>;
-    // };
-
     arrow_encoder: arrow_encoder {
       compatible = "zmk,behavior-sensor-rotate";
       #sensor-binding-cells = <0>;
@@ -220,12 +202,6 @@ SIMPLE_MORPH(eql_morph, SFT, &kp KP_EQUAL, &kp KP_DOT)        // =.
 
 SIMPLE_MORPH(bspc_morph, SFT, &kp BSPC, &kp DELETE)           // =.
 
-// SIMPLE_MORPH(enc_cw_morph_arrow, CTL, &kp UP, &kp RIGHT)            // 
-// SIMPLE_MORPH(enc_ccw_morph_arrow, CTL, &kp DOWN, &kp LEFT)
-
-// SIMPLE_MORPH(enc_cw_morph_, CTL, &kp UP, &kp LC(RIGHT))            // 
-// SIMPLE_MORPH(enc_ccw_morph_arrow, CTL, &kp DOWN, &kp LC(LEFT))
-
 ZMK_TAP_DANCE(tap_bracket_left,
     tapping-term-ms = <200>;
     bindings = <&kp LPAR>, <&kp LBRC>, <&kp LT>, <&kp LBKT>;  // ( { < [
@@ -282,9 +258,6 @@ ZMK_TAP_DANCE(tap_shot_full,
 //     tapping-term-ms = <200>;
 //     bindings = <&sk LG(LS(LALT))>, <&sk LG(LS(LA(LCTRL)))>; 
 // )
-
-// system layer when nav and num layer is on
-// ZMK_CONDITIONAL_LAYER(sys, 1 2, 4)
 
 // Tap: smart num-layer | double-tap: sticky/single shot num-word | Hold: num-layer.
 // #define SMART_NUM &smart_num 1 0
