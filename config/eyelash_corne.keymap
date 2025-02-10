@@ -110,14 +110,14 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
     enc_cw_morph_arrow: enc_cw_morph_arrow {
       compatible = "zmk,behavior-mod-morph";
-      #sensor-binding-cells = <0>;
+      #binding-cells = <0>;
       bindings = <&kp UP>, <&kp RIGHT>;
       mods = <(MOD_RGUI|MOD_LGUI)>;
     };
 
     enc_ccw_morph_arrow: enc_ccw_morph_arrow {
       compatible = "zmk,behavior-mod-morph";
-      #sensor-binding-cells = <0>;
+      #binding-cells = <0>;
       bindings = <&kp DOWN>, <&kp LEFT>;
       mods = <(MOD_RGUI|MOD_LGUI)>;
     };
