@@ -96,13 +96,13 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 		//     bindings = <&kp>, <&kp>;
 		// };
 		
-		num_word: num_word {
-			compatible = "zmk,behavior-auto-layer";
-			#binding-cells = <1>;
-			continue-list = <BACKSPACE DELETE KP_DOT KP_PLUS KP_MINUS KP_MULTIPLY KP_DIVIDE KP_EQUAL>;
-			ignore-numbers;
-      // ignore-modifiers;
-		};
+		// num_word: num_word {
+		// 	compatible = "zmk,behavior-auto-layer";
+		// 	#binding-cells = <1>;
+		// 	continue-list = <BACKSPACE DELETE KP_DOT KP_PLUS KP_MINUS KP_MULTIPLY KP_DIVIDE KP_EQUAL>;
+		// 	ignore-numbers;
+    //   // ignore-modifiers;
+		// };
 		
 		nav_word: nav_word {
 			compatible = "zmk,behavior-auto-layer";
@@ -246,12 +246,20 @@ ZMK_TAP_DANCE(tap_shot_full,
 // ZMK_TAP_DANCE(nav_dance, bindings = <&sl 2>, <&nav_word 2>;
 //               tapping-term-ms = <200>;)
 
+ZMK_HOLD_TAP(layer_num, bindings = <&mo 1>, <&sl 1>; 
+                flavor = "balanced"; 
+                tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;);
+
+ZMK_HOLD_TAP(layer_nav, bindings = <&mo 2>, <&nav_word 2>;
+                flavor = "balanced";
+                tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;);
+                
 // single-tap for smart NUM layer double-tap for smart NAV layer hold for Nav-layer
-#define LAYER_SMART &nav_num_smart 2 0
-ZMK_HOLD_TAP(nav_num_smart, bindings = <&mo>, <&nav_num_dance>; flavor = "tap-preferred";
-             tapping-term-ms = <300>; quick-tap-ms = <280>;)
-ZMK_TAP_DANCE(nav_num_dance, bindings = <&sl 1>, <&nav_word 2>, <&n>;
-              tapping-term-ms = <300>;)
+// #define LAYER_SMART &nav_num_smart 2 0
+// ZMK_HOLD_TAP(nav_num_smart, bindings = <&mo>, <&nav_num_dance>; flavor = "tap-preferred";
+//              tapping-term-ms = <300>; quick-tap-ms = <280>;)
+// ZMK_TAP_DANCE(nav_num_dance, bindings = <&sl 1>, <&nav_word 2>, <&n>;
+//               tapping-term-ms = <300>;)
 
 // I am not using HRM combos tap only since I use combinations of modifiers for MEH and HYPR
 
@@ -267,7 +275,7 @@ ZMK_LAYER(GRAPHITE,
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       &kp LC(LG(SPACE))       &kp Q         &kp X         &kp M         &kp C         &kp V              XXX              &kp DOWN              &kp K         &kp P         &dot_morph    &min_morph   &slsh_morph      &kp BSLH
     //╰─────────╯  ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
-                                              &kp TAB       &bspc_morph      LAYER_SMART                                                     LAYER_SMART         &kp SPC       &kp ENTER
+                                              &kp TAB       &bspc_morph      &layer_nav                                                     &layer_num         &kp SPC       &kp ENTER
     //                                         ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
     , &test_encoder
@@ -281,7 +289,7 @@ ZMK_LAYER(NUMBER,
     //├─────────────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
         XXX               &kp KP_DIVIDE   &kp N1        &kp N2        &kp N3        &kp KP_MINUS       XXX              &kp DOWN              &kp KP_MINUS  &kp N3        &kp N2        &kp N1        &kp KP_DIVIDE     XXX
     //╰─────────────────╯ ╰───────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
-                                                        &kp TAB       &bspc_morph      &tog 1                                                    &tog 1        &kp SPC       &kp ENTER
+                                                        &kp TAB       &bspc_morph      &layer_nav                                                    &layer_num        &kp SPC       &kp ENTER
     //                                                  ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
     , &inc_dec_kp UP DOWN
