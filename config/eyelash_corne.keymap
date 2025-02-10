@@ -299,11 +299,13 @@ ZMK_TAP_DANCE(tap_shot_full,
 // ZMK_TAP_DANCE(nav_dance, bindings = <&sl 2>, <&nav_word 2>;
 //               tapping-term-ms = <200>;)
 
-ZMK_HOLD_TAP(layer_num, bindings = <&mo 1>, <&sl 1>; 
+#define LAYER_NUM &layer_num 1 1
+ZMK_HOLD_TAP(layer_num, bindings = <&mo>, <&sl>; 
                 flavor = "balanced"; 
                 tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
 
-ZMK_HOLD_TAP(layer_nav, bindings = <&mo 2>, <&nav_word 2>;
+#define LAYER_NAV &layer_nav 2 2
+ZMK_HOLD_TAP(layer_nav, bindings = <&mo>, <&nav_word>;
                 flavor = "balanced";
                 tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
                 
@@ -328,7 +330,7 @@ ZMK_LAYER(GRAPHITE,
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       &kp LC(LG(SPACE))       &kp Q         &kp X         &kp M         &kp C         &kp V              XXX              &kp DOWN              &kp K         &kp P         &dot_morph    &min_morph   &slsh_morph      &kp BSLH
     //╰─────────╯  ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
-                                              &kp TAB       &bspc_morph      &layer_nav                                                     &layer_num         &kp SPC       &kp ENTER
+                                              &kp TAB       &bspc_morph      LAYER_NAV                                                     LAYER_NUM         &kp SPC       &kp ENTER
     //                                         ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
     , &arrow_encoder
