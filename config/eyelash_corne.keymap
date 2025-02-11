@@ -243,7 +243,7 @@ ZMK_COMBO(combo_menu, &kp LG(LS(FSLH)), RB1 RB3, 2)
 ZMK_COMBO(combo_esc, &kp ESC, LT5 RT5, 0 3, 100)
 ZMK_COMBO(combo_undo, &kp LG(Z), LB1 LB2, 0, 100)
 ZMK_COMBO(combo_redo, &kp LG(LS(Z)), RB1 RB2, 0, 100)
-ZMK_COMBO(combo_sys, &tog 4, LH0 RH0, 0, 100)
+ZMK_COMBO(combo_sys, &tog 4, LH2 RH2, 0, 100)
 ZMK_COMBO(combo_main, &to 0, LH0 RH0, 1 2 3, 100)
 
 
