@@ -237,7 +237,7 @@ ZMK_COMBO(combo_vim_word_right, &kp E, RM2 RM3, 2)
 //     continue-list = <UNDERSCORE MINUS>;
 // };
 
-ZMK_COMBO(combo_capsword, &caps_word, LH2 RH2, 0, 100)
+ZMK_COMBO(combo_capsword, &caps_word, LB5 RB5, 0, 100)
 ZMK_COMBO(combo_menu, &kp LG(LS(FSLH)), RB1 RB3, 2)
 // ZMK_COMBO(combo_fn, &sl 3, LB5 RB5, 0 3, 100)
 ZMK_COMBO(combo_esc, &kp ESC, LT5 RT5, 0 3, 100)
