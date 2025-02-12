@@ -228,6 +228,16 @@ SIMPLE_MORPH(morph_brcl_one, SFT, &kp LBRC, &kp LPAR)
 
 SIMPLE_MORPH(morph_brcl_two, SFT, &kp LT, &kp LBKT)
 
+ZMK_COMBO(combo_brcr, &tap_bracket_right, RT4 RT3, 0)
+ZMK_TAP_DANCE(tap_bracket_right,
+    tapping-term-ms = <200>;
+    bindings = <&morph_brcr_one>, <&morph_brcr_two>;
+)
+
+SIMPLE_MORPH(morph_brcl_one, SFT, &kp RBRC, &kp RPAR)
+
+SIMPLE_MORPH(morph_brcl_two, SFT, &kp RT, &kp RBKT)
+
 // macOS move combo
 ZMK_COMBO(combo_move, &kp LG(LA(V)), RT3 RT1, 2)
 
