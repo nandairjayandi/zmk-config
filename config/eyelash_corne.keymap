@@ -342,7 +342,7 @@ ZMK_LAYER(NUMBER,
                                                         &kp TAB       &bspc_morph      &to 2                                                    &to 1        &kp SPC       &kp ENTER
     //                                                  ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
-    , &inc_dec_kp UP DOWN
+    , &arrow_encoder
 )
 
 // ZMK_LAYER(NAV,
@@ -385,7 +385,7 @@ ZMK_LAYER(FN,
                                                &kp TAB       &bspc_morph      &tog 2                                                   &tog 1     &kp SPC       &kp ENTER
     //                                         ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
-    , &inc_dec_kp PG_UP PG_DN
+    , &arrow_encoder
 )
 
 ZMK_LAYER(SYSTEM,
