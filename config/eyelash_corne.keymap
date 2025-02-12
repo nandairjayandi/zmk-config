@@ -221,20 +221,20 @@ ZMK_TAP_DANCE(tap_symbol_fn,
 )
 
 
-ZMK_COMBO(combo_brcl, &tap_bracket_left, LT4 LT3, 0)
+ZMK_COMBO(combo_brcl, &tap_bracket_left, LT1 LT2, 0)
 ZMK_TAP_DANCE(tap_bracket_left,
     tapping-term-ms = <200>;
-    bindings = <&morph_brcl_one>, <&morph_brcl_two>;
+    bindings = <&morph_brcl_two>, <&morph_brcl_one>;
 )
 
 SIMPLE_MORPH(morph_brcl_one, SFT, &kp LBRC, &kp LPAR)
 
 SIMPLE_MORPH(morph_brcl_two, SFT, &kp LT, &kp LBKT)
 
-ZMK_COMBO(combo_brcr, &tap_bracket_right, RT4 RT3, 0)
+ZMK_COMBO(combo_brcr, &tap_bracket_right, RT1 RT2, 0)
 ZMK_TAP_DANCE(tap_bracket_right,
     tapping-term-ms = <200>;
-    bindings = <&morph_brcr_one>, <&morph_brcr_two>;
+    bindings = <&morph_brcr_two>, <&morph_brcr_one>;
 )
 
 SIMPLE_MORPH(morph_brcr_one, SFT, &kp RBRC, &kp RPAR)
