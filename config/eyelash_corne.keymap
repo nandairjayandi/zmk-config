@@ -191,6 +191,9 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 	// };
 };
 
+ZMK_COMBO(combo_at, &kp AT, LT1 LT2 LT3, 0)
+ZMK_COMBO(combo_amps, &kp AMPS, RT1 RT2 RT3, 0)
+
 SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp QMARK)          // ,?
 SIMPLE_MORPH(sqt_morph, SFT, &kp SQT, &kp UNDER)              // '_
 SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp GT)                 // .>
