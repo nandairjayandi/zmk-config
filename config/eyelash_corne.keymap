@@ -217,6 +217,17 @@ ZMK_TAP_DANCE(tap_symbol_fn,
     bindings = <&sl 3>, <&kp LC(LG(SPACE))>;
     )
 
+
+ZMK_COMBO(combo_brcl, &tap_bracket_left, LT4 LT3, 0)
+ZMK_TAP_DANCE(tap_bracket_left,
+    tapping-term-ms = <200>;
+    bindings = <&morph_brcl_one>, <&morph_brcl_two>;
+)
+
+SIMPLE_MORPH(morph_brcl_one, SFT, &kp LBRC, &kp LPAR)
+
+SIMPLE_MORPH(morph_brcl_two, SFT, &kp LT, &kp LBKT)
+
 // macOS move combo
 ZMK_COMBO(combo_move, &kp LG(LA(V)), RT3 RT1, 2)
 
@@ -315,7 +326,7 @@ ZMK_LAYER(NUMBER,
     //├─────────────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
         XXX               &kp KP_DIVIDE   &kp N1        &kp N2        &kp N3        &kp KP_MINUS       XXX              &kp DOWN              &kp KP_MINUS  &kp N3        &kp N2        &kp N1        &kp KP_DIVIDE     XXX
     //╰─────────────────╯ ╰───────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
-                                                        &kp TAB       &bspc_morph      &to 2                                                    &to 0        &kp SPC       &kp ENTER
+                                                        &kp TAB       &bspc_morph      &to 2                                                    &to 1        &kp SPC       &kp ENTER
     //                                                  ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
     , &inc_dec_kp UP DOWN
@@ -343,7 +354,7 @@ ZMK_LAYER(NAV,
     //├──────┤ ├───────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────┤  ╭──────╮ ╰─────────────────┼─────────────────┼─────────╯      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       &tog 1   &kp  C_BRI_DN       &tap_shot_full    &kp LG(LS(N5))    &tap_shot_partial &kp C_VOL_DN       XXX                      &mmv MOVE_DOWN                       XXX         &kp PG_DN     &kp LC(ENTER) &kp END         XXX             XXX
     //╰──────╯ ╰───────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────┤  ╰──────╯                   ╰─────────────────╯                ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯ ╰──────╯
-                                                     &kp TAB           &bspc_morph          &to 0                                                                        &to 1         &kp SPC       &kp ENTER
+                                                     &kp TAB           &bspc_morph          &to 2                                                                        &to 1         &kp SPC       &kp ENTER
     //                                               ╰─────────────────┴─────────────────┴─────────────╯                                                                ╰─────────────┴─────────────┴─────────────╯
 
     , &inc_dec_kp C_VOL_UP C_VOL_DN
