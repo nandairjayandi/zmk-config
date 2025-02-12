@@ -239,7 +239,7 @@ ZMK_TAP_DANCE(tap_bracket_right,
 
 SIMPLE_MORPH(morph_brcr_one, SFT, &kp RBRC, &kp RPAR)
 
-SIMPLE_MORPH(morph_brcr_two, SFT, &kp RT, &kp RBKT)
+// SIMPLE_MORPH(morph_brcr_two, SFT, &kp RT, &kp RBKT)
 
 // macOS move combo
 ZMK_COMBO(combo_move, &kp LG(LA(V)), RT3 RT1, 2)
