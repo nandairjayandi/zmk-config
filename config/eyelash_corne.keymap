@@ -220,6 +220,7 @@ ZMK_TAP_DANCE(tap_symbol_fn,
     bindings = <&sl 3>, <&kp LC(LG(SPACE))>;
 )
 
+SIMPLE_MORPH(brc_morph, SFT, &tap_bracket_left, &tap_bracket_right)
 
 ZMK_COMBO(combo_brcl, &tap_bracket_left, LT1 LT2, 0)
 ZMK_TAP_DANCE(tap_bracket_left,
@@ -333,7 +334,7 @@ ZMK_LAYER(GRAPHITE,
 
 ZMK_LAYER(NUMBER,
     //╭─────────────────╮ ╭───────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-        &kp ESC               &kp KP_MULTIPLY &kp N7        &kp N8        &kp N9        &kp KP_PLUS                         &kp UP                &kp KP_PLUS   &kp N9        &kp N8        &kp N7        &kp KP_MULTIPLY   XXX
+        &kp ESC               &kp KP_MULTIPLY &kp N7        &kp N8        &kp N9        &kp KP_PLUS                         &kp UP                &kp KP_MULTIPLY   &kp AMPS        &kp STAR        &brc_morph        &kp KP_PLUS   XXX
     //├─────────────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       &tap_bracket_left   &hml LCTRL N0   &hml LALT N4  &hml LGUI N5  &hml LSHFT N6 &eql_morph                &kp LEFT     XXX     &kp RIGHT  &eql_morph    &hmr RSHFT N6 &hmr RGUI N5  &hmr RALT N4  &hmr RCTRL N0   &tap_bracket_right
     //├─────────────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
