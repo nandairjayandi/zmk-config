@@ -206,12 +206,12 @@ SIMPLE_MORPH(eql_morph, SFT, &kp KP_EQUAL, &kp KP_DOT)        // =.
 SIMPLE_MORPH(bspc_morph, SFT, &kp BSPC, &kp DELETE)           // BSPC DEL
 
 ZMK_TAP_DANCE(tap_par_left,
-    tapping-term-ms = <200>;
+    tapping-term-ms = <300>;
     bindings = <&kp LPAR>, <&kp LBRC>, <&kp LT>, <&kp LBKT>;  // ( { < [
 )
 
 ZMK_TAP_DANCE(tap_par_rght,
-    tapping-term-ms = <200>;
+    tapping-term-ms = <300>;
     bindings = <&kp RPAR>, <&kp RBRC>, <&kp GT>, <&kp RBKT>;  // ) } > ]
 )
 
