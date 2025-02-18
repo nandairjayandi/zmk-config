@@ -361,11 +361,11 @@ ZMK_LAYER(NUMBER,
 
 ZMK_LAYER(NAV,
     //╭──────╮ ╭───────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────╮                             ╭─────────────────╮                ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-      &kp ESC  XXX           &kp LG(X)         &kp LG(C)         &kp LG(V)         XXX                                               &mmv MOVE_UP                         XXX         &kp PG_UP     &kp UP        &kp HOME        XXX             XXX
+      &kp ESC  XXX           &kp LG(X)         &kp LG(C)         &kp LG(V)         XXX                                               &mmv MOVE_UP                         XXX         &kp HOME     &kp UP        &kp PG_UP        XXX             XXX
     //├──────┤ ├───────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────┤           ╭─────────────────┼─────────────────┼─────────╮      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       &kp F15  &hml LCTRL C_BRI_UP &hml LALT C_PREV  &hml LGUI C_PP    &hml LSHFT C_NEXT &kp C_VOL_UP              &mmv MOVE_LEFT    &mkp LCLK         &mmv MOVE_RIGHT    XXX         &kp LEFT      &kp DOWN      &kp RIGHT       XXX             XXX
     //├──────┤ ├───────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────┤  ╭──────╮ ╰─────────────────┼─────────────────┼─────────╯      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-      &tog 1   &kp  C_BRI_DN       &tap_shot_full    &kp LG(LS(N5))    &tap_shot_partial &kp C_VOL_DN       XXX                      &mmv MOVE_DOWN                       XXX         &kp PG_DN     &kp LC(ENTER) &kp END         XXX             XXX
+      &tog 1   &kp  C_BRI_DN       &tap_shot_full    &kp LG(LS(N5))    &tap_shot_partial &kp C_VOL_DN       XXX                      &mmv MOVE_DOWN                       XXX         &kp END     &kp LC(ENTER) &kp PG_DN         XXX             XXX
     //╰──────╯ ╰───────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────┤  ╰──────╯                   ╰─────────────────╯                ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯ ╰──────╯
                                                      &kp TAB           &bspc_morph          &to 2                                                                        &to 1         &kp SPC       &kp ENTER
     //                                               ╰─────────────────┴─────────────────┴─────────────╯                                                                ╰─────────────┴─────────────┴─────────────╯
