@@ -205,12 +205,12 @@ SIMPLE_MORPH(eql_morph, SFT, &kp KP_EQUAL, &kp KP_DOT)        // =.
 
 SIMPLE_MORPH(bspc_morph, SFT, &kp BSPC, &kp DELETE)           // =.
 
-ZMK_TAP_DANCE(tap_bracket_left,
+ZMK_TAP_DANCE(tap_bracket_left_test,
     tapping-term-ms = <200>;
     bindings = <&kp LPAR>, <&kp LBRC>, <&kp LT>, <&kp LBKT>;  // ( { < [
 )
 
-ZMK_TAP_DANCE(tap_bracket_right,
+ZMK_TAP_DANCE(tap_bracket_right_test,
     tapping-term-ms = <200>;
     bindings = <&kp RPAR>, <&kp RBRC>, <&kp GT>, <&kp RBKT>;  // ) } > ]
 )
@@ -220,7 +220,7 @@ ZMK_TAP_DANCE(tap_symbol_fn,
     bindings = <&sl 3>, <&kp LC(LG(SPACE))>;
 )
 
-SIMPLE_MORPH(brc_morph, SFT, &tap_bracket_left, &tap_bracket_right)
+SIMPLE_MORPH(brc_morph, SFT, &tap_bracket_left_test, &tap_bracket_right_test)
 
 ZMK_COMBO(combo_brcl, &tap_bracket_left, LT1 LT2, 0)
 ZMK_TAP_DANCE(tap_bracket_left,
