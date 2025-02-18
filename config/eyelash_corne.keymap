@@ -196,21 +196,21 @@ ZMK_COMBO(combo_amps, &kp AMPS, RT1 RT2 RT3, 0)
 
 SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp QMARK)          // ,?
 SIMPLE_MORPH(sqt_morph, SFT, &kp SQT, &kp UNDER)              // '_
-SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp GT)                 // .>
-SIMPLE_MORPH(slsh_morph, SFT, &kp FSLH, &kp LT)               // /<
+SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &tap_par_left)          // .TD
+SIMPLE_MORPH(slsh_morph, SFT, &kp FSLH, &tap_par_rght)        // /TD
 SIMPLE_MORPH(min_morph, SFT, &kp MINUS, &kp DQT)              // -"
 
 // for NUMBER layer
 SIMPLE_MORPH(eql_morph, SFT, &kp KP_EQUAL, &kp KP_DOT)        // =.
 
-SIMPLE_MORPH(bspc_morph, SFT, &kp BSPC, &kp DELETE)           // =.
+SIMPLE_MORPH(bspc_morph, SFT, &kp BSPC, &kp DELETE)           // BSPC DEL
 
-ZMK_TAP_DANCE(tap_bracket_left_test,
+ZMK_TAP_DANCE(tap_par_left,
     tapping-term-ms = <200>;
     bindings = <&kp LPAR>, <&kp LBRC>, <&kp LT>, <&kp LBKT>;  // ( { < [
 )
 
-ZMK_TAP_DANCE(tap_bracket_right_test,
+ZMK_TAP_DANCE(tap_par_rght,
     tapping-term-ms = <200>;
     bindings = <&kp RPAR>, <&kp RBRC>, <&kp GT>, <&kp RBKT>;  // ) } > ]
 )
@@ -220,27 +220,27 @@ ZMK_TAP_DANCE(tap_symbol_fn,
     bindings = <&sl 3>, <&kp LC(LG(SPACE))>;
 )
 
-SIMPLE_MORPH(brc_morph, SFT, &tap_bracket_left_test, &tap_bracket_right_test)
+// SIMPLE_MORPH(brc_morph, SFT, &tap_bracket_left_test, &tap_bracket_right_test)
 
-ZMK_COMBO(combo_brcl, &tap_bracket_left, LT1 LT2, 0)
-ZMK_TAP_DANCE(tap_bracket_left,
-    tapping-term-ms = <200>;
-    bindings = <&morph_brcl_one>, <&morph_brcl_two>;
-)
+// ZMK_COMBO(combo_brcl, &tap_bracket_left, LT1 LT2, 0)
+// ZMK_TAP_DANCE(tap_bracket_left,
+//     tapping-term-ms = <200>;
+//     bindings = <&morph_brcl_one>, <&morph_brcl_two>;
+// )
 
-SIMPLE_MORPH(morph_brcl_one, SFT, &kp LPAR, &kp LBKT)
+// SIMPLE_MORPH(morph_brcl_one, SFT, &kp LPAR, &kp LBKT)
 
-SIMPLE_MORPH(morph_brcl_two, SFT, &kp LBRC, &kp LT)
+// SIMPLE_MORPH(morph_brcl_two, SFT, &kp LBRC, &kp LT)
 
-ZMK_COMBO(combo_brcr, &tap_bracket_right, RT1 RT2, 0)
-ZMK_TAP_DANCE(tap_bracket_right,
-    tapping-term-ms = <200>;
-    bindings = <&morph_brcr_one>, <&morph_brcr_two>;
-)
+// ZMK_COMBO(combo_brcr, &tap_bracket_right, RT1 RT2, 0)
+// ZMK_TAP_DANCE(tap_bracket_right,
+//     tapping-term-ms = <200>;
+//     bindings = <&morph_brcr_one>, <&morph_brcr_two>;
+// )
 
-SIMPLE_MORPH(morph_brcr_one, SFT, &kp RPAR, &kp RBKT)
+// SIMPLE_MORPH(morph_brcr_one, SFT, &kp RPAR, &kp RBKT)
 
-SIMPLE_MORPH(morph_brcr_two, SFT, &kp RBRC, &kp GT)
+// SIMPLE_MORPH(morph_brcr_two, SFT, &kp RBRC, &kp GT)
 
 // macOS move combo
 ZMK_COMBO(combo_move, &kp LG(LA(V)), RT3 RT1, 2)
@@ -333,15 +333,15 @@ ZMK_LAYER(GRAPHITE,
 )
 
 ZMK_LAYER(NUMBER,
-    //╭─────────────────╮ ╭───────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-        &kp ESC               &kp KP_MULTIPLY &kp N7        &kp N8        &kp N9        &kp KP_PLUS                         &kp UP                &kp KP_MULTIPLY   &kp AMPS        &kp STAR        &brc_morph        &kp KP_PLUS   XXX
-    //├─────────────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-      &tap_bracket_left   &hml LCTRL N0   &hml LALT N4  &hml LGUI N5  &hml LSHFT N6 &eql_morph                &kp LEFT     XXX     &kp RIGHT  &eql_morph    &hmr RSHFT DLLR &hmr RGUI PRCNT  &hmr RALT CARET  &hmr RCTRL N0   &tap_bracket_right
-    //├─────────────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-        XXX               &kp KP_DIVIDE   &kp N1        &kp N2        &kp N3        &kp KP_MINUS       XXX              &kp DOWN              &kp KP_DIVIDE  &kp EXCL        &kp AT        &kp HASH        &kp KP_MINUS      XXX
-    //╰─────────────────╯ ╰───────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
-                                                        &kp TAB       &bspc_morph      &to 2                                                    &to 1        &kp SPC       &kp ENTER
-    //                                                  ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
+    //╭──────────╮ ╭───────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
+        &kp ESC    &kp KP_MULTIPLY &kp N7        &kp N8        &kp N9        &kp KP_PLUS                         &kp UP                &kp KP_MULTIPLY &kp AMPS    &kp STAR      &kp LC(LG(SPACE))  &kp KP_PLUS   XXX
+    //├──────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
+        XXX        &hml LCTRL N0   &hml LALT N4  &hml LGUI N5  &hml LSHFT N6 &eql_morph                &kp LEFT     XXX     &kp RIGHT  &eql_morph    &hmr RSHFT DLLR &hmr RGUI PRCNT  &hmr RALT CARET  &hmr RCTRL XXX   XXX
+    //├──────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
+        XXX        &kp KP_DIVIDE   &kp N1        &kp N2        &kp N3        &kp KP_MINUS       XXX              &kp DOWN              &kp KP_DIVIDE &kp EXCL     &kp AT        &kp HASH        &kp KP_MINUS      XXX
+    //╰──────────╯ ╰───────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
+                                                 &kp TAB       &bspc_morph   &to 2                                                     &to 1         &kp SPC       &kp ENTER
+    //                                           ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
     , &arrow_encoder
 )
@@ -381,9 +381,9 @@ ZMK_LAYER(FN,
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       &kp MINUS    &hml LCTRL N1 &hml LALT N2  &hml LGUI N3  &hml LSHFT N4 &kp N5                    &kp LEFT    XXX     &kp RIGHT   &kp N6        &hmr RSHFT N7 &hmr RGUI N8  &hmr RALT N9  &hmr RCTRL N0   &kp EQUAL
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-      &tog 3       &sk LCTRL     &sk LALT      &sk LGUI      &sk LSHFT      &tap_bracket_left              &kp LEFT           &mmv MOVE_DOWN           &tap_bracket_right         &sk RSHFT     &sk RGUI      &sk RALT      &sk RCTRL       &tog 3
+      &tog 3       &sk LCTRL     &sk LALT      &sk LGUI      &sk LSHFT     &tap_par_left    &kp LEFT           &mmv MOVE_DOWN        &tap_par_rght &sk RSHFT     &sk RGUI      &sk RALT      &sk RCTRL       &tog 3
     //╰─────────╯  ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯ ╰──────╯
-                                               &kp TAB       &bspc_morph      &tog 2                                                   &tog 1     &kp SPC       &kp ENTER
+                                               &kp TAB       &bspc_morph   &tog 2                                                    &tog 1        &kp SPC       &kp ENTER
     //                                         ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
     , &arrow_encoder
@@ -391,7 +391,7 @@ ZMK_LAYER(FN,
 
 ZMK_LAYER(SYSTEM,
     //╭──────╮       ╭─────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────╮                              ╭──────────────────╮                     ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-        &soft_off            XXX         &rgb_ug RGB_SAD   &rgb_ug RGB_SPI   &rgb_ug RGB_SAI     XXX                                        &bt BT_SEL 0                             &out OUT_BLE    XXX           XXX           XXX           XXX             &soft_off
+      &soft_off        XXX         &rgb_ug RGB_SAD   &rgb_ug RGB_SPI   &rgb_ug RGB_SAI     XXX                                        &bt BT_SEL 0                             &out OUT_BLE    XXX           XXX           XXX           XXX           &soft_off
     //├──────┤       ├─────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────┤           ╭──────────────────┼──────────────────┼──────────────────╮  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
         XXX            XXX         &rgb_ug RGB_EFR     XXX             &rgb_ug RGB_EFF     XXX                     &bt BT_SEL 3       &bt BT_CLR_ALL     &bt BT_SEL 1            XXX           XXX           XXX           XXX           XXX             XXX
     //├──────┤       ├─────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────┤  ╭──────╮ ╰──────────────────┼──────────────────┼──────────────────╯  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
