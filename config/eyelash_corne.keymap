@@ -219,29 +219,6 @@ ZMK_TAP_DANCE(tap_symbol_fn,
     tapping-term-ms = <200>;
     bindings = <&sl 3>, <&kp LC(LG(SPACE))>;
 )
-
-// SIMPLE_MORPH(brc_morph, SFT, &tap_bracket_left_test, &tap_bracket_right_test)
-
-// ZMK_COMBO(combo_brcl, &tap_bracket_left, LT1 LT2, 0)
-// ZMK_TAP_DANCE(tap_bracket_left,
-//     tapping-term-ms = <200>;
-//     bindings = <&morph_brcl_one>, <&morph_brcl_two>;
-// )
-
-// SIMPLE_MORPH(morph_brcl_one, SFT, &kp LPAR, &kp LBKT)
-
-// SIMPLE_MORPH(morph_brcl_two, SFT, &kp LBRC, &kp LT)
-
-// ZMK_COMBO(combo_brcr, &tap_bracket_right, RT1 RT2, 0)
-// ZMK_TAP_DANCE(tap_bracket_right,
-//     tapping-term-ms = <200>;
-//     bindings = <&morph_brcr_one>, <&morph_brcr_two>;
-// )
-
-// SIMPLE_MORPH(morph_brcr_one, SFT, &kp RPAR, &kp RBKT)
-
-// SIMPLE_MORPH(morph_brcr_two, SFT, &kp RBRC, &kp GT)
-
 // macOS move combo
 ZMK_COMBO(combo_move, &kp LG(LA(V)), RT3 RT1, 2)
 
@@ -258,9 +235,7 @@ ZMK_COMBO(combo_vim_word_right, &kp E, RM2 RM3, 2)
 
 // ZMK_COMBO(combo_hypr_left, &sk LG(LC(LA(LSHFT))), LM4 LM3 LM2 LM1, 2)
 // ZMK_COMBO(combo_hypr_right, &sk RG(RC(RA(RSHFT))), RM4 RM3 RM2 RM1, 2)
-// &caps_word {
-//     continue-list = <UNDERSCORE MINUS>;
-// };
+
 
 ZMK_COMBO(combo_capsword, &caps_word, LB5 RB5, 0, 100)
 ZMK_COMBO(combo_menu, &kp LG(LS(FSLH)), RB1 RB3, 2)
@@ -282,19 +257,6 @@ ZMK_TAP_DANCE(tap_shot_full,
     bindings = <&kp LG(LS(LC(N3)))>, <&kp LG(LS(N3))>; 
 )
 
-// Doesn't work fluently and I prefer doing finger gymnastic 
-// ZMK_TAP_DANCE(tap_meh_hyper,
-//     tapping-term-ms = <200>;
-//     bindings = <&sk LG(LS(LALT))>, <&sk LG(LS(LA(LCTRL)))>; 
-// )
-
-
-// #define SMART_NAV &smart_nav 2 0
-// ZMK_HOLD_TAP(smart_nav, bindings = <&mo>, <&nav_dance>; flavor = "balanced";
-//              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
-// ZMK_TAP_DANCE(nav_dance, bindings = <&sl 2>, <&nav_word 2>;
-//               tapping-term-ms = <200>;)
-
 #define LAYER_NUM &layer_num 1 1
 ZMK_HOLD_TAP(layer_num, bindings = <&mo>, <&sl>; 
                 flavor = "balanced"; 
@@ -305,13 +267,6 @@ ZMK_HOLD_TAP(layer_nav, bindings = <&mo>, <&nav_word>;
                 flavor = "balanced";
                 tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
                 
-// single-tap for smart NUM layer double-tap for smart NAV layer hold for Nav-layer
-// #define LAYER_SMART &nav_num_smart 2 0
-// ZMK_HOLD_TAP(nav_num_smart, bindings = <&mo>, <&nav_num_dance>; flavor = "tap-preferred";
-//              tapping-term-ms = <300>; quick-tap-ms = <280>;)
-// ZMK_TAP_DANCE(nav_num_dance, bindings = <&sl 1>, <&nav_word 2>, <&n>;
-//               tapping-term-ms = <300>;)
-
 // I am not using HRM combos tap only since I use combinations of modifiers for MEH and HYPR
 
 // #include "mouse.dtsi"
@@ -345,20 +300,6 @@ ZMK_LAYER(NUMBER,
 
     , &arrow_encoder
 )
-
-// ZMK_LAYER(NAV,
-//     //╭──────╮ ╭───────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────╮                             ╭─────────────────╮                ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-//       &kp ESC    XXX         &kp PG_UP     &kp UP        &kp HOME        XXX                                                         &mmv MOVE_UP                       &kp LG(Z)     &kp LG(X)     &kp LG(C)     &kp LG(V)     &kp LG(LS(Z))     XXX
-//     //├──────┤ ├───────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────┤           ╭─────────────────┼─────────────────┼─────────╮      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-//       &kp F15   XXX         &kp LEFT      &kp DOWN      &kp RIGHT       XXX                                        &mmv MOVE_LEFT    &mkp LCLK         &mmv MOVE_RIGHT  &hml LCTRL C_BRI_UP &hml LALT C_PREV  &hml LGUI C_PP    &hml LSHFT C_NEXT &kp C_VOL_UP     XXX
-//     //├──────┤ ├───────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────┤  ╭──────╮ ╰─────────────────┼─────────────────┼─────────╯      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-//       &tog 1     XXX         &kp PG_DN     &kp LC(ENTER) &kp END         XXX                               XXX                      &mmv MOVE_DOWN                     &kp  C_BRI_DN &tap_shot_full    &kp LG(LS(N5))    &tap_shot_partial &kp C_VOL_DN      XXX
-//     //╰──────╯ ╰───────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────┤  ╰──────╯                   ╰─────────────────╯                ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯ ╰──────╯
-//                                                      &kp TAB           &bspc_morph          &tog 2                                                                         XXX        &kp SPC       &kp ENTER
-//     //                                               ╰─────────────────┴─────────────────┴─────────────╯                                                                ╰─────────────┴─────────────┴─────────────╯
-
-//     , &inc_dec_kp C_VOL_UP C_VOL_DN
-// )
 
 ZMK_LAYER(NAV,
     //╭──────╮ ╭───────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────╮                             ╭─────────────────╮                ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
