@@ -210,22 +210,22 @@ SIMPLE_MORPH(bspc_morph, SFT, &kp BSPC, &kp DELETE)           // BSPC DEL
 
 ZMK_TAP_DANCE(tap_par_left_one,
     tapping-term-ms = <200>;
-    bindings = <&kp LPAR>, <&kp LBRC>;  // ( {
+    bindings = <&kp LPAR>, <&kp LBKT>;  // ( [
 )
 
 ZMK_TAP_DANCE(tap_par_left_two,
     tapping-term-ms = <200>;
-    bindings = <&kp LBKT>, <&kp LT>;    // [ < 
+    bindings = <&kp LBRC>, <&kp LT>;    // { < 
 )
 
 ZMK_TAP_DANCE(tap_par_rght_one,
     tapping-term-ms = <200>;
-    bindings = <&kp RPAR>, <&kp RBRC>;  // ) }
+    bindings = <&kp RPAR>, <&kp RBKT>;  // ) ]
 )
 
 ZMK_TAP_DANCE(tap_par_rght_two,
     tapping-term-ms = <200>;
-    bindings = <&kp RBKT>, <&kp GT>;  // ] >
+    bindings = <&kp RBRC>, <&kp GT>;  // } >
 )
 
 ZMK_TAP_DANCE(tap_symbol_fn,
