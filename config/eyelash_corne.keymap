@@ -191,28 +191,41 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 	// };
 };
 
-ZMK_COMBO(combo_at, &kp AT, LT1 LT2 LT3, 0)
+ZMK_COMBO(combo_excl, &kp EXCL, LT1 LT2 LT3, 0)
 ZMK_COMBO(combo_amps, &kp AMPS, RT1 RT2 RT3, 0)
+ZMK_COMBO(combo_par_left, &morph_par_left, LT1 LT2, 0)
+ZMK_COMBO(combo_par_rght, &morph_par_rght, RT1 RT2, 0)
 
 SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp QMARK)          // ,?
 SIMPLE_MORPH(sqt_morph, SFT, &kp SQT, &kp UNDER)              // '_
-SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &tap_par_left)          // .TD
-SIMPLE_MORPH(slsh_morph, SFT, &kp FSLH, &tap_par_rght)        // /TD
+SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp AT)          // .TD
+SIMPLE_MORPH(slsh_morph, SFT, &kp FSLH, &kp HASH)        // /TD
 SIMPLE_MORPH(min_morph, SFT, &kp MINUS, &kp DQT)              // -"
-
+SIMPLE_MORPH(morph_par_left, SFT, &tap_par_left_one, &tap_par_left_two)
+SIMPLE_MORPH(morph_par_rght, SFT, &tap_par_rght_one, &tap_par_rght_two)
 // for NUMBER layer
 SIMPLE_MORPH(eql_morph, SFT, &kp KP_EQUAL, &kp KP_DOT)        // =.
 
 SIMPLE_MORPH(bspc_morph, SFT, &kp BSPC, &kp DELETE)           // BSPC DEL
 
-ZMK_TAP_DANCE(tap_par_left,
-    tapping-term-ms = <300>;
-    bindings = <&kp LPAR>, <&kp LBRC>, <&kp LT>, <&kp LBKT>;  // ( { < [
+ZMK_TAP_DANCE(tap_par_left_one,
+    tapping-term-ms = <200>;
+    bindings = <&kp LPAR>, <&kp LBRC>;  // ( {
 )
 
-ZMK_TAP_DANCE(tap_par_rght,
-    tapping-term-ms = <300>;
-    bindings = <&kp RPAR>, <&kp RBRC>, <&kp GT>, <&kp RBKT>;  // ) } > ]
+ZMK_TAP_DANCE(tap_par_left_two,
+    tapping-term-ms = <200>;
+    bindings = <&kp LBKT>, <&kp LT>;    // [ < 
+)
+
+ZMK_TAP_DANCE(tap_par_rght_one,
+    tapping-term-ms = <200>;
+    bindings = <&kp RPAR>, <&kp RBRC>;  // ) }
+)
+
+ZMK_TAP_DANCE(tap_par_rght_two,
+    tapping-term-ms = <200>;
+    bindings = <&kp RBKT>, <&kp GT>;  // ] >
 )
 
 ZMK_TAP_DANCE(tap_symbol_fn,
@@ -291,7 +304,7 @@ ZMK_LAYER(NUMBER,
     //╭──────────╮ ╭───────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
         &kp ESC    &kp KP_MULTIPLY &kp N7        &kp N8        &kp N9        &kp KP_PLUS                         &kp UP                &kp KP_MULTIPLY &kp AMPS    &kp STAR      &kp LC(LG(SPACE))  &kp KP_PLUS   XXX
     //├──────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-        XXX        &hml LCTRL N0   &hml LALT N4  &hml LGUI N5  &hml LSHFT N6 &eql_morph                &kp LEFT     XXX     &kp RIGHT  &eql_morph    &hmr RSHFT DLLR &hmr RGUI PRCNT  &hmr RALT CARET  &hmr RCTRL XXX   XXX
+        XXX        &hml LCTRL N0   &hml LALT N4  &hml LGUI N5  &hml LSHFT N6 &eql_morph                &kp LEFT     XXX     &kp RIGHT  &eql_morph    &hmr RSHFT DLLR &hmr RGUI PRCNT  &hmr RALT CARET  &hmr RCTRL none   XXX
     //├──────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
         XXX        &kp KP_DIVIDE   &kp N1        &kp N2        &kp N3        &kp KP_MINUS       XXX              &kp DOWN              &kp KP_DIVIDE &kp EXCL     &kp AT        &kp HASH        &kp KP_MINUS      XXX
     //╰──────────╯ ╰───────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
