@@ -198,8 +198,8 @@ ZMK_COMBO(combo_par_rght, &morph_par_rght, RT1 RT2, 0)
 
 SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp QMARK)          // ,?
 SIMPLE_MORPH(sqt_morph, SFT, &kp SQT, &kp UNDER)              // '_
-SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp AT)          // .TD
-SIMPLE_MORPH(slsh_morph, SFT, &kp FSLH, &kp HASH)        // /TD
+SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp AT)          // .@
+SIMPLE_MORPH(slsh_morph, SFT, &kp FSLH, &kp PRCNT)        // /%
 SIMPLE_MORPH(min_morph, SFT, &kp MINUS, &kp DQT)              // -"
 SIMPLE_MORPH(morph_par_left, SFT, &tap_par_left_one, &tap_par_left_two)
 SIMPLE_MORPH(morph_par_rght, SFT, &tap_par_rght_one, &tap_par_rght_two)
@@ -209,29 +209,25 @@ SIMPLE_MORPH(eql_morph, SFT, &kp KP_EQUAL, &kp KP_DOT)        // =.
 SIMPLE_MORPH(bspc_morph, SFT, &kp BSPC, &kp DELETE)           // BSPC DEL
 
 ZMK_TAP_DANCE(tap_par_left_one,
-    tapping-term-ms = <200>;
+    tapping-term-ms = <220>;
     bindings = <&kp LPAR>, <&kp LBKT>;  // ( [
 )
 
 ZMK_TAP_DANCE(tap_par_left_two,
-    tapping-term-ms = <200>;
+    tapping-term-ms = <220>;
     bindings = <&kp LBRC>, <&kp LT>;    // { < 
 )
 
 ZMK_TAP_DANCE(tap_par_rght_one,
-    tapping-term-ms = <200>;
+    tapping-term-ms = <220>;
     bindings = <&kp RPAR>, <&kp RBKT>;  // ) ]
 )
 
 ZMK_TAP_DANCE(tap_par_rght_two,
-    tapping-term-ms = <200>;
+    tapping-term-ms = <220>;
     bindings = <&kp RBRC>, <&kp GT>;  // } >
 )
 
-ZMK_TAP_DANCE(tap_symbol_fn,
-    tapping-term-ms = <200>;
-    bindings = <&sl 3>, <&kp LC(LG(SPACE))>;
-)
 // macOS move combo
 ZMK_COMBO(combo_move, &kp LG(LA(V)), RT3 RT1, 2)
 
@@ -318,7 +314,7 @@ ZMK_LAYER(NAV,
     //╭──────╮ ╭───────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────╮                             ╭─────────────────╮                ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
       &kp ESC  XXX           &kp LG(X)         &kp LG(C)         &kp LG(V)         XXX                                               &mmv MOVE_UP                         XXX         &kp HOME     &kp UP        &kp PG_UP        XXX             XXX
     //├──────┤ ├───────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────┤           ╭─────────────────┼─────────────────┼─────────╮      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-      &kp F15  &hml LCTRL C_BRI_UP &hml LALT C_PREV  &hml LGUI C_PP    &hml LSHFT C_NEXT &kp C_VOL_UP              &mmv MOVE_LEFT    &mkp LCLK         &mmv MOVE_RIGHT    XXX         &kp LEFT      &kp DOWN      &kp RIGHT       XXX             XXX
+      &kp F15  &hml LCTRL C_BRI_UP &hml LALT C,_PREV  &hml LGUI C_PP    &hml LSHFT C_NEXT &kp C_VOL_UP              &mmv MOVE_LEFT    &mkp LCLK         &mmv MOVE_RIGHT    XXX         &kp LEFT      &kp DOWN      &kp RIGHT       XXX             XXX
     //├──────┤ ├───────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────┤  ╭──────╮ ╰─────────────────┼─────────────────┼─────────╯      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       &tog 1   &kp  C_BRI_DN       &tap_shot_full    &kp LG(LS(N5))    &tap_shot_partial &kp C_VOL_DN       XXX                      &mmv MOVE_DOWN                       XXX         &kp END     &kp LC(ENTER) &kp PG_DN         XXX             XXX
     //╰──────╯ ╰───────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────┤  ╰──────╯                   ╰─────────────────╯                ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯ ╰──────╯
