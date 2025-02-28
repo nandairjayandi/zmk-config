@@ -130,21 +130,6 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 		//     bindings = <&kp>, <&kp>;
 		// };
 		
-		// num_word: num_word {
-		// 	compatible = "zmk,behavior-auto-layer";
-		// 	#binding-cells = <1>;
-		// 	continue-list = <BACKSPACE DELETE KP_DOT KP_PLUS KP_MINUS KP_MULTIPLY KP_DIVIDE KP_EQUAL>;
-		// 	ignore-numbers;
-    //   // ignore-modifiers;
-		// };
-		
-		nav_word: nav_word {
-			compatible = "zmk,behavior-auto-layer";
-			#binding-cells = <1>;
-			continue-list = <LEFT DOWN UP RIGHT PG_DN PG_UP HOME END B E LBRC RBRC>;
-			ignore-modifiers;
-		};
-
     caps_word: caps_word {
       compatible = "zmk,behavior-caps-word";
       #binding-cells = <0>;
@@ -245,16 +230,12 @@ ZMK_COMBO(combo_vim_word_right, &kp E, RM2 RM3, 2)
 // ZMK_COMBO(combo_hypr_left, &sk LG(LC(LA(LSHFT))), LM4 LM3 LM2 LM1, 2)
 // ZMK_COMBO(combo_hypr_right, &sk RG(RC(RA(RSHFT))), RM4 RM3 RM2 RM1, 2)
 
-
 ZMK_COMBO(combo_capsword, &caps_word, LH1 RH1, 0, 100)
 ZMK_COMBO(combo_menu, &kp LG(LS(FSLH)), RB1 RB3, 2)
-// ZMK_COMBO(combo_fn, &sl 3, LB5 RB5, 0 3, 100)
 ZMK_COMBO(combo_esc, &kp ESC, LH0 RH0, 0 1 2, 100)
 ZMK_COMBO(combo_undo, &kp LG(Z), LB1 LB2, 0, 100)
 ZMK_COMBO(combo_redo, &kp LG(LS(Z)), RB1 RB2, 0, 100)
 ZMK_COMBO(combo_sys, &tog 4, LH2 RH2, 0, 100)
-// ZMK_COMBO(combo_main, &to 0, LH0 RH0, 1 2 3, 100)
-
 
 ZMK_TAP_DANCE(tap_shot_partial,
     tapping-term-ms = <200>;
