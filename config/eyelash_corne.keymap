@@ -112,6 +112,7 @@ ZMK_HOLD_TAP(hold_layer, bindings = <&mo>, <&kp>;
       compatible = "zmk,behavior-sensor-rotate";
       #sensor-binding-cells = <0>;
       bindings = <&enc_cw_morph_scroll>, <&enc_ccw_morph_scroll>;
+      tap-ms = <30>;
     };
 
     enc_cw_morph_scroll: enc_cw_morph_scroll {
@@ -119,7 +120,6 @@ ZMK_HOLD_TAP(hold_layer, bindings = <&mo>, <&kp>;
       #binding-cells = <0>;
       bindings = <&msc SCRL_UP>, <&msc SCRL_RIGHT>;
       mods = <(MOD_RCTL|MOD_LCTL)>;
-      tap-ms = <30>;
     };
 
     enc_ccw_morph_scroll: enc_ccw_morph_scroll {
@@ -127,7 +127,6 @@ ZMK_HOLD_TAP(hold_layer, bindings = <&mo>, <&kp>;
       #binding-cells = <0>;
       bindings = <&msc SCRL_DOWN>, <&msc SCRL_LEFT>;
       mods = <(MOD_RCTL|MOD_LCTL)>;
-      tap-ms = <30>;
     };
 
 
