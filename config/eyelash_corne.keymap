@@ -267,7 +267,7 @@ ZMK_TAP_DANCE(tap_shot_full,
 )
 
 #define LAYER_NUM &layer_num 1 0
-ZMK_HOLD_TAP(layer_num, bindings = <&mo>, <&kp SPACE>; 
+ZMK_HOLD_TAP(layer_num, bindings = <&mo>, <&kp SPC>; 
                 flavor = "balanced"; 
                 tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
 
