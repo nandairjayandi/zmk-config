@@ -266,13 +266,13 @@ ZMK_TAP_DANCE(tap_shot_full,
     bindings = <&kp LG(LS(LC(N3)))>, <&kp LG(LS(N3))>; 
 )
 
-#define LAYER_NUM &layer_num 1 1
-ZMK_HOLD_TAP(layer_num, bindings = <&mo>, <&sl>; 
+#define LAYER_NUM &layer_num 1 0
+ZMK_HOLD_TAP(layer_num, bindings = <&mo>, <&kp SPACE>; 
                 flavor = "balanced"; 
                 tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
 
-#define LAYER_NAV &layer_nav 2 2
-ZMK_HOLD_TAP(layer_nav, bindings = <&mo>, <&nav_word>;
+#define LAYER_NAV &layer_nav 2 0
+ZMK_HOLD_TAP(layer_nav, bindings = <&mo>, <&bspc_morph>;
                 flavor = "balanced";
                 tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
                 
