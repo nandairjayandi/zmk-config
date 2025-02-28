@@ -300,7 +300,7 @@ ZMK_LAYER(NUMBER,
     //╭──────────╮ ╭───────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
         &kp ESC    &kp KP_MULTIPLY &kp N7        &kp N8        &kp N9        &kp KP_PLUS                         &kp UP                &kp KP_MULTIPLY &kp AMPS    &kp STAR      &kp LC(LG(SPACE))  &kp KP_PLUS  ___ 
     //├──────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-        XXX        &hml LCTRL N0   &hml LALT N4  &hml LGUI N5  &hml LSHFT N6 &eql_morph                &kp LEFT     XXX     &kp RIGHT  &eql_morph    &hmr RSHFT DLLR &hmr RGUI PRCNT  &hmr RALT CARET  &hmr RCTRL TILDE  ___ 
+        XXX        &hml LCTRL N0   &hml LALT N4  &hml LGUI N5  &hml LSHFT N6 &eql_morph                &kp LEFT     XXX     &kp RIGHT  &eql_morph    &hmr RSHFT DLLR &hmr RGUI PRCNT  &hmr RALT CARET  &hmr RCTRL GRAVE  ___ 
     //├──────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
         XXX        &kp KP_DIVIDE   &kp N1        &kp N2        &kp N3        &kp KP_MINUS       XXX              &kp DOWN              &kp KP_DIVIDE &kp EXCL     &kp AT        &kp HASH        &kp KP_MINUS     ___ 
     //╰──────────╯ ╰───────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
