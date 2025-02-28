@@ -109,6 +109,27 @@ ZMK_HOLD_TAP(hold_layer, bindings = <&mo>, <&kp>;
       mods = <(MOD_RCTL|MOD_LCTL)>;
     };
 
+    scroll_encoder: scroll_encoder {
+      compatible = "zmk,behavior-sensor-rotate";
+      #sensor-binding-cells = <0>;
+      bindings = <&enc_cw_morph_scroll>, <&enc_ccw_morph_scroll>;
+    };
+
+    enc_cw_morph_scroll: enc_cw_morph_scroll {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&msc SCRL_UP, <&msc SCRL_RIGHT>;
+      mods = <(MOD_RCTL|MOD_LCTL)>;
+    };
+
+    enc_ccw_morph_scroll: enc_ccw_morph_scroll {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&msc SCRL_DOWN, <&msc SCRL_LEFT>;
+      mods = <(MOD_RCTL|MOD_LCTL)>;
+    };
+
+
     // enc_cw_morph_main: enc_cw_morph_main {
     //   compatible = "zmk,behavior-mod-morph"
     //   #sensor-binding-cells = <0>;
@@ -274,10 +295,10 @@ ZMK_LAYER(GRAPHITE,
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       MAC_CHAR     &kp Q         &kp X         &kp M         &kp C         &kp V              XXX              &kp DOWN              &kp K         &kp P         &dot_morph    &min_morph   &slsh_morph      &kp BSLH
     //╰─────────╯  ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
-                                               &tog 1         LAYER_NAV    &kp TAB                                                   &kp ENTER      LAYER_NUM    &tog 2
+                                               &tog 2         LAYER_NAV    &kp TAB                                                   &kp ENTER      LAYER_NUM    &tog 1
     //                                         ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
-    , &arrow_encoder
+    , &scroll_encoder
 )
 
 ZMK_LAYER(NUMBER,
@@ -288,7 +309,7 @@ ZMK_LAYER(NUMBER,
     //├──────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
         ___        &kp KP_DIVIDE   &kp N1        &kp N2        &kp N3        &kp KP_MINUS       XXX              &kp DOWN              &kp KP_DIVIDE &kp EXCL      &kp AT        &kp HASH      &kp KP_MINUS      ___ 
     //╰──────────╯ ╰───────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
-                                                 &tog 1       LAYER_NAV   &kp TAB                                                      &kp ENTER      LAYER_NUM       &tog 2
+                                                 &tog 2       LAYER_NAV   &kp TAB                                                      &kp ENTER      LAYER_NUM       &tog 1
     //                                           ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
     , &arrow_encoder
@@ -302,7 +323,7 @@ ZMK_LAYER(NAV,
     //├──────┤ ├───────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────┤  ╭──────╮ ╰─────────────────┼─────────────────┼─────────╯      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
        ___     &kp  C_BRI_DN       &tap_shot_full    &kp LG(LS(N5))    &tap_shot_partial &kp C_VOL_DN       &kp F15                  &mmv MOVE_DOWN                       XXX         &kp END       &kp LC(ENTER) &kp PG_DN      XXX             XXX
     //╰──────╯ ╰───────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────┤  ╰──────╯                   ╰─────────────────╯                ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯ ╰──────╯
-                                                     &tog 1           LAYER_NAV          &kp TAB                                                                        &kp ENTER      LAYER_NUM    &tog 2
+                                                     &tog 2           LAYER_NAV          &kp TAB                                                                        &kp ENTER      LAYER_NUM    &tog 1
     //                                               ╰─────────────────┴─────────────────┴─────────────╯                                                                ╰─────────────┴─────────────┴─────────────╯
 
     , &arrow_encoder
@@ -317,7 +338,7 @@ ZMK_LAYER(FN,
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       &kp MINUS    &kp N1        &kp N2        &kp N3        &kp N4        &kp N5           &kp LEFT           &mmv MOVE_DOWN        &kp N6        &kp N7        &kp N8        &kp N9        &kp N0          &kp EQUAL
     //╰─────────╯  ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯ ╰──────╯
-                                               &tog 1         LAYER_NAV    &kp TAB                                                   &kp ENTER      LAYER_NUM    &tog 2
+                                               &tog 2         LAYER_NAV    &kp TAB                                                   &kp ENTER      LAYER_NUM    &tog 1
     //                                         ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
     , &arrow_encoder
