@@ -68,6 +68,10 @@
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
+ZMK_HOLD_TAP(hold_layer, bindings = <&mo>, <&kp>; 
+                flavor = "balanced"; 
+                tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
+
 #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
   ZMK_MOD_MORPH(NAME, mods = <(MOD_L##MOD | MOD_R##MOD)>;                      \
                 bindings = <BINDING1>, <BINDING2>;)
@@ -247,11 +251,9 @@ ZMK_TAP_DANCE(tap_shot_full,
     bindings = <&kp LG(LS(LC(N3)))>, <&kp LG(LS(N3))>; 
 )
 
-#define LAYER_NUM &layer_num 1 SPC
-ZMK_HOLD_TAP(layer_num, bindings = <&mo>, <&kp>; 
-                flavor = "balanced"; 
-                tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
-
+#define L_FN &hold_layer 3 GRAVE
+#define R_FN &hold_layer 3 SEMI
+#define LAYER_NUM &hold_layer 1 SPC
 #define LAYER_NAV &layer_nav 2 0
 ZMK_HOLD_TAP(layer_nav, bindings = <&mo>, <&bspc_morph>;
                 flavor = "balanced";
@@ -265,7 +267,7 @@ ZMK_HOLD_TAP(layer_nav, bindings = <&mo>, <&bspc_morph>;
 
 ZMK_LAYER(GRAPHITE,
     //╭─────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-      &kp GRAVE    &kp B         &kp L         &kp D         &kp W         &kp Z                               &kp UP                &sqt_morph    &kp F         &kp O         &kp U         &kp J           &kp SEMI
+      L_FN         &kp B         &kp L         &kp D         &kp W         &kp Z                               &kp UP                &sqt_morph    &kp F         &kp O         &kp U         &kp J           R_FN
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       &kp EQUAL    &hml LCTRL N  &hml LALT R   &hml LGUI T   &hml LSHFT S  &kp G                     &kp LEFT    XXX     &kp RIGHT   &kp Y         &hmr RSHFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I    &comma_morph
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
