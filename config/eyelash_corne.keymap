@@ -117,14 +117,14 @@ ZMK_HOLD_TAP(hold_layer, bindings = <&mo>, <&kp>;
     enc_cw_morph_scroll: enc_cw_morph_scroll {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&msc SCRL_UP, <&msc SCRL_RIGHT>;
+      bindings = <&msc SCRL_UP>, <&msc SCRL_RIGHT>;
       mods = <(MOD_RCTL|MOD_LCTL)>;
     };
 
     enc_ccw_morph_scroll: enc_ccw_morph_scroll {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&msc SCRL_DOWN, <&msc SCRL_LEFT>;
+      bindings = <&msc SCRL_DOWN>, <&msc SCRL_LEFT>;
       mods = <(MOD_RCTL|MOD_LCTL)>;
     };
 
