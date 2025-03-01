@@ -9,17 +9,6 @@
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/eyelash42.h"
 
-&sl {
-    release-after-ms = <0>;
-    ignore-modifiers;
-};
-
-&sk {
-  release-after-ms = <3000>;
-  // quick-release;
-  // display-name = "SK ON";
-};
-
 #define QUICK_TAP_MS 175
 
 #define XXX &none
@@ -35,21 +24,9 @@
 #define ENC_PRESS   LEC
 #define JOYSTICK    JS0 JS1 JS2 JS3 JS4
 
-ZMK_HOLD_TAP(hold_layer, bindings = <&mo>, <&kp>; 
-                flavor = "balanced"; 
-                tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
-
-#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS)                                 \
-  ZMK_HOLD_TAP(NAME, bindings = <HOLD>, <TAP>; flavor = "balanced";            \
-               tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;         \
-               require-prior-idle-ms = <100>; hold-trigger-on-release;         \
-               hold-trigger-key-positions = <TRIGGER_POS>;)
-
-MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
-MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
-
-#include "mouse.dtsi"
+#include "adv_layers.dtsi"
 #include "adv_functions.dtsi"
+#include "mouse.dtsi"
 #include "encoder.dtsi"
 
 #define L_FN &hold_layer 3 GRAVE
