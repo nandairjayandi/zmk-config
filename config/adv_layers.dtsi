@@ -31,7 +31,7 @@
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
-MAKE_HLK(hlk_default, HOLD, TAP)
+MAKE_HLK(hlk_default)
 
 #define SK_STOP &kp LANG9
 
