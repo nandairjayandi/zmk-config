@@ -47,61 +47,14 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
 #include "mouse.dtsi"
 #include "adv_functions.dtsi"
+#include "encoder.dtsi"
 
 ZMK_HOLD_TAP(hold_layer, bindings = <&mo>, <&kp>; 
                 flavor = "balanced"; 
                 tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
 
-// TODO scroll wheel for encoder with morphing
 / {
 	behaviors {
-		rgb_encoder: rgb_encoder {
-			compatible = "zmk,behavior-sensor-rotate";
-			#sensor-binding-cells = <0>;
-			bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
-		};
-
-    arrow_encoder: arrow_encoder {
-      compatible = "zmk,behavior-sensor-rotate";
-      #sensor-binding-cells = <0>;
-      bindings = <&enc_cw_morph_arrow>, <&enc_ccw_morph_arrow>;
-    };
-
-    enc_cw_morph_arrow: enc_cw_morph_arrow {
-      compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings = <&kp UP>, <&kp RIGHT>;
-      mods = <(MOD_RCTL|MOD_LCTL)>;
-    };
-
-    enc_ccw_morph_arrow: enc_ccw_morph_arrow {
-      compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings = <&kp DOWN>, <&kp LEFT>;
-      mods = <(MOD_RCTL|MOD_LCTL)>;
-    };
-
-    scroll_encoder: scroll_encoder {
-      compatible = "zmk,behavior-sensor-rotate";
-      #sensor-binding-cells = <0>;
-      bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-      tap-ms = <30>;
-    };
-
-    enc_cw_morph_scroll: enc_cw_morph_scroll {
-      compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings = <&msc SCRL_UP>, <&msc SCRL_RIGHT>;
-      mods = <(MOD_RCTL|MOD_LCTL)>;
-    };
-
-    enc_ccw_morph_scroll: enc_ccw_morph_scroll {
-      compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings = <&msc SCRL_DOWN>, <&msc SCRL_LEFT>;
-      mods = <(MOD_RCTL|MOD_LCTL)>;
-    };
-		
     caps_word: caps_word {
       compatible = "zmk,behavior-caps-word";
       #binding-cells = <0>;
@@ -109,43 +62,6 @@ ZMK_HOLD_TAP(hold_layer, bindings = <&mo>, <&kp>;
       // ignore-modifiers; 
     };
 	};
-	
-	// kscan: kscan {
-	// 	wakeup-source;
-	// };
-	
-	// side_band_behavior_triggers: side_band_behavior_triggers {
-	// 	compatible = "zmk,kscan-sideband-behaviors";
-	// 	wakeup-source;
-	// 	kscan = <&kscan>;
-	// 	soft_on {
-	// 		column = <12>;
-	// 		row = <4>;
-	// 		bindings = <&hw_soft_on>;
-	// 	};
-	// };
-	
-	// chosen {
-	// 	zmk,kscan = &side_band_behavior_triggers;
-	// };
-
-  // wakeup_scan: wakeup_scan {
-  //     compatible = "zmk,gpio-key-wakeup-trigger";
-  //     trigger = <&soft_off_gpio_key>;
-  //     wakeup-source;
-  //     extra-gpios = <&gpio0 23 GPIO_ACTIVE_HIGH>;
-  // };
-
-  // soft_off_wakers {
-  //     compatible = "zmk,soft-off-wakeup-sources";
-  //     wakeup-sources = <&wakeup_scan>;
-  // };
-
-	// &encoder {
-	//     compatible = "zmk,behavior-encoder";
-	//     sensor-bindings = <&encoder_toggle 0 &rot_kp VOL_UP VOL_DOWN>,
-	//                       <&encoder_toggle 1 &rot_kp PG_UP PG_DN>;
-	// };
 };
 
 #define L_FN &hold_layer 3 GRAVE
