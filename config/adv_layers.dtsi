@@ -12,7 +12,7 @@
 };
 
 &sk {
-  release-after-ms = <-1>;
+  release-after-ms = <5000>;
   // quick-release;
   // display-name = "SK ON";
 };
