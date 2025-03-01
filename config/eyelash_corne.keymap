@@ -43,7 +43,7 @@ ZMK_LAYER(GRAPHITE,
                                                &tog 2        BSPC_NAV      &kp TAB                                           &kp ENTER     SPC_NUM       &tog 1
     //                                         ╰─────────────┴─────────────┴─────────────╯                                   ╰─────────────┴─────────────┴─────────────╯
 
-    , &scroll_encoder
+    , &arrow_encoder
 )
 
 ZMK_LAYER(NUMBER,
@@ -71,7 +71,7 @@ ZMK_LAYER(NAV,
                                                      &tog 2           BSPC_NAV          &kp TAB                                                                        &kp ENTER      SPC_NUM    &tog 1
     //                                               ╰─────────────────┴─────────────────┴─────────────╯                                                                ╰─────────────┴─────────────┴─────────────╯
 
-    , &arrow_encoder
+    , &scroll_encoder
 )
 
 // Press XXX to cancel the sticky key
