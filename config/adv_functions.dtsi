@@ -15,10 +15,10 @@
 #define COMBO_IDLE_SLOW 50
 
 /* Combos */
-ZMK_COMBO(combo_excl,               &kp EXCL,           LT1 LT2 LT3, 0)
-ZMK_COMBO(combo_amps,               &kp AMPS,           RT1 RT2 RT3, 0)
-ZMK_COMBO(combo_bral,               &morph_bral,        LT1 LT2, 0)
-ZMK_COMBO(combo_brar,               &morph_brar,        RT1 RT2, 0)
+ZMK_COMBO(combo_semi,               &kp SEMI,           RT1 RT2 T3, 0)
+ZMK_COMBO(combo_amps,               &kp AMPS,           LT1 LT2 LT3, 0)
+// ZMK_COMBO(combo_bral,               &morph_bral,        LT1 LT2, 0)
+// ZMK_COMBO(combo_brar,               &morph_brar,        RT1 RT2, 0)
 
 // Typing Combos
 ZMK_COMBO(combo_capsword,           &caps_word,         LH1 RH1, 0, 100)
@@ -45,7 +45,7 @@ ZMK_COMBO(combo_menu,               &kp LG(LS(FSLH)),   RB1 RB3, 2)
 // Graphite Specific Morph
 SIMPLE_MORPH(morph_comma,   SFT, &kp COMMA, &kp QMARK)          // ,?
 SIMPLE_MORPH(morph_sqt,     SFT, &kp SQT, &kp UNDER)              // '_
-SIMPLE_MORPH(morph_dot,     SFT, &kp DOT, &kp AT)          // .@
+SIMPLE_MORPH(morph_dot,     SFT, &kp DOT, &kp EXCL)          // .!
 SIMPLE_MORPH(morph_fslh,    SFT, &kp FSLH, &kp PRCNT)        // /%
 SIMPLE_MORPH(morph_min,     SFT, &kp MINUS, &kp DQT)              // -"
 
@@ -88,6 +88,8 @@ ZMK_TAP_DANCE(tap_shot_full,    tapping-term-ms = <200>; bindings = <&kp LG(LS(L
 #define M_SQT &morph_sqt
 #define M_EQL &morph_eql
 #define M_BSPC &morph_bspc
+#define M_BRAL &morph_bral
+#define M_BRAR &morph_brar
 
 /* Templates */
 
