@@ -71,7 +71,7 @@ ZMK_TAP_DANCE(tap_par_rght_two,tapping-term-ms = <220>;
     bindings = <&kp RBRC>, <&kp GT>;  // } >
 )
 
-ZMK_TAP_DANCE(tap_shot_partial, tapping-term-ms = <200>;
+ZMK_TAP_DANCE(tap_shot_part, tapping-term-ms = <200>;
     bindings = <&kp LG(LS(LC(N4)))>, <&kp LG(LS(N4))>; 
 )
 
