@@ -13,7 +13,7 @@
 };
 
 &sk {
-  release-after-ms = <3000>;
+  release-after-ms = <-1>;
   // quick-release;
   // display-name = "SK ON";
 };
@@ -30,6 +30,8 @@ ZMK_HOLD_TAP(hold_layer, bindings = <&mo>, <&kp>;
 
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
+
+#define SK_STOP &kp LANG9
 
 / {
 	behaviors {
