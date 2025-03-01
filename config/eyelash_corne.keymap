@@ -35,6 +35,10 @@
 #define ENC_PRESS   LEC
 #define JOYSTICK    JS0 JS1 JS2 JS3 JS4
 
+ZMK_HOLD_TAP(hold_layer, bindings = <&mo>, <TAP>; 
+                flavor = "balanced"; 
+                tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
+
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS)                                 \
   ZMK_HOLD_TAP(NAME, bindings = <HOLD>, <TAP>; flavor = "balanced";            \
                tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;         \
@@ -59,13 +63,10 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 	};
 };
 
-#define L_FN &hold_layer 3 GRAVE
-#define R_FN &hold_layer 3 SEMI
-#define LAYER_NUM &hold_layer 1 SPC
-#define LAYER_NAV &layer_nav 2 0
-ZMK_HOLD_TAP(layer_nav, bindings = <&mo>, <&bspc_morph>;
-                flavor = "balanced";
-                tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
+#define L_FN &hold_layer 3 (&kp GRAVE)
+#define R_FN &hold_layer 3 (&kp SEMI)
+#define LAYER_NUM &hold_layer 1 (&kp SPC)
+#define LAYER_NAV &layer_nav 2 (&bspc_morph)
 
 ZMK_LAYER(GRAPHITE,
     //╭─────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
