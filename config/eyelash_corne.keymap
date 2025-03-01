@@ -28,7 +28,7 @@
 #include "encoder.dtsi"
 
 #define L_FN &hlk_default 3 GRAVE
-#define R_FN &hlk_default 3 SEMI
+#define R_FN &hlk_hash_fn 3 0
 #define SPC_NUM &hlk_default 1 SPC
 #define BSPC_NAV &hlk_nav_bspc 2 0
 
