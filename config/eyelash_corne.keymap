@@ -24,7 +24,6 @@
 
 #define XXX &none
 #define ___ &trans
-#define MAC_CHAR &kp LC(LG(SPACE))
 
 // Home-Row Mods Definition
 // I don't believe I would be having another keyboard in the future
@@ -49,10 +48,6 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 #include "adv_functions.dtsi"
 #include "encoder.dtsi"
 
-ZMK_HOLD_TAP(hold_layer, bindings = <&mo>, <&kp>; 
-                flavor = "balanced"; 
-                tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
-
 / {
 	behaviors {
     caps_word: caps_word {
@@ -74,11 +69,11 @@ ZMK_HOLD_TAP(layer_nav, bindings = <&mo>, <&bspc_morph>;
 
 ZMK_LAYER(GRAPHITE,
     //╭─────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-      L_FN         &kp B         &kp L         &kp D         &kp W         &kp Z                               &kp UP                &sqt_morph    &kp F         &kp O         &kp U         &kp J           R_FN
+      L_FN         &kp B         &kp L         &kp D         &kp W         &kp Z                               MS_U                  &sqt_morph    &kp F         &kp O         &kp U         &kp J           R_FN
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-      &kp EQUAL    &hml LCTRL N  &hml LALT R   &hml LGUI T   &hml LSHFT S  &kp G                     &kp LEFT    XXX     &kp RIGHT   &kp Y         &hmr RSHFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I    &comma_morph
+      &kp EQUAL    &hml LCTRL N  &hml LALT R   &hml LGUI T   &hml LSHFT S  &kp G                     MS_L    MS_HC     MS_R          &kp Y         &hmr RSHFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I    &comma_morph
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-      MAC_CHAR     &kp Q         &kp X         &kp M         &kp C         &kp V              XXX              &kp DOWN              &kp K         &kp P         &dot_morph    &min_morph    &slsh_morph     &kp BSLH
+      MAC_CHAR     &kp Q         &kp X         &kp M         &kp C         &kp V              XXX              MS_D                  &kp K         &kp P         &dot_morph    &min_morph    &slsh_morph     &kp BSLH
     //╰─────────╯  ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
                                                &tog 2         LAYER_NAV    &kp TAB                                                   &kp ENTER      LAYER_NUM    &tog 1
     //                                         ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
