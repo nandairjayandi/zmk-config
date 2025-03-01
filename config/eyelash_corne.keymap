@@ -74,7 +74,6 @@ ZMK_LAYER(NAV,
     , &scroll_encoder
 )
 
-// Press XXX to cancel the sticky key
 ZMK_LAYER(FN,
     //╭─────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
       &kp F1       &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                              &mmv MOVE_UP          &kp F7        &kp F8        &kp F9        &kp F10       &kp F11         &kp F12
