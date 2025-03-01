@@ -1,0 +1,85 @@
+#include <behaviors.dtsi>
+
+#include "zmk-helpers/helper.h"
+
+#define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
+  ZMK_MOD_MORPH(NAME, mods = <(MOD_L##MOD | MOD_R##MOD)>;                      \
+                bindings = <BINDING1>, <BINDING2>;)
+
+#define COMBO_TERM_FAST 18
+#define COMBO_TERM_SLOW 30
+
+#define COMBO_IDLE_FAST 150
+#define COMBO_IDLE_SLOW 50
+
+// I am not using HRM combos
+
+// this is dual function that results in different keycode when different modifier is used
+// SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
+// SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMI, &kp BSLH)
+
+ZMK_COMBO(combo_excl, &kp EXCL, LT1 LT2 LT3, 0)
+ZMK_COMBO(combo_amps, &kp AMPS, RT1 RT2 RT3, 0)
+ZMK_COMBO(combo_par_left, &morph_par_left, LT1 LT2, 0)
+ZMK_COMBO(combo_par_rght, &morph_par_rght, RT1 RT2, 0)
+
+ZMK_COMBO(combo_capsword, &caps_word, LH1 RH1, 0, 100)
+ZMK_COMBO(combo_menu, &kp LG(LS(FSLH)), RB1 RB3, 2)
+ZMK_COMBO(combo_esc, &kp ESC, LH0 RH0, 0 1 2, 100)
+ZMK_COMBO(combo_undo, &kp LG(Z), LB1 LB2, 0, 100)
+ZMK_COMBO(combo_redo, &kp LG(LS(Z)), RB1 RB2, 0, 100)
+ZMK_COMBO(combo_sys, &tog 4, LB5 RB5, 0, 100)
+ZMK_COMBO(combo_home, &to 0, LH2 RH2, 1 2 3, 100)
+
+// VIM navigation combo
+ZMK_COMBO(combo_vim_jump_left, &kp LBRC, RT2 RM1, 2)
+ZMK_COMBO(combo_vim_jump_right, &kp RBRC, RT2 RM3, 2)
+
+ZMK_COMBO(combo_vim_word_left, &kp B, RM2 RM1, 2)
+ZMK_COMBO(combo_vim_word_right, &kp E, RM2 RM3, 2)
+
+// macOS move combo
+ZMK_COMBO(combo_move, &kp LG(LA(V)), RT3 RT1, 2)
+
+SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp QMARK)          // ,?
+SIMPLE_MORPH(sqt_morph, SFT, &kp SQT, &kp UNDER)              // '_
+SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp AT)          // .@
+SIMPLE_MORPH(slsh_morph, SFT, &kp FSLH, &kp PRCNT)        // /%
+SIMPLE_MORPH(min_morph, SFT, &kp MINUS, &kp DQT)              // -"
+SIMPLE_MORPH(morph_par_left, SFT, &tap_par_left_one, &tap_par_left_two)
+SIMPLE_MORPH(morph_par_rght, SFT, &tap_par_rght_one, &tap_par_rght_two)
+// for NUMBER layer
+SIMPLE_MORPH(eql_morph, SFT, &kp KP_EQUAL, &kp KP_DOT)        // =.
+
+SIMPLE_MORPH(bspc_morph, SFT, &kp BSPC, &kp DELETE)           // BSPC DEL
+
+ZMK_TAP_DANCE(tap_par_left_one, tapping-term-ms = <220>;
+    bindings = <&kp LPAR>, <&kp LBKT>;  // ( [
+)
+
+ZMK_TAP_DANCE(tap_par_left_two, tapping-term-ms = <220>;
+    bindings = <&kp LBRC>, <&kp LT>;    // { < 
+)
+
+ZMK_TAP_DANCE(tap_par_rght_one, tapping-term-ms = <220>;
+    bindings = <&kp RPAR>, <&kp RBKT>;  // ) ]
+)
+
+ZMK_TAP_DANCE(tap_par_rght_two,tapping-term-ms = <220>;
+    bindings = <&kp RBRC>, <&kp GT>;  // } >
+)
+
+ZMK_TAP_DANCE(tap_shot_partial, tapping-term-ms = <200>;
+    bindings = <&kp LG(LS(LC(N4)))>, <&kp LG(LS(N4))>; 
+)
+
+ZMK_TAP_DANCE(tap_shot_full, tapping-term-ms = <200>;
+    bindings = <&kp LG(LS(LC(N3)))>, <&kp LG(LS(N3))>; 
+)
+
+// Doesn't work
+// ZMK_COMBO(combo_meh_left, &sk LC(LA(LSHFT)), LM4 LM3 LM1, 2)
+// ZMK_COMBO(combo_meh_right, &sk RC(RA(RSHFT)), RM4 RM3 RM1, 2)
+
+// ZMK_COMBO(combo_hypr_left, &sk LG(LC(LA(LSHFT))), LM4 LM3 LM2 LM1, 2)
+// ZMK_COMBO(combo_hypr_right, &sk RG(RC(RA(RSHFT))), RM4 RM3 RM2 RM1, 2)
