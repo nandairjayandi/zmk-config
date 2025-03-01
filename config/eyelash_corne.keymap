@@ -111,7 +111,7 @@ ZMK_HOLD_TAP(hold_layer, bindings = <&mo>, <&kp>;
     scroll_encoder: scroll_encoder {
       compatible = "zmk,behavior-sensor-rotate";
       #sensor-binding-cells = <0>;
-      bindings = <&enc_cw_morph_scroll>, <&enc_ccw_morph_scroll>;
+      bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
       tap-ms = <30>;
     };
 
