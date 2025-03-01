@@ -44,7 +44,7 @@ ZMK_COMBO(combo_move, &kp LG(LA(V)), RT3 RT1, 2)
 SIMPLE_MORPH(morph_comma, SFT, &kp COMMA, &kp QMARK)          // ,?
 SIMPLE_MORPH(sqt_morph, SFT, &kp SQT, &kp UNDER)              // '_
 SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp AT)          // .@
-SIMPLE_MORPH(slsh_morph, SFT, &kp FSLH, &kp PRCNT)        // /%
+SIMPLE_MORPH(morph_fslh, SFT, &kp FSLH, &kp PRCNT)        // /%
 SIMPLE_MORPH(min_morph, SFT, &kp MINUS, &kp DQT)              // -"
 
 // for NUMBER layer
@@ -89,3 +89,4 @@ ZMK_TAP_DANCE(tap_shot_full, tapping-term-ms = <200>;
 // alias list
 #define MAC_CHAR &kp LC(LG(SPACE))
 #define MCOMMA &morph_comma
+#define MFSLH &morph_fslh
