@@ -16,7 +16,7 @@
 
 /* Combos */
 ZMK_COMBO(combo_semi,               &kp SEMI,           RT1 RT2 RT3, 0)
-ZMK_COMBO(combo_amps,               &morph_amps,        LT1 LT2 LT3, 0)
+ZMK_COMBO(combo_at,               &morph_at,          LT1 LT2 LT3, 0)
 // ZMK_COMBO(combo_bral,               &morph_bral,        LT1 LT2, 0)
 // ZMK_COMBO(combo_brar,               &morph_brar,        RT1 RT2, 0)
 
@@ -56,7 +56,7 @@ SIMPLE_MORPH(morph_eql,     SFT, &kp KP_EQUAL, &kp KP_DOT)        // =.
 // Backspace/Delete Morph
 SIMPLE_MORPH(morph_bspc,    SFT, &kp BSPC, &kp DELETE)           // BSPC DEL
 
-SIMPLE_MORPH(morph_amps,    SFT, &kp AMPS, &kp AT)
+SIMPLE_MORPH(morph_at,    SFT, &kp AT, &kp AMPS)
 SIMPLE_MORPH(morph_hash,    SFT, &kp HASH, &kp DLLR)
 // SIMPLE_MORPH(morph_semi,    SFT, &kp SEMI, &kp COLON) 
 
