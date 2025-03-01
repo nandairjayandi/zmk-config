@@ -30,7 +30,7 @@
 #define L_FN &hold_layer 3 GRAVE
 #define R_FN &hold_layer 3 SEMI
 #define SPC_NUM &hold_layer 1 SPC
-#define BSPC_NAV &hold_layer 2 M_BSPC
+#define BSPC_NAV &hold_layer 2 &morph_bspc
 
 ZMK_LAYER(GRAPHITE,
     //╭─────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                  ╭──────╮         ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────╮
