@@ -28,8 +28,8 @@
 #define WH_R &msc SCRL_RIGHT
 #define MS_LC &mkp LCLK
 #define MS_RC &mkp RCLK
-#define MS_HC &hold_click 0 0
+#define MS_HC &hold_click RCLK LCLK 
 
-ZMK_HOLD_TAP(hold_click, bindings = <RCLK>, <LCLK>;
+ZMK_HOLD_TAP(hold_click, bindings = <&mkp>, <&mkp>;
                 flavor = "balanced";
                 tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
