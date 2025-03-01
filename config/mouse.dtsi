@@ -44,4 +44,4 @@
 
 ZMK_HOLD_TAP(hold_click, bindings = <&mkp>, <&mkp>;
                 flavor = "balanced";
-                tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
+                tapping-term-ms = <500>; quick-tap-ms = <QUICK_TAP_MS>;)
