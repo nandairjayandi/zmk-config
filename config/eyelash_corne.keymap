@@ -52,17 +52,6 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 #include "adv_functions.dtsi"
 #include "encoder.dtsi"
 
-/ {
-	behaviors {
-    caps_word: caps_word {
-      compatible = "zmk,behavior-caps-word";
-      #binding-cells = <0>;
-      continue-list = <BACKSPACE MINUS UNDER PERIOD SLASH PERIOD>;
-      // ignore-modifiers; 
-    };
-	};
-};
-
 #define L_FN &hold_layer 3 GRAVE
 #define R_FN &hold_layer 3 SEMI
 #define SPC_NUM &hold_layer 1 SPC

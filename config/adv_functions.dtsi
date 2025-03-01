@@ -95,3 +95,14 @@ ZMK_TAP_DANCE(tap_shot_full, tapping-term-ms = <200>;
 #define M_SQT &morph_sqt
 #define M_EQL &morph_eql
 #define M_BSPC &morph_bspc
+
+/ {
+	behaviors {
+    caps_word: caps_word {
+      compatible = "zmk,behavior-caps-word";
+      #binding-cells = <0>;
+      continue-list = <BACKSPACE MINUS UNDER PERIOD SLASH PERIOD>;
+      // ignore-modifiers; 
+    };
+	};
+};
