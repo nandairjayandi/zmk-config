@@ -9,8 +9,6 @@
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/eyelash42.h"
 
-#define QUICK_TAP_MS 175
-
 #define XXX &none
 #define ___ &trans
 

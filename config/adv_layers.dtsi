@@ -5,6 +5,8 @@
 
 #include "zmk-helpers/helper.h"
 
+#define QUICK_TAP_MS 175
+
 &sl {
     release-after-ms = <0>;
     ignore-modifiers;
