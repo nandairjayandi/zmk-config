@@ -17,8 +17,9 @@
   // display-name = "SK ON";
 };
 
-ZMK_HOLD_TAP(hold_layer, bindings = <&mo>, <&kp>; 
-                flavor = "balanced"; 
+#define MAKE_HLK(NAME, HOLD, TAP)                                             \
+  ZMK_HOLD_TAP(NAME, bindings = <HOLD>, <TAP>;                           \
+                flavor = "balanced";                                          \
                 tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
 
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS)                                 \
@@ -29,6 +30,8 @@ ZMK_HOLD_TAP(hold_layer, bindings = <&mo>, <&kp>;
 
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
+
+MAKE_HLK(hlk_default, HOLD, TAP)
 
 #define SK_STOP &kp LANG9
 
