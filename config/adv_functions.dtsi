@@ -20,10 +20,10 @@
 
 ZMK_COMBO(combo_excl, &kp EXCL, LT1 LT2 LT3, 0)
 ZMK_COMBO(combo_amps, &kp AMPS, RT1 RT2 RT3, 0)
-ZMK_COMBO(combo_par_left, &morph_bral, LT1 LT2, 0)
-ZMK_COMBO(combo_par_rght, &morph_brar, RT1 RT2, 0)
+ZMK_COMBO(combo_bral, &morph_bral, LT1 LT2, 0)
+ZMK_COMBO(combo_brar, &morph_brar, RT1 RT2, 0)
 
-ZMK_COMBO(combo_capsword, &caps_word, LH1 RH1, 0, 100)
+ZMK_COMBO(combo_caps, &caps_word, LH1 RH1, 0, 100)
 ZMK_COMBO(combo_menu, &kp LG(LS(FSLH)), RB1 RB3, 2)
 ZMK_COMBO(combo_esc, &kp ESC, LH0 RH0, 0 1 2, 100)
 ZMK_COMBO(combo_undo, &kp LG(Z), LB1 LB2, 0, 100)
@@ -32,25 +32,25 @@ ZMK_COMBO(combo_sys, &tog 4, LB5 RB5, 0, 100)
 ZMK_COMBO(combo_home, &to 0, LH2 RH2, 1 2 3, 100)
 
 // VIM navigation combo
-ZMK_COMBO(combo_vim_jump_left, &kp LBRC, RT2 RM1, 2)
-ZMK_COMBO(combo_vim_jump_right, &kp RBRC, RT2 RM3, 2)
+ZMK_COMBO(combo_vim_juml, &kp LBRC, RT2 RM1, 2)
+ZMK_COMBO(combo_vim_jumr, &kp RBRC, RT2 RM3, 2)
 
-ZMK_COMBO(combo_vim_word_left, &kp B, RM2 RM1, 2)
-ZMK_COMBO(combo_vim_word_right, &kp E, RM2 RM3, 2)
+ZMK_COMBO(combo_vim_worl, &kp B, RM2 RM1, 2)
+ZMK_COMBO(combo_vim_worr, &kp E, RM2 RM3, 2)
 
 // macOS move combo
 ZMK_COMBO(combo_move, &kp LG(LA(V)), RT3 RT1, 2)
 
 SIMPLE_MORPH(morph_comma, SFT, &kp COMMA, &kp QMARK)          // ,?
-SIMPLE_MORPH(sqt_morph, SFT, &kp SQT, &kp UNDER)              // '_
+SIMPLE_MORPH(morph_sqt, SFT, &kp SQT, &kp UNDER)              // '_
 SIMPLE_MORPH(morph_dot, SFT, &kp DOT, &kp AT)          // .@
 SIMPLE_MORPH(morph_fslh, SFT, &kp FSLH, &kp PRCNT)        // /%
-SIMPLE_MORPH(min_morph, SFT, &kp MINUS, &kp DQT)              // -"
+SIMPLE_MORPH(morph_min, SFT, &kp MINUS, &kp DQT)              // -"
 
 // for NUMBER layer
-SIMPLE_MORPH(eql_morph, SFT, &kp KP_EQUAL, &kp KP_DOT)        // =.
+SIMPLE_MORPH(morph_eql, SFT, &kp KP_EQUAL, &kp KP_DOT)        // =.
 
-SIMPLE_MORPH(bspc_morph, SFT, &kp BSPC, &kp DELETE)           // BSPC DEL
+SIMPLE_MORPH(morph_bspc, SFT, &kp BSPC, &kp DELETE)           // BSPC DEL
 
 SIMPLE_MORPH(morph_bral, SFT, &tap_par_left_one, &tap_par_left_two)
 SIMPLE_MORPH(morph_brar, SFT, &tap_par_rght_one, &tap_par_rght_two)
@@ -88,6 +88,10 @@ ZMK_TAP_DANCE(tap_shot_full, tapping-term-ms = <200>;
 
 // alias list
 #define MAC_CHAR &kp LC(LG(SPACE))
-#define MCOMMA &morph_comma
-#define MFSLH &morph_fslh
-#define MDOT &morph_dot
+#define M_COMM &morph_comma
+#define M_FSLH &morph_fslh
+#define M_DOT &morph_dot
+#define M_MIN &morph_min
+#define M_SQT &morph_sqt
+#define M_EQL &morph_eql
+#define M_BSPC &morph_bspc

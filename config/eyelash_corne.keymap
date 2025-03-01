@@ -39,10 +39,6 @@ ZMK_HOLD_TAP(hold_layer, bindings = <&mo>, <&kp>;
                 flavor = "balanced"; 
                 tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
 
-ZMK_HOLD_TAP(hold_layer_morph_bspc, bindings = <&mo>, <&bspc_morph>; 
-                flavor = "balanced"; 
-                tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
-
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS)                                 \
   ZMK_HOLD_TAP(NAME, bindings = <HOLD>, <TAP>; flavor = "balanced";            \
                tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;         \
@@ -74,13 +70,13 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
 ZMK_LAYER(GRAPHITE,
     //╭─────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-      L_FN         &kp B         &kp L         &kp D         &kp W         &kp Z                               MS_U                  &sqt_morph    &kp F         &kp O         &kp U         &kp J           R_FN
+      L_FN         &kp B         &kp L         &kp D         &kp W         &kp Z                               MS_U                  M_SQT         &kp F         &kp O         &kp U         &kp J           R_FN
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-      &kp EQUAL    &hml LCTRL N  &hml LALT R   &hml LGUI T   &hml LSHFT S  &kp G                     MS_L    MS_HC     MS_R          &kp Y         &hmr RSHFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I    MCOMMA
+      &kp EQUAL    &hml LCTRL N  &hml LALT R   &hml LGUI T   &hml LSHFT S  &kp G                     MS_L    MS_HC     MS_R          &kp Y         &hmr RSHFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I    M_COMM
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-      MAC_CHAR     &kp Q         &kp X         &kp M         &kp C         &kp V              XXX              MS_D                  &kp K         &kp P         MDOT    &min_morph    MFSLH     &kp BSLH
+      MAC_CHAR     &kp Q         &kp X         &kp M         &kp C         &kp V              XXX              MS_D                  &kp K         &kp P          M_DOT         M_MIN         M_FSLH         &kp BSLH
     //╰─────────╯  ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
-                                               &tog 2         BSPC_NAV    &kp TAB                                                   &kp ENTER      SPC_NUM    &tog 1
+                                               &tog 2        BSPC_NAV      &kp TAB                                                   &kp ENTER     SPC_NUM       &tog 1
     //                                         ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
     , &scroll_encoder
@@ -90,11 +86,11 @@ ZMK_LAYER(NUMBER,
     //╭──────────╮ ╭───────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
         ___        &kp KP_MULTIPLY &kp N7        &kp N8        &kp N9        &kp KP_PLUS                         &kp UP                &kp KP_MULTIPLY &kp AMPS    &kp STAR      &kp SQT       &kp KP_PLUS       ___ 
     //├──────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-        ___        &hml LCTRL N0   &hml LALT N4  &hml LGUI N5  &hml LSHFT N6 &eql_morph                &kp LEFT     XXX     &kp RIGHT  &eql_morph    &hmr RSHFT DLLR &hmr RGUI PRCNT  &hmr RALT CARET  &hmr RCTRL GRAVE  ___ 
+        ___        &hml LCTRL N0   &hml LALT N4  &hml LGUI N5  &hml LSHFT N6 M_EQL                &kp LEFT     XXX     &kp RIGHT       M_EQL    &hmr RSHFT DLLR &hmr RGUI PRCNT  &hmr RALT CARET  &hmr RCTRL GRAVE  ___ 
     //├──────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
         ___        &kp KP_DIVIDE   &kp N1        &kp N2        &kp N3        &kp KP_MINUS       XXX              &kp DOWN              &kp KP_DIVIDE &kp EXCL      &kp AT        &kp HASH      &kp KP_MINUS      ___ 
     //╰──────────╯ ╰───────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
-                                                 &tog 2       BSPC_NAV   &kp TAB                                                      &kp ENTER      SPC_NUM       &tog 1
+                                                 &tog 2         BSPC_NAV     &kp TAB                                                   &kp ENTER      SPC_NUM      &tog 1
     //                                           ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
     , &arrow_encoder
