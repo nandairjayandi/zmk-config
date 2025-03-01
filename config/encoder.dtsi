@@ -33,7 +33,7 @@
 			compatible = "zmk,behavior-sensor-rotate";
 			#sensor-binding-cells = <0>;
 			bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-			tap-ms = <60>;
+			tap-ms = <80>;
 		};
 		
 		enc_cw_morph_scroll: enc_cw_morph_scroll {
