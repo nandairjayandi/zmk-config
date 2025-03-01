@@ -27,10 +27,10 @@
 #include "mouse.dtsi"
 #include "encoder.dtsi"
 
-#define L_FN &hlk_default (&mo 3) (&kp GRAVE)
-#define R_FN &hlk_default (&mo 3) (&kp SEMI)
-#define SPC_NUM &hlk_default (&mo 1) (&kp SPC)
-#define BSPC_NAV &hlk_default (&mo 2) (&morph_bspc)
+#define L_FN &hlk_default 3 GRAVE
+#define R_FN &hlk_default 3 SEMI
+#define SPC_NUM &hlk_default 1 SPC
+#define BSPC_NAV &hlk_default 2 0
 
 ZMK_LAYER(GRAPHITE,
     //╭─────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                  ╭──────╮         ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────╮
