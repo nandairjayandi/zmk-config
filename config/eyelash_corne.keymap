@@ -70,7 +70,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 #define L_FN &hold_layer 3 GRAVE
 #define R_FN &hold_layer 3 SEMI
 #define SPC_NUM &hold_layer 1 SPC
-#define BSPC_NAV &hold_layer_morph_bspc 2 0
+#define BSPC_NAV &hold_layer 2 &bspc_morph
 
 ZMK_LAYER(GRAPHITE,
     //╭─────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
