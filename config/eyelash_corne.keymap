@@ -128,33 +128,6 @@ ZMK_HOLD_TAP(hold_layer, bindings = <&mo>, <&kp>;
       bindings = <&msc SCRL_DOWN>, <&msc SCRL_LEFT>;
       mods = <(MOD_RCTL|MOD_LCTL)>;
     };
-
-
-    // enc_cw_morph_main: enc_cw_morph_main {
-    //   compatible = "zmk,behavior-mod-morph"
-    //   #sensor-binding-cells = <0>;
-    //   bindings = <&enc_cw_rshft>, <&enc_cw_rgui>, <&enc_cw_ralt>;
-    //   mods = <MOD_RSHFT|MOD_RGUI|RMOD_RALT|MOD_RCTRL>;
-    // };
-
-    // enc_cw_rshft: enc_cw_morph_rshft {
-    //   compatible = "zmk,behavior-mod-morph"
-    //   #sensor-binding-cells = <0>;
-    //   bindings = 
-    //   mods = <MOD_RSHFT>;
-    // };
-
-    // enc_cw_rgui: enc_cw_morph_rgui {
-    //   compatible = "zmk,behavior-mod-morph"
-    //   #sensor-binding-cells = <0>;
-    //   bindings = 
-    //   mods = <MOD_RSHFT>;
-    // };
-		// rot_kp: sensor_rotate_kp {
-		//     compatible = "zmk,behavior-sensor-rotate-var";
-		//     #sensor-binding-cells = <2>;
-		//     bindings = <&kp>, <&kp>;
-		// };
 		
     caps_word: caps_word {
       compatible = "zmk,behavior-caps-word";
@@ -294,7 +267,7 @@ ZMK_LAYER(GRAPHITE,
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭─────────┼─────────┼─────────╮ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       &kp EQUAL    &hml LCTRL N  &hml LALT R   &hml LGUI T   &hml LSHFT S  &kp G                     &kp LEFT    XXX     &kp RIGHT   &kp Y         &hmr RSHFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I    &comma_morph
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-      MAC_CHAR     &kp Q         &kp X         &kp M         &kp C         &kp V              XXX              &kp DOWN              &kp K         &kp P         &dot_morph    &min_morph   &slsh_morph      &kp BSLH
+      MAC_CHAR     &kp Q         &kp X         &kp M         &kp C         &kp V              XXX              &kp DOWN              &kp K         &kp P         &dot_morph    &min_morph    &slsh_morph     &kp BSLH
     //╰─────────╯  ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
                                                &tog 2         LAYER_NAV    &kp TAB                                                   &kp ENTER      LAYER_NUM    &tog 1
     //                                         ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
