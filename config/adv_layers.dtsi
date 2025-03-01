@@ -1,5 +1,4 @@
-/* contains configuration and macro helper for layer setup
-*/
+/* contains configuration and macro helper for layer setup */
 
 #include <behaviors.dtsi>
 
