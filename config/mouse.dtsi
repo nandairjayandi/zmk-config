@@ -5,6 +5,18 @@
 #include <input/processors.dtsi>
 #include "zmk-helpers/helper.h"
 
+/* this is for input processor if you want to modify the behaviour
+// not sure what the use case for me is
+   &mmv_input_listener {
+       input-processors = <&zip_xy_scaler 2 1>;
+   };
+
+   &msc_input_listener {
+       input-processors = <&zip_xy_scaler 2 1>;
+   };
+
+ */
+
 // Based on @caksoylar's config, defaults in comments
 &mmv {
   acceleration-exponent = <1>;          // 1

@@ -9,18 +9,6 @@
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/eyelash42.h"
 
-/* this is for input processor if you want to modify the behaviour
-// not sure what the use case for me is
-   &mmv_input_listener {
-       input-processors = <&zip_xy_scaler 2 1>;
-   };
-
-   &msc_input_listener {
-       input-processors = <&zip_xy_scaler 2 1>;
-   };
-
- */
-
 &sl {
     release-after-ms = <0>;
     ignore-modifiers;
@@ -248,10 +236,6 @@ ZMK_HOLD_TAP(layer_nav, bindings = <&mo>, <&bspc_morph>;
                 tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
                 
 // I am not using HRM combos tap only since I use combinations of modifiers for MEH and HYPR
-
-// #include "mouse.dtsi"
-// note that this should be written after MAKE_HRM, though I'll think about it later. The current implementation uses dt-bindings which i need to explore a little bit more
-// for now the important bit is to make timeless homerow first
 
 ZMK_LAYER(GRAPHITE,
     //╭─────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
