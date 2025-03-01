@@ -35,7 +35,11 @@
 #define ENC_PRESS   LEC
 #define JOYSTICK    JS0 JS1 JS2 JS3 JS4
 
-ZMK_HOLD_TAP(hold_layer, bindings = <&mo>, <TAP>; 
+ZMK_HOLD_TAP(hold_layer, bindings = <&mo>, <&kp>; 
+                flavor = "balanced"; 
+                tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
+
+ZMK_HOLD_TAP(hold_layer_morph_bspc, bindings = <&mo>, <&bspc_morph>; 
                 flavor = "balanced"; 
                 tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
 
@@ -63,10 +67,10 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 	};
 };
 
-#define L_FN &hold_layer 3 (&kp GRAVE)
-#define R_FN &hold_layer 3 (&kp SEMI)
-#define LAYER_NUM &hold_layer 1 (&kp SPC)
-#define LAYER_NAV &layer_nav 2 (&bspc_morph)
+#define L_FN &hold_layer 3 GRAVE
+#define R_FN &hold_layer 3 SEMI
+#define SPC_NUM &hold_layer 1 SPC
+#define BSPC_NAV &hold_layer_morph_bspc 2 0
 
 ZMK_LAYER(GRAPHITE,
     //╭─────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                     ╭─────────╮           ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
@@ -76,7 +80,7 @@ ZMK_LAYER(GRAPHITE,
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       MAC_CHAR     &kp Q         &kp X         &kp M         &kp C         &kp V              XXX              MS_D                  &kp K         &kp P         MDOT    &min_morph    MFSLH     &kp BSLH
     //╰─────────╯  ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
-                                               &tog 2         LAYER_NAV    &kp TAB                                                   &kp ENTER      LAYER_NUM    &tog 1
+                                               &tog 2         BSPC_NAV    &kp TAB                                                   &kp ENTER      SPC_NUM    &tog 1
     //                                         ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
     , &scroll_encoder
@@ -90,7 +94,7 @@ ZMK_LAYER(NUMBER,
     //├──────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
         ___        &kp KP_DIVIDE   &kp N1        &kp N2        &kp N3        &kp KP_MINUS       XXX              &kp DOWN              &kp KP_DIVIDE &kp EXCL      &kp AT        &kp HASH      &kp KP_MINUS      ___ 
     //╰──────────╯ ╰───────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
-                                                 &tog 2       LAYER_NAV   &kp TAB                                                      &kp ENTER      LAYER_NUM       &tog 1
+                                                 &tog 2       BSPC_NAV   &kp TAB                                                      &kp ENTER      SPC_NUM       &tog 1
     //                                           ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
     , &arrow_encoder
@@ -104,7 +108,7 @@ ZMK_LAYER(NAV,
     //├──────┤ ├───────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────┤  ╭──────╮ ╰─────────────────┼─────────────────┼─────────╯      ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
        ___     &kp  C_BRI_DN       &tap_shot_full    &kp LG(LS(N5))    &tap_shot_partial &kp C_VOL_DN       &kp F15                  MS_D                      XXX         &kp END       &kp LC(ENTER) &kp PG_DN      XXX             XXX
     //╰──────╯ ╰───────────────────┴─────────────────┼─────────────────┼─────────────────┼─────────────┤  ╰──────╯                   ╰─────────────────╯                ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯ ╰──────╯
-                                                     &tog 2           LAYER_NAV          &kp TAB                                                                        &kp ENTER      LAYER_NUM    &tog 1
+                                                     &tog 2           BSPC_NAV          &kp TAB                                                                        &kp ENTER      SPC_NUM    &tog 1
     //                                               ╰─────────────────┴─────────────────┴─────────────╯                                                                ╰─────────────┴─────────────┴─────────────╯
 
     , &arrow_encoder
@@ -119,7 +123,7 @@ ZMK_LAYER(FN,
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰─────────┼─────────┼─────────╯ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
       &kp MINUS    &kp N1        &kp N2        &kp N3        &kp N4        &kp N5           &kp LEFT           &mmv MOVE_DOWN        &kp N6        &kp N7        &kp N8        &kp N9        &kp N0          &kp EQUAL
     //╰─────────╯  ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯           ╰─────────╯           ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯ ╰──────╯
-                                               &tog 2         LAYER_NAV    &kp TAB                                                   &kp ENTER      LAYER_NUM    &tog 1
+                                               &tog 2         BSPC_NAV    &kp TAB                                                   &kp ENTER      SPC_NUM    &tog 1
     //                                         ╰─────────────┴─────────────┴─────────────╯                                           ╰─────────────┴─────────────┴─────────────╯
 
     , &arrow_encoder
