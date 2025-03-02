@@ -27,9 +27,9 @@
 #include "mouse.dtsi"
 #include "encoder.dtsi"
 
-#define L_FN &hlk_default 3 GRAVE
+#define L_FN &lt 3 GRAVE
 #define R_FN &hlk_hash_fn 3 0
-#define SPC_NUM &hlk_default 1 SPC
+#define SPC_NUM &lt 1 SPC
 #define BSPC_NAV &hlk_nav_bspc 2 0
 
 ZMK_LAYER(GRAPHITE,
@@ -40,7 +40,7 @@ ZMK_LAYER(GRAPHITE,
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰──────┼──────┼──────╯  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────┤
        M_BRAL      &kp Q         &kp X         &kp M         &kp C         &kp V             MAC_CHAR        MS_D            &kp K         &kp P          M_MIN         M_FSLH       &kp BSLH         M_BRAR
     //╰─────────╯  ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯        ╰──────╯         ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯ ╰─────────╯
-                                               &tog 2         BSPC_NAV     &kp TAB                                           &kp ENTER      SPC_NUM      &tog 1
+                                               &sk 2         BSPC_NAV     &kp TAB                                           &kp ENTER      SPC_NUM      &sk 1
     //                                         ╰─────────────┴─────────────┴─────────────╯                                   ╰─────────────┴─────────────┴─────────────╯
 
     , &arrow_encoder

@@ -31,7 +31,6 @@
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
-MAKE_HLK(hlk_default, &mo, &kp)
 MAKE_HLK(hlk_nav_bspc, &mo, &morph_bspc)
 MAKE_HLK(hlk_hash_fn, &mo, &morph_hash)
 
