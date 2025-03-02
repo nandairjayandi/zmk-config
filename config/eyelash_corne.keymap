@@ -29,7 +29,7 @@
 
 #define L_FN &lt 3 GRAVE
 #define R_FN &hlk_hash_fn 3 0
-#define SPC_NUM &lt 1 SPC
+#define SPC_NUM &lt 1 SPACE
 #define BSPC_NAV &hlk_nav_bspc 2 0
 
 ZMK_LAYER(GRAPHITE,
