@@ -7,12 +7,12 @@
 #define QUICK_TAP_MS 175
 
 &sl {
-    release-after-ms = <0>;
+    release-after-ms = <3000>;
     ignore-modifiers;
 };
 
 &sk {
-  release-after-ms = <5000>;
+  release-after-ms = <8000>;
   // quick-release;
   // display-name = "SK ON";
 };
