@@ -67,11 +67,11 @@ SIMPLE_MORPH(morph_brar,    SFT, &tap_brar_one, &tap_brar_two)
 
 /* Tap Dance */
 // Bracket Tap Dance 
-ZMK_TAP_DANCE(tap_bral_one,     tapping-term-ms = <220>; bindings = <&kp LPAR>, <&kp LBKT>;) // ( [
-ZMK_TAP_DANCE(tap_bral_two,     tapping-term-ms = <220>; bindings = <&kp LBRC>, <&kp LT>;) // { < 
+ZMK_TAP_DANCE(tap_bral_one,     tapping-term-ms = <280>; bindings = <&kp LPAR>, <&kp LBKT>;) // ( [
+ZMK_TAP_DANCE(tap_bral_two,     tapping-term-ms = <280>; bindings = <&kp LBRC>, <&kp LT>;) // { < 
 
-ZMK_TAP_DANCE(tap_brar_one,     tapping-term-ms = <220>; bindings = <&kp RPAR>, <&kp RBKT>;) // ) ]
-ZMK_TAP_DANCE(tap_brar_two,     tapping-term-ms = <220>; bindings = <&kp RBRC>, <&kp GT>;) // } >
+ZMK_TAP_DANCE(tap_brar_one,     tapping-term-ms = <280>; bindings = <&kp RPAR>, <&kp RBKT>;) // ) ]
+ZMK_TAP_DANCE(tap_brar_two,     tapping-term-ms = <280>; bindings = <&kp RBRC>, <&kp GT>;) // } >
 
 // Screenshot Tap Dance
 ZMK_TAP_DANCE(tap_shot_part,    tapping-term-ms = <200>; bindings = <&kp LG(LS(LC(N4)))>, <&kp LG(LS(N4))>;)
