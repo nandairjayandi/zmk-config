@@ -46,11 +46,11 @@ ZMK_LAYER(GRAPHITE,
 
 ZMK_LAYER(NUMBER,
     //╭─────────╮ ╭───────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                 ╭──────╮         ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭──────╮
-        ___       &kp KP_MULTIPLY &kp N7        &kp N8        &kp N9        &kp KP_PLUS                      MS_U            &kp KP_MULTIPLY &kp AMPS    &kp STAR      &kp SQT       &kp KP_PLUS       ___ 
+        ___       &kp KP_MULTIPLY &kp N7        &kp N8        &kp N9        &kp KP_PLUS                      MS_U            &kp GRAVE &kp AMPS    &kp STAR      &kp SQT       &kp KP_PLUS       ___ 
     //├─────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤          ╭──────┼──────┼──────╮  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-        ___       &hml LCTRL N0   &hml LALT N4  &hml LGUI N5  &hml LSHFT N6 M_EQL                     MS_L   MS_HC  MS_R     M_EQL         &hmr RSHFT DLLR &hmr RGUI PRCNT  &hmr RALT CARET  &hmr RCTRL GRAVE  ___ 
+        ___       &hml LCTRL N0   &hml LALT N4  &hml LGUI N5  &hml LSHFT N6 M_EQL                     MS_L   MS_HC  MS_R     M_COMM        &hmr RSHFT DLLR &hmr RGUI PRCNT  &hmr RALT CARET  &hmr RCTRL EQUAL  ___ 
     //├─────────┤ ├───────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮╰──────┼──────┼──────╯  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├──────┤
-        ___       &kp KP_DIVIDE   &kp N1        &kp N2        &kp N3        &kp KP_MINUS       XXX           MS_D            &kp KP_DIVIDE &kp EXCL      &kp AT        &kp HASH      &kp KP_MINUS      ___ 
+        ___       &kp KP_DIVIDE   &kp N1        &kp N2        &kp N3        &kp KP_MINUS       XXX           MS_D            M_BRAL        &kp EXCL      &kp AT        &kp HASH      &kp KP_MINUS      ___ 
     //╰─────────╯ ╰───────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯       ╰──────╯         ├─────────────┼─────────────┼─────────────┼───────────────────────────╯ ╰──────╯
                                                 &to 2         BSPC_NAV     &kp TAB                                           &kp ENTER      SPC_NUM      &to 1
     //                                          ╰─────────────┴─────────────┴─────────────╯                                  ╰─────────────┴─────────────┴─────────────╯
