@@ -6,16 +6,16 @@
 
 #define QUICK_TAP_MS 175
 
-&sl {
-    release-after-ms = <3000>;
-    ignore-modifiers;
-};
+// &sl {
+//     release-after-ms = <3000>;
+//     ignore-modifiers;
+// };
 
-&sk {
-  release-after-ms = <8000>;
-  // quick-release;
-  // display-name = "SK ON";
-};
+// &sk {
+//   release-after-ms = <8000>;
+//   // quick-release;
+//   // display-name = "SK ON";
+// };
 
 #define MAKE_HLK(NAME, HOLD, TAP)                                             \
   ZMK_HOLD_TAP(NAME, bindings = <HOLD>, <TAP>;                           \
