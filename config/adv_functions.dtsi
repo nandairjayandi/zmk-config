@@ -100,6 +100,7 @@ ZMK_TAP_DANCE(tap_paste_move,   tapping-term-ms = <200>; bindings = <&kp LG(V)>,
 #define M_HASH &morph_hash
 #define T_COPY &tap_copy_cut
 #define T_PASTE &tap_paste_move
+#define MAC_ALL &kp LG(A)
 
 /* Templates */
 
