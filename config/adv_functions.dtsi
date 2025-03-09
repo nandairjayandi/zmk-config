@@ -27,7 +27,8 @@ ZMK_COMBO(combo_undo,               &kp LG(Z),          LB1 LB2, 0, 100)
 ZMK_COMBO(combo_redo,               &kp LG(LS(Z)),      RB1 RB2, 0, 100)
 
 // macOS move combo 
-ZMK_COMBO(combo_move,               &kp LG(LA(V)),      LT3 LT1, 2)
+ZMK_COMBO(combo_char,               &kp LC(LG(SPACE)),  LM0 RM0, 0)
+ZMK_COMBO(combo_menu,               &kp LG(LS(FSLH)),   RB1 RB3, 2)
 
 // VIM navigation combo 
 ZMK_COMBO(combo_vim_jump_left,      &kp LBRC,           RT2 RM1, 2)
@@ -39,7 +40,6 @@ ZMK_COMBO(combo_vim_word_right,     &kp E,              RM2 RM3, 2)
 // Layer Navigation Combo   
 ZMK_COMBO(combo_sys,                &tog 4,             LB5 RB5, 0, 100)
 ZMK_COMBO(combo_home,               &to 0,              LH2 RH2, 1 2 3, 100)
-ZMK_COMBO(combo_menu,               &kp LG(LS(FSLH)),   RB1 RB3, 2)
 
 /* Simple Morph */
 // Graphite Specific Morph
@@ -87,7 +87,6 @@ ZMK_TAP_DANCE(tap_paste_move,   tapping-term-ms = <200>; bindings = <&kp LG(V)>,
 // ZMK_COMBO(combo_hypr_right, &sk RG(RC(RA(RSHFT))), RM4 RM3 RM2 RM1, 2)
 
 // alias list
-#define MAC_CHAR &kp LC(LG(SPACE))
 #define M_COMM &morph_comma
 #define M_FSLH &morph_fslh
 #define M_DOT &morph_dot
