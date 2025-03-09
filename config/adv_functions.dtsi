@@ -77,6 +77,8 @@ ZMK_TAP_DANCE(tap_brar_two,     tapping-term-ms = <280>; bindings = <&kp RBRC>, 
 ZMK_TAP_DANCE(tap_shot_part,    tapping-term-ms = <200>; bindings = <&kp LG(LS(LC(N4)))>, <&kp LG(LS(N4))>;)
 ZMK_TAP_DANCE(tap_shot_full,    tapping-term-ms = <200>; bindings = <&kp LG(LS(LC(N3)))>, <&kp LG(LS(N3))>;)
 
+ZMK_TAP_DANCE(tap_copy_cut,     tapping-term-ms = <200>; bindings = <&kp LG(C)>, <&kp LG(X)>;)
+ZMK_TAP_DANCE(tap_paste_move,   tapping-term-ms = <200>; bindings = <&kp LG(V)>, <&kp LG(LA(V))>;)
 // Doesn't work
 // ZMK_COMBO(combo_meh_left, &sk LC(LA(LSHFT)), LM4 LM3 LM1, 2)
 // ZMK_COMBO(combo_meh_right, &sk RC(RA(RSHFT)), RM4 RM3 RM1, 2)
@@ -96,6 +98,8 @@ ZMK_TAP_DANCE(tap_shot_full,    tapping-term-ms = <200>; bindings = <&kp LG(LS(L
 #define M_BRAL &morph_bral
 #define M_BRAR &morph_brar
 #define M_HASH &morph_hash
+#define T_COPY &tap_copy_cut
+#define T_PASTE &tap_paste_move
 
 /* Templates */
 
