@@ -40,7 +40,9 @@ ZMK_COMBO(combo_vim_word_right,     &kp E,              RM2 RM3, 2)
 // Layer Navigation Combo   
 ZMK_COMBO(combo_sys,                &tog 4,             LB5 RB5, 0, 100)
 ZMK_COMBO(combo_fn,                 &sl 3,              LT5 RT5, 0, 100)
-ZMK_COMBO(combo_home,               &to 0,              LH2 RH2, 1 2 3, 100)
+ZMK_COMBO(combo_home,               &to 0,              LH2 RH2, 1 2 3 4, 100)
+ZMK_COMBO(combo_number,             &to 1,              LM5 LH1, 0, 100)
+ZMK_COMBO(combo_nav,                &to 2,              RM5 RH1, 0, 100)
 
 /* Simple Morph */
 // Graphite Specific Morph
