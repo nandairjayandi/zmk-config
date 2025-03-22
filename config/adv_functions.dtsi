@@ -43,6 +43,7 @@ ZMK_COMBO(combo_fn,                 &sl 3,              LT5 RT5, 0, 100)
 ZMK_COMBO(combo_home,               &to 0,              LH2 RH2, 1 2 3 4, 100)
 ZMK_COMBO(combo_number,             &tog 1,             LM5 LH1, 100)
 ZMK_COMBO(combo_nav,                &tog 2,             RM5 RH1, 100)
+ZMK_COMBO(combo_meh,                &sk LC(LA(LS)),     LH2 RH2, 0, 100)
 
 /* Simple Morph */
 // Graphite Specific Morph
