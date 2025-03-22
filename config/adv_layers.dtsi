@@ -34,7 +34,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 MAKE_HLK(hlk_nav_bspc, &mo, &morph_bspc)
 MAKE_HLK(hlk_hash_fn, &mo, &morph_hash)
 
-#define SK_STOP &kp LANG9
+#define SK_STOP &kp LANG9 // cancels Sticky Key 
 
 / {
 	behaviors {
