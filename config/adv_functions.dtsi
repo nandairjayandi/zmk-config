@@ -4,6 +4,17 @@
 
 #include "zmk-helpers/helper.h"
 
+&sl {
+    release-after-ms = <0>;
+    ignore-modifiers;
+};
+
+&sk {
+  release-after-ms = <2000>;
+  // quick-release;
+  // display-name = "SK ON";
+};
+
 #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
   ZMK_MOD_MORPH(NAME, mods = <(MOD_L##MOD | MOD_R##MOD)>;                      \
                 bindings = <BINDING1>, <BINDING2>;)
