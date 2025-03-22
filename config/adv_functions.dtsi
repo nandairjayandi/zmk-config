@@ -15,8 +15,8 @@
 #define COMBO_IDLE_SLOW 50
 
 /* Combos */
-ZMK_COMBO(combo_semi,               &kp SEMI,           RT1 RT2 RT3, 0)
-ZMK_COMBO(combo_at,               &morph_at,          LT1 LT2 LT3, 0)
+ZMK_COMBO(combo_semi,               &kp SEMI,           RT1 RT2 RT3, 0, 45)
+ZMK_COMBO(combo_at,               &morph_at,          LT1 LT2 LT3, 0, 45)
 // ZMK_COMBO(combo_bral,               &morph_bral,        LT1 LT2, 0)
 // ZMK_COMBO(combo_brar,               &morph_brar,        RT1 RT2, 0)
 
