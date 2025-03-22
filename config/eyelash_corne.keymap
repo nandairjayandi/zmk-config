@@ -37,9 +37,11 @@
 #include "encoder.dtsi"
 
 #define L_FN &lt 3 GRAVE
-#define R_FN &hlk_hash_fn 3 0
+#define R_FN &ht_hash_fn 3 0
 #define SPC_NUM &lt 1 SPACE
-#define BSPC_NAV &hlk_nav_bspc 2 0
+#define BSPC_NAV &ht_nav_bspc 2 0
+#define HT_MEH &ht_mo_sk LC(LA(LSHFT)) LC(LA(LSHFT))
+#define HT_HYPR &ht_mo_sk LC(LA(LS(LGUI))) LC(LA(LS(LGUI)))
 
 ZMK_LAYER(GRAPHITE,
     //╭─────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                  ╭──────╮         ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────╮
