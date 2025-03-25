@@ -46,8 +46,8 @@ ZMK_COMBO(combo_vim_jump_right,     &kp RBRC,           RT2 RT3, 2)
 ZMK_COMBO(combo_pgup,               &kp PG_UP,          RH1 RT2, 2)
 ZMK_COMBO(combo_pgdn,               &kp PG_DN,          RH1 RM2, 2)
 
-ZMK_COMBO(combo_home,               &kp HOME,           RH1 RM3, 2)
-ZMK_COMBO(combo_end,                &kp END,            RH1 RM1, 2)
+ZMK_COMBO(combo_home,               &kp HOME,           RH1 RM1, 2)
+ZMK_COMBO(combo_end,                &kp END,            RH1 RM3, 2)
 
 ZMK_COMBO(combo_vim_word_left,      &kp B,              RM2 RM1, 2)
 ZMK_COMBO(combo_vim_word_right,     &kp E,              RM2 RM3, 2)
