@@ -25,19 +25,14 @@
 #include "mouse.dtsi"
 #include "encoder.dtsi"
 
-#define L_FN &lt 3 GRAVE
-#define R_FN &ht_hash_fn 3 0
-#define SPC_NUM &lt 1 SPACE
-#define BSPC_NAV &ht_nav_bspc 2 0
-// #define HT_HYPR &ht_mo_sk LC(LA(LS(LGUI))) LC(LA(LS(LGUI)))
 
 ZMK_LAYER(GRAPHITE,
     //╭─────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                  ╭──────╮         ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────╮
-       L_FN        &kp B         &kp L         &kp D         &kp W         &kp Z                             MS_U             M_SQT        &kp F         &kp O         &kp U         &kp J            R_FN
+       M_GRAVE     &kp B         &kp L         &kp D         &kp W         &kp Z                             MS_U             M_SQT        &kp F         &kp O         &kp U         &kp J            M_HASH
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤           ╭──────┼──────┼──────╮  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────┤
-       M_COMM      &hml LCTRL N  &hml LALT R   &hml LGUI T   &hml LSHFT S  &kp G                      MS_L   MS_HC  MS_R     &kp Y         &hmr RSHFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I     M_DOT
+       L_FN        &hml LCTRL N  &hml LALT R   &hml LGUI T   &hml LSHFT S  &kp G                      MS_L   MS_HC  MS_R     &kp Y         &hmr RSHFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I     R_FN
     //├─────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ╭──────╮ ╰──────┼──────┼──────╯  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────┤
-       M_BRAL      &kp Q         &kp X         &kp M         &kp C         &kp V             XXX             MS_D            &kp K         &kp P          M_MIN         M_FSLH       &kp BSLH              M_BRAR 
+       M_BRAL      &kp Q         &kp X         &kp M         &kp C         &kp V             XXX             MS_D            &kp K         &kp P          M_MIN         M_FSLH       &kp BSLH         M_BRAR 
     //╰─────────╯  ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ╰──────╯        ╰──────╯         ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯ ╰─────────╯
                                                T_SUPER         BSPC_NAV     &kp TAB                                            &kp ENTER      SPC_NUM      T_SUPER
     //                                         ╰─────────────┴─────────────┴─────────────╯                                   ╰─────────────┴─────────────┴─────────────╯

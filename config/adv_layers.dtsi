@@ -32,10 +32,18 @@ MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
 MAKE_HT(ht_nav_bspc, &mo, &morph_bspc)
-MAKE_HT(ht_hash_fn, &mo, &morph_hash)
+
+MAKE_HT(ht_comma_fn, &mo, &morph_comma)
+MAKE_HT(ht_dot_fn, &mo, &morph_dot)
 // MAKE_HT(ht_mo_sk, &kp, &sk)
 
 #define SK_STOP &kp LANG9 // cancels Sticky Key 
+
+#define L_FN &ht_comma_fn 3 0
+#define R_FN &ht_dot_fn 3 0
+
+#define SPC_NUM &lt 1 SPACE
+#define BSPC_NAV &ht_nav_bspc 2 0
 
 / {
 	behaviors {

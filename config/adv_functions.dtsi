@@ -38,7 +38,7 @@ ZMK_COMBO(combo_undo,               &kp LG(Z),          LB1 LB2, 0)
 ZMK_COMBO(combo_redo,               &kp LG(LS(Z)),      RB1 RB2, 0)
 
 // macOS move combo 
-ZMK_COMBO(combo_char,               &kp LC(LG(SPACE)),  LM5 RM5, 0)
+ZMK_COMBO(combo_char,               &kp LC(LG(SPACE)),  LT5 RT5, 0)
 ZMK_COMBO(combo_menu,               &kp LG(LS(FSLH)),   RB1 RB3, 2)
 
 // VIM navigation combo 
@@ -50,7 +50,7 @@ ZMK_COMBO(combo_vim_word_right,     &kp E,              RM2 RM3, 2)
 
 // Layer Navigation Combo   
 ZMK_COMBO(combo_sys,                &tog 4,             LB5 RB5, 0)
-ZMK_COMBO(combo_fn,                 &sl 3,              LT5 RT5, 0)
+ZMK_COMBO(combo_fn,                 &tog 3,             LM5 RM5, 0)
 ZMK_COMBO(combo_home,               &to 0,              LH2 RH2, 1 2 3 4)
 ZMK_COMBO(combo_number,             &tog 1,             LM5 LH1)
 ZMK_COMBO(combo_nav,                &tog 2,             RM5 RH1)
@@ -105,15 +105,14 @@ ZMK_TAP_DANCE(tap_meh_hypr,   tapping-term-ms = <200>; bindings = <&sk LC(LA(LSH
 // ZMK_COMBO(combo_hypr_right, &sk RG(RC(RA(RSHFT))), RM4 RM3 RM2 RM1, 2)
 
 // alias list
-#define M_COMM &morph_comma
 #define M_FSLH &morph_fslh
-#define M_DOT &morph_dot
 #define M_MIN &morph_min
 #define M_SQT &morph_sqt
 #define M_EQL &morph_eql
 #define M_BSPC &morph_bspc
 #define M_BRAL &morph_bral
 #define M_BRAR &morph_brar
+#define M_GRAVE &kp GRAVE
 #define M_HASH &morph_hash
 #define T_COPY &tap_copy_cut
 #define T_PASTE &tap_paste_move
