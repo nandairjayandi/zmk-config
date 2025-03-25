@@ -42,8 +42,8 @@ ZMK_COMBO(combo_char,               &kp LC(LG(SPACE)),  LT5 RT5, 0)
 ZMK_COMBO(combo_menu,               &kp LG(LS(FSLH)),   RB1 RB3, 2)
 
 // VIM navigation combo 
-ZMK_COMBO(combo_vim_jump_left,      &ht_kp LBRC HOME,           RT2 RT1, 2)
-ZMK_COMBO(combo_vim_jump_right,     &kp RBRC END,           RT2 RT3, 2)
+ZMK_COMBO(combo_vim_jump_left,      &ht_kp HOME LBRC,           RT2 RT1, 2)
+ZMK_COMBO(combo_vim_jump_right,     &ht_kp END RBRC,           RT2 RT3, 2)
 
 // ZMK_COMBO(combo_pgup,               &kp PG_UP,          RH0 RT2, 2)
 // ZMK_COMBO(combo_pgdn,               &kp PG_DN,          RH0 RM2, 2)
@@ -51,8 +51,8 @@ ZMK_COMBO(combo_vim_jump_right,     &kp RBRC END,           RT2 RT3, 2)
 // ZMK_COMBO(combo_home,               &kp HOME,           RH0 RM1, 2)
 // ZMK_COMBO(combo_end,                &kp END,            RH0 RM3, 2)
 
-ZMK_COMBO(combo_vim_word_left,      &ht_kp B PG_DN,              RM2 RM1, 2)
-ZMK_COMBO(combo_vim_word_right,     &ht_kp E PG_UP,              RM2 RM3, 2)
+ZMK_COMBO(combo_vim_word_left,      &ht_kp PG_DN B,              RM2 RM1, 2)
+ZMK_COMBO(combo_vim_word_right,     &ht_kp PG_UP E,              RM2 RM3, 2)
 
 // Layer Navigation Combo   
 ZMK_COMBO(combo_sys,                &tog 4,             LB5 RB5, 0)
