@@ -27,9 +27,7 @@
 
 /* Combos */
 ZMK_COMBO(combo_semi,               &kp SEMI,           RT1 RT2 RT3, 0, 45)
-ZMK_COMBO(combo_at,               &morph_at,          LT1 LT2 LT3, 0, 45)
-// ZMK_COMBO(combo_bral,               &morph_bral,        LT1 LT2, 0)
-// ZMK_COMBO(combo_brar,               &morph_brar,        RT1 RT2, 0)
+ZMK_COMBO(combo_at,                 &morph_at,          LT1 LT2 LT3, 0, 45)
 
 // Typing Combos
 ZMK_COMBO(combo_capsword,           &caps_word,         LH1 RH1, 0, 60)
@@ -42,8 +40,14 @@ ZMK_COMBO(combo_char,               &kp LC(LG(SPACE)),  LT5 RT5, 0)
 ZMK_COMBO(combo_menu,               &kp LG(LS(FSLH)),   RB1 RB3, 2)
 
 // VIM navigation combo 
-ZMK_COMBO(combo_vim_jump_left,      &kp LBRC,           RT2 RM1, 2)
-ZMK_COMBO(combo_vim_jump_right,     &kp RBRC,           RT2 RM3, 2)
+ZMK_COMBO(combo_vim_jump_left,      &kp LBRC,           RT2 RT1, 2)
+ZMK_COMBO(combo_vim_jump_right,     &kp RBRC,           RT2 RT3, 2)
+
+ZMK_COMBO(combo_pgup,               &kp PG_UP,          RH1 RT2, 2)
+ZMK_COMBO(combo_pgdn,               &kp PG_DN,          RH1 RM2, 2)
+
+ZMK_COMBO(combo_home,               &kp HOME,           RH1 RM3, 2)
+ZMK_COMBO(combo_end,                &kp END,            RH1 RM1, 2)
 
 ZMK_COMBO(combo_vim_word_left,      &kp B,              RM2 RM1, 2)
 ZMK_COMBO(combo_vim_word_right,     &kp E,              RM2 RM3, 2)
@@ -51,10 +55,9 @@ ZMK_COMBO(combo_vim_word_right,     &kp E,              RM2 RM3, 2)
 // Layer Navigation Combo   
 ZMK_COMBO(combo_sys,                &tog 4,             LB5 RB5, 0)
 ZMK_COMBO(combo_fn,                 &tog 3,             LM5 RM5, 0)
-ZMK_COMBO(combo_home,               &to 0,              LH2 RH2, 1 2 3 4)
+ZMK_COMBO(combo_home_layer,         &to 0,              LH2 RH2, 1 2 3 4)
 ZMK_COMBO(combo_number,             &tog 1,             LM5 LH1)
 ZMK_COMBO(combo_nav,                &tog 2,             RM5 RH1)
-ZMK_COMBO(combo_meh,                &sk LC(LA(LSHFT)),  LH2 RH2, 60)
 
 /* Simple Morph */
 // Graphite Specific Morph
@@ -95,6 +98,7 @@ ZMK_TAP_DANCE(tap_shot_full,    tapping-term-ms = <200>; bindings = <&kp LG(LS(L
 ZMK_TAP_DANCE(tap_copy_cut,     tapping-term-ms = <200>; bindings = <&kp LG(C)>, <&kp LG(X)>;)
 ZMK_TAP_DANCE(tap_paste_move,   tapping-term-ms = <200>; bindings = <&kp LG(V)>, <&kp LG(LA(V))>;)
 
+// Meh and HYPR Dance 
 ZMK_TAP_DANCE(tap_meh_hypr,   tapping-term-ms = <200>; bindings = <&sk LC(LA(LSHFT))>, <&sk LC(LA(LG(LSHFT)))>;)
 
 // Doesn't work
