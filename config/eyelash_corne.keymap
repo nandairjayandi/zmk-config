@@ -25,7 +25,6 @@
 #include "mouse.dtsi"
 #include "encoder.dtsi"
 
-
 ZMK_LAYER(GRAPHITE,
     //╭─────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮                  ╭──────╮         ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────╮
        M_GRAVE     &kp B         &kp L         &kp D         &kp W         &kp Z                             MS_U             M_SQT        &kp F         &kp O         &kp U         &kp J            M_HASH
