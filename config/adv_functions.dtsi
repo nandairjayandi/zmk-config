@@ -62,9 +62,8 @@ ZMK_COMBO(combo_nav,                &tog 2,             RM5 RH1)
 /* Simple Morph */
 // Graphite Specific Morph
 SIMPLE_MORPH(morph_comma,   SFT, &kp COMMA, &kp QMARK)          // ,?
+SIMPLE_MORPH(morph_dot,     SFT, &kp DOT, &kp EXCL)          // .!
 SIMPLE_MORPH(morph_sqt,     SFT, &kp SQT, &kp UNDER)              // '_
-SIMPLE_MORPH(morph_dot,     SFT, &kp DOT, &kp EXCL)          // .!
-SIMPLE_MORPH(morph_dot,     SFT, &kp DOT, &kp EXCL)          // .!
 SIMPLE_MORPH(morph_fslh,    SFT, &kp FSLH, &kp PRCNT)        // /%
 SIMPLE_MORPH(morph_min,     SFT, &kp MINUS, &kp DQT)              // -"
 
