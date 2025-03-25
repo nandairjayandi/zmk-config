@@ -35,6 +35,7 @@ MAKE_HT(ht_nav_bspc, &mo, &morph_bspc)
 
 MAKE_HT(ht_comma_fn, &mo, &morph_comma)
 MAKE_HT(ht_dot_fn, &mo, &morph_dot)
+
 // MAKE_HT(ht_mo_sk, &kp, &sk)
 
 #define SK_STOP &kp LANG9 // cancels Sticky Key 
