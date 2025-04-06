@@ -40,8 +40,8 @@ MAKE_HT(ht_dot_fn, &mo, &morph_dot)
 
 #define SK_STOP &kp LANG9 // cancels Sticky Key 
 
-#define L_FN &ht_comma_fn 3 0
-#define R_FN &ht_dot_fn 3 0
+#define L_FN &ht_dot_fn 3 0
+#define R_FN &ht_comma_fn  3 0
 
 #define SPC_NUM &lt 1 SPACE
 #define BSPC_NAV &ht_nav_bspc 2 0
