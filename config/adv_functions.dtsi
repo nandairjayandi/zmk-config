@@ -64,7 +64,7 @@ SIMPLE_MORPH(morph_fslh,    SFT, &kp FSLH, &kp PRCNT)        // /%
 SIMPLE_MORPH(morph_min,     SFT, &kp MINUS, &kp DQT)              // -"
 
 // NUMBER layer morph
-SIMPLE_MORPH(morph_eql,     SFT, &kp KP_EQUAL, &kp KP_DOT)        // =.
+SIMPLE_MORPH(morph_eql,     SFT, &kp KP_EQUAL, &kp COMMA)        // =.
 
 // Backspace/Delete Morph
 SIMPLE_MORPH(morph_bspc,    SFT, &kp BSPC, &kp DELETE)           // BSPC DEL
