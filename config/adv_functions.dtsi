@@ -71,6 +71,7 @@ SIMPLE_MORPH(morph_eql,     SFT, &kp KP_EQUAL, &kp COMMA)        // =,
 
 // Backspace/Delete Morph
 SIMPLE_MORPH(morph_bspc,    SFT, &kp BSPC, &kp DELETE)           // BSPC DEL
+SIMPLE_MORPH(morph_spc,     SFT, &kp SPC, &kp INSERT)           // SPC INS
 
 SIMPLE_MORPH(morph_and,      SFT, &kp AMPS, &kp AT)
 SIMPLE_MORPH(morph_hash,    SFT, &kp HASH, &kp DLLR)
