@@ -28,8 +28,8 @@ MAKE_HT(ht_kp, &kp, &kp)
 #define COMBO_IDLE_SLOW 50
 
 /* Combos */
-ZMK_COMBO(combo_semi,               &kp SEMI,           RT1 RT2 RT3, 0, 45)
-ZMK_COMBO(combo_at,                 &morph_at,          LT1 LT2 LT3, 0, 45)
+ZMK_COMBO(combo_semi,               &kp SEMI,           RT2 RT3, 0, 45)
+ZMK_COMBO(combo_and,                 &morph_and,          LT2 LT3, 0, 45)
 
 // Typing Combos
 ZMK_COMBO(combo_capsword,           &caps_word,         LH1 RH1, 0, 60)
@@ -69,7 +69,7 @@ SIMPLE_MORPH(morph_eql,     SFT, &kp KP_EQUAL, &kp COMMA)        // =.
 // Backspace/Delete Morph
 SIMPLE_MORPH(morph_bspc,    SFT, &kp BSPC, &kp DELETE)           // BSPC DEL
 
-SIMPLE_MORPH(morph_at,      SFT, &kp AT, &kp AMPS)
+SIMPLE_MORPH(morph_and,      SFT, &kp AMPS, &kp AT)
 SIMPLE_MORPH(morph_hash,    SFT, &kp HASH, &kp DLLR)
 
 // Bracket Morph
