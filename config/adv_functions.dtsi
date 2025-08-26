@@ -102,7 +102,7 @@ ZMK_TAP_DANCE(tap_bluetooth,    tapping-term-ms = <200>; bindings = <&bt BT_CLR>
 
 // alias list
 #define M_FSLH &morph_fslh
-#define M_STAR &morph_start
+#define M_STAR &morph_star
 #define M_MIN &morph_min
 #define M_SQT &morph_sqt
 #define M_EQL &morph_eql
