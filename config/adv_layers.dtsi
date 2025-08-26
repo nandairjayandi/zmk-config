@@ -32,6 +32,7 @@ MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
 MAKE_HT(ht_nav_bspc, &mo, &morph_bspc)
+MAKE_HT(ht_num_spc, &mo, &kp SPACE)
 
 MAKE_HT(ht_comma_fn, &mo, &morph_comma)
 MAKE_HT(ht_dot_fn, &mo, &morph_dot)
@@ -43,7 +44,7 @@ MAKE_HT(ht_dot_fn, &mo, &morph_dot)
 #define L_FN &ht_dot_fn 3 0
 #define R_FN &ht_comma_fn  3 0
 
-#define SPC_NUM &mo 1 SPACE
+#define SPC_NUM &ht_num_spc 1 0
 #define BSPC_NAV &ht_nav_bspc 2 0
 
 / {
