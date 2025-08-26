@@ -63,10 +63,11 @@ SIMPLE_MORPH(morph_comma,   SFT, &kp COMMA, &kp QMARK)          // ,?
 SIMPLE_MORPH(morph_dot,     SFT, &kp DOT, &kp EXCL)          // .!
 SIMPLE_MORPH(morph_sqt,     SFT, &kp SQT, &kp UNDER)              // '_
 SIMPLE_MORPH(morph_fslh,    SFT, &kp FSLH, &kp PRCNT)        // /%
+SIMPLE_MORPH(morph_star,    SFT, &kp STAR, &kp CARET)        // *^
 SIMPLE_MORPH(morph_min,     SFT, &kp MINUS, &kp DQT)              // -"
 
 // NUMBER layer morph
-SIMPLE_MORPH(morph_eql,     SFT, &kp KP_EQUAL, &kp COMMA)        // =.
+SIMPLE_MORPH(morph_eql,     SFT, &kp KP_EQUAL, &kp COMMA)        // =,
 
 // Backspace/Delete Morph
 SIMPLE_MORPH(morph_bspc,    SFT, &kp BSPC, &kp DELETE)           // BSPC DEL
@@ -99,6 +100,7 @@ ZMK_TAP_DANCE(tap_meh_hypr,   tapping-term-ms = <200>; bindings = <&sk LC(LA(LSH
 
 // alias list
 #define M_FSLH &morph_fslh
+#define M_STAR &morph_start
 #define M_MIN &morph_min
 #define M_SQT &morph_sqt
 #define M_EQL &morph_eql
