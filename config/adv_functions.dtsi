@@ -58,11 +58,11 @@ ZMK_COMBO(combo_home_layer,         &to 0,              LH2 RH2, 1 2 3 4)
 ZMK_COMBO(combo_number,             &tog 1,             LM5 LH1)
 ZMK_COMBO(combo_nav,                &tog 2,             RM5 RH1)
 
-ZMK_COMBO(combo_rec_l,              &tap_rec_l,             LT1 LT2, 3)
-ZMK_COMBO(combo_rec_r,              &tap_rec_r,             RT1 RT2, 3)
+ZMK_COMBO(combo_rec_l,              &tap_rec_l,             LT1 LT2 LT3, 3)
+ZMK_COMBO(combo_rec_r,              &tap_rec_r,             RT1 RT2 RT3, 3)
 
-ZMK_COMBO(combo_ply_l,              &dm DM_PLY 0,             LT1 LT2, 0 1 2)
-ZMK_COMBO(combo_ply_r,              &dm DM_PLY 1,             RT1 RT2, 0 1 2)
+ZMK_COMBO(combo_ply_l,              &dm DM_PLY 0,             LT1 LT2 LT3, 0 1 2)
+ZMK_COMBO(combo_ply_r,              &dm DM_PLY 1,             RT1 RT2 RT3, 0 1 2)
 
 /* Simple Morph */
 // Graphite Specific Morph
@@ -108,8 +108,8 @@ ZMK_TAP_DANCE(tap_meh_hypr,     tapping-term-ms = <200>; bindings = <&sk LC(LA(L
 
 ZMK_TAP_DANCE(tap_bluetooth,    tapping-term-ms = <200>; bindings = <&bt BT_CLR>, <&bt BT_CLR_ALL>;)
 
-ZMK_TAP_DANCE(tap_rec_l,    tapping-term-ms = <200>; bindings = <&dm DM_REC 0>, <&dm DM_STP 0>;)
-ZMK_TAP_DANCE(tap_rec_r,    tapping-term-ms = <200>; bindings = <&dm DM_REC 1>, <&dm DM_STP 1>;)
+SIMPLE_MORPH(tap_rec_l,    SFT, &dm DM_STP 0, &dm DM_REC 0)
+SIMPLE_MORPH(tap_rec_r,    SFT, &dm DM_STP 1, &dm DM_REC 1)
 
 // alias list
 #define M_FSLH &morph_fslh
