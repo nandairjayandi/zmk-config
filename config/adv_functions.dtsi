@@ -30,6 +30,8 @@ MAKE_HT(ht_kp, &kp, &kp)
 /* Combos */
 ZMK_COMBO(combo_semi,               &kp SEMI,           RT2 RT3, 0, 45)
 ZMK_COMBO(combo_and,                 &morph_and,          LT2 LT3, 0, 45)
+ZMK_COMBO(combo_bral,               &morph_bral,        LM3 LM2,  1, 45)
+ZMK_COMBO(combo_brar,               &morph_brar,        LM2 LM1,  1, 45)
 
 // Typing Combos
 ZMK_COMBO(combo_capsword,           &caps_word,         LH1 RH1, 0, 60)
