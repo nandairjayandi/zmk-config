@@ -3,6 +3,7 @@
 #include <behaviors.dtsi>
 
 #include "zmk-helpers/helper.h"
+#include <dt-bindings/zmk/dynamic_macro.h>
 
 &sl {
     release-after-ms = <0>;
@@ -44,8 +45,8 @@ ZMK_COMBO(combo_char,               &kp LC(LG(SPACE)),  LT5 RT5, 0)
 ZMK_COMBO(combo_menu,               &kp LG(LS(FSLH)),   RB1 RB3, 2)
 
 // VIM navigation combo 
-ZMK_COMBO(combo_vim_jump_left,      &ht_kp PG_UP LBRC,  RT2 RT1, 2)
-ZMK_COMBO(combo_vim_jump_right,     &ht_kp PG_DN RBRC,  RT2 RT3, 2)
+ZMK_COMBO(combo_vim_jump_left,      &ht_kp PG_UP LBRC,  RT2 RM1, 2)
+ZMK_COMBO(combo_vim_jump_right,     &ht_kp PG_DN RBRC,  RT2 RM3, 2)
 
 ZMK_COMBO(combo_vim_word_left,      &ht_kp HOME B,      RM2 RM1, 2)
 ZMK_COMBO(combo_vim_word_right,     &ht_kp END E,       RM2 RM3, 2)
@@ -56,6 +57,12 @@ ZMK_COMBO(combo_fn,                 &tog 3,             LM5 RM5, 0)
 ZMK_COMBO(combo_home_layer,         &to 0,              LH2 RH2, 1 2 3 4)
 ZMK_COMBO(combo_number,             &tog 1,             LM5 LH1)
 ZMK_COMBO(combo_nav,                &tog 2,             RM5 RH1)
+
+ZMK_COMBO(combo_rec_l,              &tap_rec_l,             LT1 LT2, 3)
+ZMK_COMBO(combo_rec_r,              &tap_rec_r,             RT1 RT2, 3)
+
+ZMK_COMBO(combo_ply_l,              &bt DM_PLY 0,             LT1 LT2, 0 1 2)
+ZMK_COMBO(combo_ply_r,              &bt DM_PLY 1,             RT1 RT2, 0 1 2)
 
 /* Simple Morph */
 // Graphite Specific Morph
@@ -100,6 +107,9 @@ ZMK_TAP_DANCE(tap_paste_move,   tapping-term-ms = <200>; bindings = <&kp LG(V)>,
 ZMK_TAP_DANCE(tap_meh_hypr,     tapping-term-ms = <200>; bindings = <&sk LC(LA(LSHFT))>, <&sk LC(LA(LG(LSHFT)))>;)
 
 ZMK_TAP_DANCE(tap_bluetooth,    tapping-term-ms = <200>; bindings = <&bt BT_CLR>, <&bt BT_CLR_ALL>;)
+
+ZMK_TAP_DANCE(tap_rec_l,    tapping-term-ms = <200>; bindings = <&bt DM_REC 0>, <&bt DM_STP 0>;)
+ZMK_TAP_DANCE(tap_rec_r,    tapping-term-ms = <200>; bindings = <&bt DM_REC 1>, <&bt DM_STP 1>;)
 
 // alias list
 #define M_FSLH &morph_fslh
