@@ -96,7 +96,9 @@ ZMK_TAP_DANCE(tap_copy_cut,     tapping-term-ms = <200>; bindings = <&kp LG(C)>,
 ZMK_TAP_DANCE(tap_paste_move,   tapping-term-ms = <200>; bindings = <&kp LG(V)>, <&kp LG(LA(V))>;)
 
 // Meh and HYPR Dance 
-ZMK_TAP_DANCE(tap_meh_hypr,   tapping-term-ms = <200>; bindings = <&sk LC(LA(LSHFT))>, <&sk LC(LA(LG(LSHFT)))>;)
+ZMK_TAP_DANCE(tap_meh_hypr,     tapping-term-ms = <200>; bindings = <&sk LC(LA(LSHFT))>, <&sk LC(LA(LG(LSHFT)))>;)
+
+ZMK_TAP_DANCE(tap_bluetooth,    tapping-term-ms = <200>; bindings = <&bt BT_CLR, <&bt BT_CLR_ALL>;)
 
 // alias list
 #define M_FSLH &morph_fslh
@@ -112,6 +114,7 @@ ZMK_TAP_DANCE(tap_meh_hypr,   tapping-term-ms = <200>; bindings = <&sk LC(LA(LSH
 #define T_COPY &tap_copy_cut
 #define T_PASTE &tap_paste_move
 #define T_SUPER &tap_meh_hypr
+#define T_BL &tap_bluetooth
 #define MAC_ALL &kp LG(A)
 
 /* Templates */
