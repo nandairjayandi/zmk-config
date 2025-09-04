@@ -25,8 +25,8 @@ manifest:
     - name: zmk-helpers # from urob
       remote: nandairjayandi
       revision: main
-    - name: nice-view-gem 
-      remote: m165437 
+    - name: nice-view-parrot 
+      remote: nandairjayandi 
       revision: main 
     - name: zmk-auto-layer
       remote: urob
