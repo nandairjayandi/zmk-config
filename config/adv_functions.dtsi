@@ -69,12 +69,12 @@ ZMK_COMBO(combo_ply_r,              &dm DM_PLY 1,             RT1 RT2 RT3, 0 1 2
 SIMPLE_MORPH(morph_comma,   SFT, &kp COMMA, &kp QMARK)          // ,?
 SIMPLE_MORPH(morph_dot,     SFT, &kp DOT, &kp EXCL)          // .!
 SIMPLE_MORPH(morph_sqt,     SFT, &kp SQT, &kp UNDER)              // '_
-SIMPLE_MORPH(morph_fslh,    SFT, &kp FSLH, &kp PRCNT)        // /%
-SIMPLE_MORPH(morph_star,    SFT, &kp STAR, &kp CARET)        // *^
 SIMPLE_MORPH(morph_min,     SFT, &kp MINUS, &kp DQT)              // -"
 
 // NUMBER layer morph
 SIMPLE_MORPH(morph_eql,     SFT, &kp KP_EQUAL, &kp COMMA)        // =,
+SIMPLE_MORPH(morph_fslh,    SFT, &kp FSLH, &kp BSLH)        // /%
+SIMPLE_MORPH(morph_star,    SFT, &kp STAR, &kp UNDER)        // *^
 
 // Backspace/Delete Morph
 SIMPLE_MORPH(morph_bspc,    SFT, &kp BSPC, &kp DELETE)           // BSPC DEL
