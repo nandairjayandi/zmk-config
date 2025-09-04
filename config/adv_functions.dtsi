@@ -85,8 +85,8 @@ SIMPLE_MORPH(morph_hash,    SFT, &kp HASH, &kp DLLR)
 
 // Bracket Morph
 // combine shift modifier and tap-dance to change the bracket form transmitted
-SIMPLE_MORPH(morph_bral,    GUI, &tap_bral_one, &tap_bral_two)
-SIMPLE_MORPH(morph_brar,    GUI, &tap_brar_one, &tap_brar_two)
+SIMPLE_MORPH(morph_bral,    SFT, &tap_bral_one, &tap_bral_two)
+SIMPLE_MORPH(morph_brar,    SFT, &tap_brar_one, &tap_brar_two)
 
 /* Tap Dance */
 // Bracket Tap Dance 
@@ -108,8 +108,8 @@ ZMK_TAP_DANCE(tap_meh_hypr,     tapping-term-ms = <200>; bindings = <&sk LC(LA(L
 
 ZMK_TAP_DANCE(tap_bluetooth,    tapping-term-ms = <200>; bindings = <&bt BT_CLR>, <&bt BT_CLR_ALL>;)
 
-SIMPLE_MORPH(tap_rec_l,    SFT, &dm DM_STP 0, &dm DM_REC 0)
-SIMPLE_MORPH(tap_rec_r,    SFT, &dm DM_STP 1, &dm DM_REC 1)
+SIMPLE_MORPH(tap_rec_l,    GUI, &dm DM_STP 0, &dm DM_REC 0)
+SIMPLE_MORPH(tap_rec_r,    GUI, &dm DM_STP 1, &dm DM_REC 1)
 
 // alias list
 #define M_FSLH &morph_fslh
