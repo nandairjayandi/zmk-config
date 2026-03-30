@@ -5,8 +5,8 @@ manifest:
     #  url-base: https://github.com/zmkfirmware
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
-    # - name: eyelash_corne
-    #   url-base: https://github.com/a741725193
+    - name: eyelash_corne
+      url-base: https://github.com/a741725193
     - name: nandairjayandi
       url-base: https://github.com/nandairjayandi
     - name: m165437
@@ -19,8 +19,8 @@ manifest:
       remote: nandairjayandi
       revision: main
       import: app/west.yml
-    - name: zmk-eyelash_corne
-      remote: nandairjayandi
+    - name: zmk-new_corne
+      remote: eyelash_corne
       revision: main
     - name: zmk-helpers # from urob
       remote: nandairjayandi
