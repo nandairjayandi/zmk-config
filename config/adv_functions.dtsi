@@ -73,7 +73,8 @@ SIMPLE_MORPH(morph_min,     SFT, &kp MINUS, &kp DQT)              // -"
 
 // NUMBER layer morph
 SIMPLE_MORPH(morph_eql,     SFT, &kp KP_EQUAL, &kp COMMA)        // =,
-SIMPLE_MORPH(morph_fslh,    SFT, &kp FSLH, &kp BSLH)        // /%
+SIMPLE_MORPH(morph_fslh,    SFT, &kp FSLH, &kp PRCNT)        // /%
+SIMPLE_MORPH(morph_pipe,    SFT, &kp PIPE, &kp BSLH)        // |\
 SIMPLE_MORPH(morph_star,    SFT, &kp STAR, &kp UNDER)        // *^
 
 // Backspace/Delete Morph
