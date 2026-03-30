@@ -74,7 +74,7 @@ SIMPLE_MORPH(morph_min,     SFT, &kp MINUS, &kp DQT)              // -"
 // NUMBER layer morph
 SIMPLE_MORPH(morph_eql,     SFT, &kp KP_EQUAL, &kp COMMA)        // =,
 SIMPLE_MORPH(morph_fslh,    SFT, &kp FSLH, &kp PRCNT)        // /%
-SIMPLE_MORPH(morph_pipe,    SFT, &kp PIPE, &kp BSLH)        // |\
+SIMPLE_MORPH(morph_bslh,    SFT, &kp BSLH, &kp PIPE)        // \|
 SIMPLE_MORPH(morph_star,    SFT, &kp STAR, &kp UNDER)        // *^
 
 // Backspace/Delete Morph
@@ -114,6 +114,7 @@ SIMPLE_MORPH(tap_rec_r,    GUI, &dm DM_STP 1, &dm DM_REC 1)
 
 // alias list
 #define M_FSLH &morph_fslh
+#define M_BSLH &morph_bslh
 #define M_STAR &morph_star
 #define M_MIN &morph_min
 #define M_SQT &morph_sqt
