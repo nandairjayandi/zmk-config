@@ -61,8 +61,8 @@ ZMK_COMBO(combo_nav,                &tog 2,             RM5 RH1)
 // ZMK_COMBO(combo_rec_l,              &tap_rec_l,             LT1 LT2 LT3, 3)
 // ZMK_COMBO(combo_rec_r,              &tap_rec_r,             RT1 RT2 RT3, 3)
 
-ZMK_COMBO(combo_ply_l,              &dm DM_PLY 0,             LT1 LT2 LT3, 0 1 2)
-ZMK_COMBO(combo_ply_r,              &dm DM_PLY 1,             RT1 RT2 RT3, 0 1 2)
+// ZMK_COMBO(combo_ply_l,              &dm DM_PLY 0,             LT1 LT2 LT3, 0 1 2)
+// ZMK_COMBO(combo_ply_r,              &dm DM_PLY 1,             RT1 RT2 RT3, 0 1 2)
 
 /* Simple Morph */
 // Graphite Specific Morph
