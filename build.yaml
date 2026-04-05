@@ -53,11 +53,11 @@
 #     shield: corne_right
 ---
 include:
-  - board: eyelash_corne_left//zmk
+  - board: eyelash_corne_left
     # shield: nice_view
     shield: nice_view_gem
     #snippet: zmk-usb-logging    # Uncomment to log over USB.
-  - board: eyelash_corne_right//zmk
+  - board: eyelash_corne_right
     # shield: nice_view
     shield: nice_view_gem
     #snippet: zmk-usb-logging
