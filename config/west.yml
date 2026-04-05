@@ -26,7 +26,7 @@ manifest:
       remote: nandairjayandi
       revision: Zephyr4.1.0
     - name: zmk-helpers # from urob
-      remote: nandairjayandi
+      remote: urob
       revision: main
     - name: nice-view-gem 
       remote: m165437 
