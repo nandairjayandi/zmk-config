@@ -15,10 +15,10 @@ manifest:
       url-base: https://github.com/urob
 
   projects:
-    - name: zmk
-      remote: zmkfirmware
-      revision: main
-      import: app/west.yml
+    # - name: zmk
+    #   remote: zmkfirmware
+    #   revision: main
+    #   import: app/west.yml
     # - name: zmk-new_corne
     #   remote: eyelash_corne
     #   revision: main
